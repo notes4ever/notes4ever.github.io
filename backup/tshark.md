@@ -27,6 +27,7 @@ tshark -nni 1 -f "icmp or port 443" -w packets.pcap
 ![image](https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c)
 
 注意截图左下角，有显示数据包的数量。
+
 参数解释：
 
 - -nn 不解析ip和端口，显示原始ip和端口
