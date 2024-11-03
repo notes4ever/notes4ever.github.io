@@ -22,13 +22,18 @@ sudo chmod +x /usr/bin/dumpcap
 ### 捕获过滤器，存入文件
 tshark -nni 1 -f "icmp or port 443" -w packets.pcap
 
-![image](https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c)
-注意截图左下角，有显示数据包的数量。
-1. -nn 不解析ip和端口，显示原始ip和端口
-2. -i 序号为1的网络接口
-3. -f 捕获过滤器，在双引号内请遵从BPF的语法。
-4. -w 抓包结果存储到文件
 只能手动停止。
+
+![image](https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c)
+
+注意截图左下角，有显示数据包的数量。
+参数解释：
+
+- -nn 不解析ip和端口，显示原始ip和端口
+- -i 序号为1的网络接口
+- -f 捕获过滤器，在双引号内请遵从BPF的语法。
+- -w 抓包结果存储到文件
+
 ### 指定数据包数量的抓包
 tshark -nni 1 -f "icmp or port 443" -w packets.pcap -c 100
 
