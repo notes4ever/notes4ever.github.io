@@ -1,6 +1,4 @@
-
 ![image](https://github.com/user-attachments/assets/0b00a4b1-f4f7-41c4-8047-e7c838e1e0cb)
-
 
 > **简洁，快速，稳定的Terminal**
 
