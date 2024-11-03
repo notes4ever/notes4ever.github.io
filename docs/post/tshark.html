@@ -103,14 +103,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>tshark -D</p>
 <p>实际使用，只需要网络接口对应的序号即可。</p>
 <h2>不用root和sudo</h2>
-<p>sudo dpkg-reconfigure wireshark-common<br>
-选「是」，然后执行<br>
-sudo chmod +x /usr/bin/dumpcap<br>
-就可以直接以普通用户执行tshark命令了</p>
+<p>sudo dpkg-reconfigure wireshark-common</p>
+<p>选「是」，然后执行<br>
+sudo chmod +x /usr/bin/dumpcap</p>
+<p>就可以直接以普通用户执行tshark命令了</p>
 <h2>tshark常用命令</h2>
 <h3>捕获过滤器，存入文件</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c"><img src="https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c" alt="image" style="max-width: 100%;"></a><br>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c"><img src="https://github.com/user-attachments/assets/a206c4fb-6e09-4ebe-b689-9e398bc67e0c" alt="image" style="max-width: 100%;"></a><br>
 注意截图左下角，有显示数据包的数量。</p>
 <ol>
 <li>-nn 不解析ip和端口，显示原始ip和端口</li>
@@ -120,28 +120,28 @@ sudo chmod +x /usr/bin/dumpcap<br>
 只能手动停止。</li>
 </ol>
 <h3>指定数据包数量的抓包</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -c 100<br>
-抓够100个数据包会自动停止。</p>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -c 100</p>
+<p>抓够100个数据包会自动停止。</p>
 <h3>指定文件大小的抓包</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a filesize:512<br>
-抓够512字节后会自动停止。</p>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a filesize:512</p>
+<p>抓够512字节后会自动停止。</p>
 <h3>指定抓包时间</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a duration:10<br>
-抓包10秒就自动停止。</p>
-<h3>保存为多个大小相同文件</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -b filesize:1024<br>
-单位：KB<br>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a duration:10</p>
+<p>抓包10秒就自动停止。</p>
+<h3>保存为多个大小相同文件的抓包</h3>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -b filesize:1024</p>
+<p>单位：KB<br>
 保存的文件命名为：<br>
 packets_00001_20240616230331.pcap<br>
 packets_00002_20240616230353.pcap<br>
 ......<br>
 只能手动停止。</p>
 <h3>指定抓包时长，保存成若干相等大小文件</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -b filesize:1024 -a duration:600<br>
-抓包10分钟，每个文件1MB</p>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -b filesize:1024 -a duration:600</p>
+<p>抓包10分钟，每个文件1MB</p>
 <h3>读取数据包</h3>
-<p>tshark -r packets.pcap -c 50<br>
--c 指定读取数据包的数量，不加即读取全部。</p></div>
+<p>tshark -r packets.pcap -c 50</p>
+<p>-c 指定读取数据包的数量，不加即读取全部。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
