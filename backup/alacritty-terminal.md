@@ -1,4 +1,5 @@
-<img src="https://oss.unixtea.com/notes4ever/ff8b506b7b5f6dde60f4ed3e8db3055a.png" width="800" />
+
+![image](https://github.com/user-attachments/assets/f2ffba48-6e94-40b9-b66d-58c4ab2265ac)
 
 > **简洁，快速，稳定的Terminal**
 
