@@ -2,5 +2,7 @@
     "title":"notes4ever",
     "subTitle":"Thinking, Fast and Slow",
     "avatarUrl":"https://avatars.githubusercontent.com/u/186999790",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last",
+    "showPostSource": 0,
+    "urlMode": issue
 }
