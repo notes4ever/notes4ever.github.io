@@ -157,7 +157,7 @@ packets_00002_20240616230353.pcap<br>
 <p>包含抓包文件的报文数、文件大小、抓包时长等丰富的信息。它的功能跟 Wireshark 里 Statistics 下拉菜单里的 Capture File Properties 是类似的</p>
 <h3>专家信息</h3>
 <p>tshark -r packets.pcap -z expert -q</p>
-<p>比较慢，输出信息太多，还是下载pcap文件后使用wireguard打开比较方便。</p>
+<p>比较慢，输出信息太多，还是下载pcap文件后使用wireshark GUI打开比较方便。</p>
 <h3>会话统计</h3>
 <p>tshark -r packets.pcap -z conv,ip -q</p>
 <h2>tshark命令实现特定场景需求</h2>

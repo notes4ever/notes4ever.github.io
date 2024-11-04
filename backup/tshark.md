@@ -89,7 +89,7 @@ capinfos packets.pcap
 ### 专家信息
 tshark -r packets.pcap -z expert -q
 
-比较慢，输出信息太多，还是下载pcap文件后使用wireguard打开比较方便。
+比较慢，输出信息太多，还是下载pcap文件后使用wireshark GUI打开比较方便。
 
 ### 会话统计
 tshark -r packets.pcap -z conv,ip -q
