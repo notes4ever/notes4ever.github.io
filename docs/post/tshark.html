@@ -104,9 +104,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>实际使用，只需要网络接口对应的序号即可。</p>
 <h2>不用root和sudo</h2>
 <p>sudo dpkg-reconfigure wireshark-common</p>
-<p>选「是」，然后执行<br>
-sudo chmod +x /usr/bin/dumpcap</p>
-<p>就可以直接以普通用户执行tshark命令了</p>
+<p>选「是」，然后使用root运行：<br>
+usermod -a -G wireshark ht<br>
+chmod +x /usr/bin/dumpcap<br>
+chmod +s /usr/sbin/tcpdump<br>
+chmod的两条命令可选，尝试如果不行再全部执行，可能要注销或重启生效；一般这样执行后就可以直接以普通用户执行tshark命令了。</p>
 <h2>tshark常用命令</h2>
 <h3>捕获过滤器，存入文件</h3>
 <p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap</p>

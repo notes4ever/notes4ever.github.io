@@ -13,10 +13,11 @@ tshark -D
 ## 不用root和sudo
 sudo dpkg-reconfigure wireshark-common
 
-选「是」，然后执行
-sudo chmod +x /usr/bin/dumpcap
-
-就可以直接以普通用户执行tshark命令了
+选「是」，然后使用root运行：
+usermod -a -G wireshark ht
+chmod +x /usr/bin/dumpcap
+chmod +s /usr/sbin/tcpdump
+chmod的两条命令可选，尝试如果不行再全部执行，可能要注销或重启生效；一般这样执行后就可以直接以普通用户执行tshark命令了。
 
 ## tshark常用命令
 ### 捕获过滤器，存入文件
