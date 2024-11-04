@@ -110,5 +110,7 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e
 以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。
 
 ## 参考资料
-
+- [tshark官方文档](https://www.wireshark.org/docs/man-pages/tshark.html)
 - [tshark 大杂烩 合集](https://const.net.cn/668.html)
+- [一文读懂网络报文分析神器Tshark](https://cloud.tencent.com/developer/article/2312883)
+- [tshark在流量分析中的绝佳应用](https://blog.csdn.net/weixin_44288604/article/details/123807294)
