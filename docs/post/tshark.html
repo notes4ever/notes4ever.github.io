@@ -142,7 +142,32 @@ packets_00002_20240616230353.pcap<br>
 <p>抓包10分钟，每个文件1MB</p>
 <h3>读取数据包</h3>
 <p>tshark -r packets.pcap -c 50</p>
-<p>-c 指定读取数据包的数量，不加即读取全部。</p></div>
+<p>-c 指定读取数据包的数量，不加即读取全部。</p>
+<h3>显示过滤，输出特定字段与分隔符</h3>
+<p>tshark -r packets.pcap -Y dns -T fields -e dns.qry.name -E separator="|"</p>
+<p>每个字段前面都用-e参数</p>
+<h2>tshark命令实现特定场景需求</h2>
+<h3>找出数据包中所有dns请求域名</h3>
+<p>排序并去重示例：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y dns -T fields -e dns.qry.name | sort | uniq</p>
+<p>-Y 显示过滤 参数值可以用双引号扩起来<br>
+T fields -e 需要显示的字段 参数值可以用双引号扩起来</p>
+<p>增加去查询的dns对应的IP：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y dns -T fields -e ip.dst -e dns.qry.name | sort | uniq</p>
+<p>这种方式无法区分具体的方向，也就无法去重。</p>
+<p>统计总共有多少dns域名请求：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y "dns" -T fields -e dns.qry.name | sort | uniq | wc -l</p>
+<p>更多带dns查询的命令：<br>
+tshark -r test.cap -T fields -e frame.time -e ip.src -e ip.dst -e dns.qry.name -R 'udp.dstport==53 || dns'</p>
+<p>参考：<a href="https://const.net.cn/668.html" rel="nofollow">https://const.net.cn/668.html</a></p>
+<h3>tshark命令找出所有tls的SNI域名</h3>
+<p>排序并去重示例：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e tls.handshake.extensions_server_name | sort | uniq</p>
+<p>统计tls总共有多少dns域名请求(client hello)：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y "tls.handshake.type==1" -T fields  -e "tls.handshake.extensions_server_name" | sort | uniq | wc -l</p>
+<p>追加提取目标的ip和端口：<br>
+tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e ipv6.dst -e tcp.dstport -e tls.handshake.extensions_server_name -E separator="|"  | sort | uniq</p>
+<p>以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
