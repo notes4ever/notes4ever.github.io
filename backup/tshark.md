@@ -77,6 +77,23 @@ tshark -r packets.pcap -Y dns -T fields -e dns.qry.name -E separator="|"
 
 每个字段前面都用-e参数
 
+### 修改每个报文的大小，并另存为新文件
+editcap -s 88 packets.pcap new.pcap
+
+## tshark统计相关
+### 抓包文件的基本信息
+capinfos packets.pcap
+
+包含抓包文件的报文数、文件大小、抓包时长等丰富的信息。它的功能跟 Wireshark 里 Statistics 下拉菜单里的 Capture File Properties 是类似的
+
+### 专家信息
+tshark -r packets.pcap -z expert -q
+
+比较慢，输出信息太多，还是下载pcap文件后使用wireguard打开比较方便。
+
+### 会话统计
+tshark -r packets.pcap -z conv,ip -q
+
 ## tshark命令实现特定场景需求
 
 ### 找出数据包中所有dns请求域名
@@ -110,6 +127,8 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y "tls.handshake.type==1" -T fields  
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e ipv6.dst -e tcp.dstport -e tls.handshake.extensions_server_name -E separator="|"  | sort | uniq
 
 以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。
+
+
 
 ## 参考资料
 - [tshark官方文档](https://www.wireshark.org/docs/man-pages/tshark.html)
