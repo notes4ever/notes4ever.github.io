@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 04 Nov 2024 06:33:27 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之ps</title><link>https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-ps.html</link><description>![image](https://github.com/user-attachments/assets/43b47427-f7ce-4248-af0a-79d02094ea4d)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 04 Nov 2024 06:34:28 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之ps</title><link>https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-ps.html</link><description>![image](https://github.com/user-attachments/assets/43b47427-f7ce-4248-af0a-79d02094ea4d)&#13;
 &#13;
 &gt; **ps命令与netstat类似，参数比较多，需要记住一些重要的，常用的**&#13;
 &#13;
@@ -32,10 +32,10 @@ tshark -v&#13;
 ## 查看网络接口&#13;
 tshark -D&#13;
 &#13;
-实际使用，只需要网络接口对应的序号即可。</description><guid isPermaLink="true">https://notes4ever.github.io/post/tshark-shi-yong-bi-ji.html</guid><pubDate>Sun, 03 Nov 2024 14:40:38 +0000</pubDate></item><item><title>alacritty</title><link>https://notes4ever.github.io/post/alacritty.html</link><description>![image](https://github.com/user-attachments/assets/2d792155-617e-4c79-9cef-298d8b91714e)&#13;
+实际使用，只需要网络接口对应的序号即可。</description><guid isPermaLink="true">https://notes4ever.github.io/post/tshark-shi-yong-bi-ji.html</guid><pubDate>Sun, 03 Nov 2024 14:40:38 +0000</pubDate></item><item><title>Alacritty Terminal</title><link>https://notes4ever.github.io/post/Alacritty%20Terminal.html</link><description>![image](https://github.com/user-attachments/assets/2d792155-617e-4c79-9cef-298d8b91714e)&#13;
 &#13;
 &gt; **简洁，快速，稳定的Terminal**&#13;
 &#13;
 ## 忆往昔&#13;
 &#13;
-记得多年前，第一次使用Linux（Ubuntu），打开终端，仿佛打开了一个新的世界。</description><guid isPermaLink="true">https://notes4ever.github.io/post/alacritty.html</guid><pubDate>Sun, 03 Nov 2024 06:37:12 +0000</pubDate></item></channel></rss>
+记得多年前，第一次使用Linux（Ubuntu），打开终端，仿佛打开了一个新的世界。</description><guid isPermaLink="true">https://notes4ever.github.io/post/Alacritty%20Terminal.html</guid><pubDate>Sun, 03 Nov 2024 06:37:12 +0000</pubDate></item></channel></rss>
