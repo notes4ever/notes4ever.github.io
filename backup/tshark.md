@@ -36,10 +36,11 @@ tshark -nni 1 -f "icmp or port 443" -w packets.pcap
 - -f 捕获过滤器，在双引号内请遵从BPF的语法。
 - -w 抓包结果存储到文件
 
-### 指定数据包数量的抓包
-tshark -nni 1 -f "icmp or port 443" -w packets.pcap -c 100
+### 指定数据包大小和数量的抓包
+tshark -nni 1 -f "icmp or port 443" -w packets.pcap -s 100-c 100
 
-抓够100个数据包会自动停止。
+-s 指定每个数据包的大小，单位字节
+-c 表示数据包的数量，抓够100个数据包会自动停止。
 
 ### 指定文件大小的抓包
 tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a filesize:512

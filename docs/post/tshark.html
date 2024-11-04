@@ -122,9 +122,10 @@ chmod的两条命令可选，尝试如果不行再全部执行，可能要注销
 <li>-f 捕获过滤器，在双引号内请遵从BPF的语法。</li>
 <li>-w 抓包结果存储到文件</li>
 </ul>
-<h3>指定数据包数量的抓包</h3>
-<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -c 100</p>
-<p>抓够100个数据包会自动停止。</p>
+<h3>指定数据包大小和数量的抓包</h3>
+<p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -s 100-c 100</p>
+<p>-s 指定每个数据包的大小，单位字节<br>
+-c 表示数据包的数量，抓够100个数据包会自动停止。</p>
 <h3>指定文件大小的抓包</h3>
 <p>tshark -nni 1 -f "icmp or port 443" -w packets.pcap -a filesize:512</p>
 <p>抓够512字节后会自动停止。</p>
