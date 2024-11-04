@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 04 Nov 2024 08:54:49 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之nohup</title><link>https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-nohup.html</link><description>![image](https://github.com/user-attachments/assets/a62559a6-bbe9-47c5-82fa-e81dbd417b41)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 04 Nov 2024 09:25:27 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之nohup</title><link>https://notes4ever.github.io/post/6.html</link><description>![image](https://github.com/user-attachments/assets/a62559a6-bbe9-47c5-82fa-e81dbd417b41)&#13;
 &#13;
 &gt; **后台运行命令，以及恢复命令的前台执行**&#13;
 &#13;
-*nix系统下有很多关于后台、挂起、前台恢复的命令；在此列举一些常用的，尤其是最强大的nohup。</description><guid isPermaLink="true">https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-nohup.html</guid><pubDate>Mon, 04 Nov 2024 08:54:20 +0000</pubDate></item><item><title>Terminal常用快捷键</title><link>https://notes4ever.github.io/post/Terminal-chang-yong-kuai-jie-jian.html</link><description>![cli-commands](https://github.com/user-attachments/assets/92509d21-fce3-4e1b-8359-d94719aef1e6)&#13;
+*nix系统下有很多关于后台、挂起、前台恢复的命令；在此列举一些常用的，尤其是最强大的nohup。</description><guid isPermaLink="true">https://notes4ever.github.io/post/6.html</guid><pubDate>Mon, 04 Nov 2024 08:54:20 +0000</pubDate></item><item><title>Terminal常用快捷键</title><link>https://notes4ever.github.io/post/5.html</link><description>![cli-commands](https://github.com/user-attachments/assets/92509d21-fce3-4e1b-8359-d94719aef1e6)&#13;
 &#13;
 &gt; **到处都是快捷键，太多了，记录Terminal最常用的快捷键**&#13;
 &#13;
@@ -32,14 +32,14 @@ Ctrl+k&#13;
 ## 粘贴Ctrl+u或Ctrl+k剪切的内容&#13;
 Ctrl + y&#13;
 &#13;
-。</description><guid isPermaLink="true">https://notes4ever.github.io/post/Terminal-chang-yong-kuai-jie-jian.html</guid><pubDate>Mon, 04 Nov 2024 08:13:01 +0000</pubDate></item><item><title>常用命令之less</title><link>https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-less.html</link><description>&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/5.html</guid><pubDate>Mon, 04 Nov 2024 08:13:01 +0000</pubDate></item><item><title>常用命令之less</title><link>https://notes4ever.github.io/post/4.html</link><description>&#13;
 ![image](https://github.com/user-attachments/assets/899255d7-0cd2-4324-b41e-46cd09322012)&#13;
 &#13;
 &#13;
 &gt; **lesss is more than more**&#13;
 &#13;
 ## less命令&#13;
-less是more命令的升级版本；文本文件的读取一般使用less，尤其较大文件。</description><guid isPermaLink="true">https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-less.html</guid><pubDate>Mon, 04 Nov 2024 07:11:19 +0000</pubDate></item><item><title>常用命令之ps</title><link>https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-ps.html</link><description>![image](https://github.com/user-attachments/assets/43b47427-f7ce-4248-af0a-79d02094ea4d)&#13;
+less是more命令的升级版本；文本文件的读取一般使用less，尤其较大文件。</description><guid isPermaLink="true">https://notes4ever.github.io/post/4.html</guid><pubDate>Mon, 04 Nov 2024 07:11:19 +0000</pubDate></item><item><title>常用命令之ps</title><link>https://notes4ever.github.io/post/3.html</link><description>![image](https://github.com/user-attachments/assets/43b47427-f7ce-4248-af0a-79d02094ea4d)&#13;
 &#13;
 &gt; **ps命令与netstat类似，参数比较多，需要记住一些重要的，常用的**&#13;
 &#13;
@@ -62,7 +62,7 @@ less是more命令的升级版本；文本文件的读取一般使用less，尤�
 **ps  -p 1234 -Lf**&#13;
 &#13;
 ## 部分命令参数与输出结果解释&#13;
-ps 命令堪比工具中的瑞士军刀，能够输出系统中运行的所有程序（进程）的大量信息。</description><guid isPermaLink="true">https://notes4ever.github.io/post/chang-yong-ming-ling-zhi-ps.html</guid><pubDate>Mon, 04 Nov 2024 06:25:21 +0000</pubDate></item><item><title>tshark使用笔记</title><link>https://notes4ever.github.io/post/tshark-shi-yong-bi-ji.html</link><description>![image](https://github.com/user-attachments/assets/e3ea6ef6-3bc8-4877-8e0a-704e7a87104e)&#13;
+ps 命令堪比工具中的瑞士军刀，能够输出系统中运行的所有程序（进程）的大量信息。</description><guid isPermaLink="true">https://notes4ever.github.io/post/3.html</guid><pubDate>Mon, 04 Nov 2024 06:25:21 +0000</pubDate></item><item><title>tshark使用笔记</title><link>https://notes4ever.github.io/post/2.html</link><description>![image](https://github.com/user-attachments/assets/e3ea6ef6-3bc8-4877-8e0a-704e7a87104e)&#13;
 &#13;
 &gt; **记录tshark常用命令**&#13;
 &#13;
@@ -72,10 +72,10 @@ tshark -v&#13;
 ## 查看网络接口&#13;
 tshark -D&#13;
 &#13;
-实际使用，只需要网络接口对应的序号即可。</description><guid isPermaLink="true">https://notes4ever.github.io/post/tshark-shi-yong-bi-ji.html</guid><pubDate>Sun, 03 Nov 2024 14:40:38 +0000</pubDate></item><item><title>Alacritty Terminal</title><link>https://notes4ever.github.io/post/Alacritty%20Terminal.html</link><description>![image](https://github.com/user-attachments/assets/2d792155-617e-4c79-9cef-298d8b91714e)&#13;
+实际使用，只需要网络接口对应的序号即可。</description><guid isPermaLink="true">https://notes4ever.github.io/post/2.html</guid><pubDate>Sun, 03 Nov 2024 14:40:38 +0000</pubDate></item><item><title>Alacritty Terminal</title><link>https://notes4ever.github.io/post/1.html</link><description>![image](https://github.com/user-attachments/assets/2d792155-617e-4c79-9cef-298d8b91714e)&#13;
 &#13;
 &gt; **简洁，快速，稳定的Terminal**&#13;
 &#13;
 ## 忆往昔&#13;
 &#13;
-记得多年前，第一次使用Linux（Ubuntu），打开终端，仿佛打开了一个新的世界。</description><guid isPermaLink="true">https://notes4ever.github.io/post/Alacritty%20Terminal.html</guid><pubDate>Sun, 03 Nov 2024 06:37:12 +0000</pubDate></item></channel></rss>
+记得多年前，第一次使用Linux（Ubuntu），打开终端，仿佛打开了一个新的世界。</description><guid isPermaLink="true">https://notes4ever.github.io/post/1.html</guid><pubDate>Sun, 03 Nov 2024 06:37:12 +0000</pubDate></item></channel></rss>
