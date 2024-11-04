@@ -96,8 +96,6 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y "dns" -T fields -e dns.qry.name | s
 更多带dns查询的命令：
 tshark -r test.cap -T fields -e frame.time -e ip.src -e ip.dst -e dns.qry.name -R 'udp.dstport==53 || dns'
 
-参考：https://const.net.cn/668.html
-
 ### tshark命令找出所有tls的SNI域名
 
 排序并去重示例：
@@ -110,3 +108,7 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y "tls.handshake.type==1" -T fields  
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e ipv6.dst -e tcp.dstport -e tls.handshake.extensions_server_name -E separator="|"  | sort | uniq
 
 以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。
+
+## 参考资料
+
+- [tshark 大杂烩 合集](https://const.net.cn/668.html)

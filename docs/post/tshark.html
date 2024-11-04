@@ -159,7 +159,6 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y dns -T fields -e ip.dst -e dns.qry.
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y "dns" -T fields -e dns.qry.name | sort | uniq | wc -l</p>
 <p>更多带dns查询的命令：<br>
 tshark -r test.cap -T fields -e frame.time -e ip.src -e ip.dst -e dns.qry.name -R 'udp.dstport==53 || dns'</p>
-<p>参考：<a href="https://const.net.cn/668.html" rel="nofollow">https://const.net.cn/668.html</a></p>
 <h3>tshark命令找出所有tls的SNI域名</h3>
 <p>排序并去重示例：<br>
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e tls.handshake.extensions_server_name | sort | uniq</p>
@@ -167,7 +166,11 @@ tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y "tls.handshake.type==1" -T fields  -e "tls.handshake.extensions_server_name" | sort | uniq | wc -l</p>
 <p>追加提取目标的ip和端口：<br>
 tshark -r 10271418-no-doh-no-proxy.pcapng -Y tls.handshake.type==1 -T fields  -e ipv6.dst -e tcp.dstport -e tls.handshake.extensions_server_name -E separator="|"  | sort | uniq</p>
-<p>以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。</p></div>
+<p>以上这种写法如果同时有ipv4和ipv6就不适用，都会缺失一部分。</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://const.net.cn/668.html" rel="nofollow">tshark 大杂烩 合集</a></li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
