@@ -1,8 +1,11 @@
 {
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
     "title":"notes4ever",
     "subTitle":"Thinking, Fast and Slow",
     "avatarUrl":"https://avatars.githubusercontent.com/u/186999790",
     "GMEEK_VERSION":"last",
     "showPostSource": 0,
-    "urlMode": "issue"
+    "urlMode": "issue",
+    "onePageListNum":15,
+    "i18n":"CN",
 }
