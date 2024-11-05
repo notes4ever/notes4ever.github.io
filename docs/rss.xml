@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 04 Nov 2024 09:25:27 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之nohup</title><link>https://notes4ever.github.io/post/6.html</link><description>![image](https://github.com/user-attachments/assets/a62559a6-bbe9-47c5-82fa-e81dbd417b41)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Thinking, Fast and Slow</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 05 Nov 2024 01:59:11 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用浏览器之librewolf</title><link>https://notes4ever.github.io/post/7.html</link><description>![image](https://github.com/user-attachments/assets/b7792b03-c8a2-4757-a877-1aeaad551d87)&#13;
+&#13;
+&gt; **值得向所有人推荐的浏览器**&#13;
+&#13;
+## Firefox家族浏览器&#13;
+基于Mozilla开源内核的浏览器很多，其中有不少优秀的代表，隐私与安全方面有Tor和Mullvad，性能与交互都很优秀的Zen，如果注重隐私与安全，又不牺牲太多便捷性，同时又简洁可靠不花哨，那[lirewolf](https://librewolf.net/)应该是不二之选。</description><guid isPermaLink="true">https://notes4ever.github.io/post/7.html</guid><pubDate>Tue, 05 Nov 2024 01:58:47 +0000</pubDate></item><item><title>常用命令之nohup</title><link>https://notes4ever.github.io/post/6.html</link><description>![image](https://github.com/user-attachments/assets/a62559a6-bbe9-47c5-82fa-e81dbd417b41)&#13;
 &#13;
 &gt; **后台运行命令，以及恢复命令的前台执行**&#13;
 &#13;
