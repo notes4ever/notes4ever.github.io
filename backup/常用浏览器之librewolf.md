@@ -22,7 +22,7 @@ lirewolf的特点列举：
 
 以下列举部分配置内容。
 
-## about:config 配置
+## about:config配置
 network.http.http3.enable          设置false，关闭quic。为什么关闭，有单独的笔记记录。
 media.peerconnection.enabled          设置false，关闭WebRTC。
 geo.enabled      设置false，关闭 Geolocation 地理信息。
@@ -64,7 +64,7 @@ startpage贴心地支持了自定义配置但免登录的url，可以自由地�
 搜索框的搜索也设置成startpage：
 ![image](https://github.com/user-attachments/assets/13611707-c374-4862-9e2c-4f7526c84ce9)
 
-## Doh 设置
+## Doh设置
 大陆的网络，不使用代理的话，可以使用**阿里的doh**: `https://223.5.5.5/dns-query`。
 ![image](https://github.com/user-attachments/assets/9d692249-d592-4c88-8f23-4bd295beb10a)
 
