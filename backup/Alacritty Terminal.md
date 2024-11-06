@@ -20,3 +20,6 @@ yml配置文件转换成toml，使用 alacritty migrate。
 macos下如果找不到alacritty 命令，使用绝对路径：
 /Applications/Alacritty.app/Contents/MacOS/alacritty migrate
 然后删除yml文件，只保留toml即可。
+
+## 更多搭配
+还可以进一步搭配tmux，来弥补没有标签管理和session会话的劣势。
