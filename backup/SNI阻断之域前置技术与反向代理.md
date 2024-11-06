@@ -11,15 +11,11 @@
 这里的http请求头具体指的是https的请求头，由于tls的加密，GFW不知道请求头里的内容；SNI是明文，所以GFW能获取，这也是SNI阻断的前提。（当然，GFW技术很复杂，SNI阻断只是常规手段之一。）
 
 ## SNI加密：ESNI与ECH
-
-1. Encrypted SNI (ESNI)
-
+### Encrypted SNI (ESNI)
 虽然SNI最初被设计为明文，但随着隐私需求的增加，出现了加密SNI（ESNI）的提案。ESNI旨在加密SNI信息，以保护用户隐私。通过这种方式，客户端可以在TLS握手中发送加密的SNI信息，而服务器则使用相应的密钥进行解密。
-
-2. Encrypted Client Hello (ECH)
-
+### Encrypted Client Hello (ECH)
 ECH是ESNI的后续发展，旨在不仅**加密SNI**，还加密整个**Client Hello**消息。这一技术通过改进密钥分发和握手流程来克服ESNI的一些局限性，使得用户隐私保护更加全面。
-
+### 加密SNI落地的挑战
 将SNI设计为明文可以被视为一种技术缺陷，因为它未能有效保护用户隐私。ESNI与ECH使得用户隐私保护更加全面。尽管在实际应用中仍面临挑战。这一演变过程体现了网络协议在应对不断变化的安全需求方面的重要性。
 
 这种SNI加密的技术，对于GFW来说，为时已晚，因为它可以直接封杀新的版本和协议扩展。实际上也这么做了，可以查看这篇：[揭示和规避中国对加密SNI（ESNI）的封锁](https://gfw.report/blog/gfw_esni_blocking/zh/)。所以SNI加密这条路在大陆是走不通的了。
