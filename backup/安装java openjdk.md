@@ -21,3 +21,7 @@ sudo apt install openjdk-17-jdk
 指定版本安装java-11-openjdk：
 
 `sudo yum install -y java-11-openjdk-devel `
+
+## 参考
+
+- https://blog.csdn.net/xiaochong0302/article/details/139593466
