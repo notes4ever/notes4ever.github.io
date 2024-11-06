@@ -10,14 +10,14 @@
 <meta name="description" content="![image](https://github.com/user-attachments/assets/da31a224-f048-44c6-9ff9-1ea17ddaad55)
 
 > **GFW工作的时候，识别SNI然后阻断是常用手段之一，域前置技术与反向代理可以绕过SNI阻断。">
-<meta property="og:title" content="域前置技术与反向代理">
+<meta property="og:title" content="SNI阻断之域前置技术与反向代理">
 <meta property="og:description" content="![image](https://github.com/user-attachments/assets/da31a224-f048-44c6-9ff9-1ea17ddaad55)
 
 > **GFW工作的时候，识别SNI然后阻断是常用手段之一，域前置技术与反向代理可以绕过SNI阻断。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://notes4ever.github.io/post/26.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
-<title>域前置技术与反向代理</title>
+<title>SNI阻断之域前置技术与反向代理</title>
 
 
 
@@ -50,7 +50,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">域前置技术与反向代理</h1>
+<h1 class="postTitle">SNI阻断之域前置技术与反向代理</h1>
 <div class="title-right">
     <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -78,9 +78,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p><strong>GFW工作的时候，识别SNI然后阻断是常用手段之一，域前置技术与反向代理可以绕过SNI阻断。</strong></p>
 </blockquote>
-<p>域前置，利用反向代理服务器不验证SNI的特性，发送一个白名单的SNI，绕过GFW，但实际请求的是http请求头指定的域名并不是SNI。<br>
-所以，只要反向代理服务器能拿到http请求头指定的域名（即目标域名），就能实现绕过GFW的阻断。</p>
-<p>这里的http请求头具体指的是https的请求头，由于tls的加密，GFW不知道请求头里的内容；SNI是明文，所以GFW能获取，这也是SNI阻断的前提。（当然，GFW技术很复杂，SNI阻断只是常规手段之一。）</p></div>
+<h2>SNI阻断技术</h2>
+<p>在建立TLS连接时，客户端（如浏览器）发送的第一个握手包中包含了目标域名的信息，这就是SNI。由于SNI以明文形式传输，GFW可以根据黑名单精确阻断这些连接。例如，当用户尝试访问被封锁的网站时，GFW会识别并丢弃这些连接请求。</p>
+<h2>域前置与反代</h2>
+<p>域前置，利用反向代理服务器不验证SNI的特性，发送一个<strong>GFW白名单里的SNI</strong>，绕过GFW，但实际请求的是<strong>http请求头指定的域名</strong>并不是SNI。所以，只要反向代理服务器能拿到http请求头指定的域名（即目标域名），就能实现绕过GFW的阻断。</p>
+<p>这里的http请求头具体指的是https的请求头，由于tls的加密，GFW不知道请求头里的内容；SNI是明文，所以GFW能获取，这也是SNI阻断的前提。（当然，GFW技术很复杂，SNI阻断只是常规手段之一。）</p>
+<h2>SNI加密：ESNI与ECH</h2>
+<ol>
+<li>Encrypted SNI (ESNI)</li>
+</ol>
+<p>虽然SNI最初被设计为明文，但随着隐私需求的增加，出现了加密SNI（ESNI）的提案。ESNI旨在加密SNI信息，以保护用户隐私。通过这种方式，客户端可以在TLS握手中发送加密的SNI信息，而服务器则使用相应的密钥进行解密。</p>
+<ol start="2">
+<li>Encrypted Client Hello (ECH)</li>
+</ol>
+<p>ECH是ESNI的后续发展，旨在不仅<strong>加密SNI</strong>，还加密整个<strong>Client Hello</strong>消息。这一技术通过改进密钥分发和握手流程来克服ESNI的一些局限性，使得用户隐私保护更加全面。</p>
+<p>将SNI设计为明文可以被视为一种技术缺陷，因为它未能有效保护用户隐私。ESNI与ECH使得用户隐私保护更加全面。尽管在实际应用中仍面临挑战。这一演变过程体现了网络协议在应对不断变化的安全需求方面的重要性。</p>
+<p>这种SNI加密的技术，对于GFW来说，为时已晚，因为它可以直接封杀新的版本和协议扩展。实际上也这么做了，可以查看这篇：<a href="https://gfw.report/blog/gfw_esni_blocking/zh/" rel="nofollow">揭示和规避中国对加密SNI（ESNI）的封锁</a>。所以SNI加密这条路在大陆是走不通的了。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载请注明出处 ❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
