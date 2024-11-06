@@ -17,7 +17,7 @@ sudo apt install -y /tmp/tcping.deb
 ## httping
 使用的是[httping](https://www.vanheusden.com/httping/)，官网的说明：
 
-![image](https://github.com/user-attachments/assets/907af3e4-0241-416c-a4c5-33e1a1344670)
+![image](https://github.com/user-attachments/assets/81c36f91-eda6-44e3-9c35-b9f7c98fc4e9)
 
 读取header返回，计算真实的http延迟，包括服务器处理和网络传输。
 
