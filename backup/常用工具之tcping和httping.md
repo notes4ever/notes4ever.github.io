@@ -1,4 +1,4 @@
-> **类比ping之基于icmp，用于探测网络层的延迟；tcping基于tcp，用于探测tcp三次握手；httping基于http/https用于测试真实的http/https数据返回。**
+> **类比ping之基于icmp，用于探测网络层的延迟；tcping基于tcp，用于探测tcp三次握手；httping基于http/https用于测试真实的http/https数据返回延迟。**
 
 ## tcping
 使用的是开源的[tcping](https://github.com/pouriyajamshidi/tcping)，使用golang实现。
