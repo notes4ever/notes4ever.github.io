@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 06 Nov 2024 02:59:30 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>centos yum epel-release</title><link>https://notes4ever.github.io/post/13.html</link><description>&gt; **关于centos epel** &#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 06 Nov 2024 05:18:15 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>home目录下中英文名字切换</title><link>https://notes4ever.github.io/post/14.html</link><description>&gt; **linuxmint下一种中英文目录名切换的方式**&#13;
+&#13;
+打开终端，在终端下输入命令：&#13;
+```&#13;
+sudo apt-get install xdg-user-dirs-gtk &#13;
+export LANG=en_US &#13;
+xdg-user-dirs-gtk-update&#13;
+export LANG=zh_CN.UTF-8&#13;
+```&#13;
+&#13;
+更改export LANG实现切换，可能需要注销重启生效。</description><guid isPermaLink="true">https://notes4ever.github.io/post/14.html</guid><pubDate>Wed, 06 Nov 2024 05:17:42 +0000</pubDate></item><item><title>centos yum epel-release</title><link>https://notes4ever.github.io/post/13.html</link><description>&gt; **关于centos epel** &#13;
 &#13;
 &#13;
 ```&#13;
