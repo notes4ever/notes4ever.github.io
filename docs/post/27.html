@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="> **GFW工作的时候，除了SNI阻断之外，常用基本手段还有IP阻断和DNS污染。">
+<meta property="og:title" content="IP阻断 DNS污染与DoH">
+<meta property="og:description" content="> **GFW工作的时候，除了SNI阻断之外，常用基本手段还有IP阻断和DNS污染。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/27.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>IP阻断 DNS污染与DoH</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">IP阻断 DNS污染与DoH</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/notes4ever/notes4ever.github.io/issues/27" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><blockquote>
+<p><strong>GFW工作的时候，除了SNI阻断之外，常用基本手段还有IP阻断和DNS污染。</strong></p>
+</blockquote>
+<h2>IP阻断</h2>
+<p>IP阻断在GFW中扮演着重要的角色，主要用于控制和限制用户访问特定网站和服务。IP阻断是GFW实施网络审查的重要手段之一，通过对特定IP地址和端口的控制，限制用户访问不符合政府规定的网站和服务。这一机制不仅影响了直接目标，还可能波及使用相同服务器资源的其他合法网站，造成更广泛的信息封锁。</p>
+<p>IP阻断技术的应用场景有：</p>
+<ul>
+<li>GFW通过分光技术在出口路由器旁边捕获流量，并分析数据包内容。一旦检测到与黑名单中的IP地址匹配的数据包，便会采取相应措施，如发送TCP RST包以中断连接。</li>
+<li>除了RST之外，还会选择性丢包。在检测到某些特定行为或内容时，GFW可以选择性地丢弃与特定IP地址相关的数据包。这种方法可以用于动态调整封锁策略，以应对不断变化的网络环境和用户行为。</li>
+<li>端口封锁。GFW还会针对某些特定端口（如SSH的22端口、VPN的1723端口和SSL的443端口）进行封锁。这种措施会导致与这些端口相关的服务无法正常使用，从而影响用户访问被封锁网站的能力</li>
+</ul>
+<h2>DNS污染</h2>
+<p>DNS cache pollution，DNS污染或DNS劫持，是一种破坏域名系统查询解析的行为。（污染一词可能取自域名系统域名解析之特性，若递归DNS解析器查询上游时收到错误回复，所有下游也会受影响。）</p>
+<p>DNS劫持是一类旁观者攻击，攻击者借由其在网络拓扑中的特殊位置，发送比真实的DNS回应更早到达攻击目标的伪造DNS回应。 一部连上了互联网的电脑一般都会使用互联网服务提供商提供的递归DNS服务器，这个服务器通常都会将部分客户曾经请求过的域名暂存起来。缓存污染攻击就是针对这一特性，影响服务器的用户或下游服务。</p>
+<p>所有经过GFW的在UDP的53端口上的域名查询，GFW都会进行IDS入侵检测，一经发现与黑名单关键词相匹配的域名查询请求，会马上伪装成目标解析服务器注入伪造的查询结果。攻击仅出现在DNS查询之路由经过防火长城时（中国大陆用户查询当地的DNS服务器收到错误结果是缓存所致，其并没有直接受到防火长城的DNS劫持攻击。）。伪造的查询结果中的IP地址不是一成不变的，在一段时间后会更新。</p>
+<h2>应对DNS污染</h2>
+<p>DNSSEC技术为DNS解析服务提供了解析数据验证机制，理论上可以有效抵御劫持。此外，DNSCrypt、DoT、DoH等方法通过将DNS请求封装于安全连接内，以保护DNS请求中的数据不被中间传输设备篡改。</p>
+<p>以上各种应对的技术，DoH被认为是比较靠谱的技术，依赖的是https的加密与防篡改。</p>
+<h2>DoT与DoH技术区别</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/daf98096-8849-4134-bd37-3e1e40e2fd05"><img src="https://github.com/user-attachments/assets/daf98096-8849-4134-bd37-3e1e40e2fd05" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/87e42923-c4c4-4c58-a5e6-560e1363c252"><img src="https://github.com/user-attachments/assets/87e42923-c4c4-4c58-a5e6-560e1363c252" alt="image" style="max-width: 100%;"></a></p>
+<p>DNS查询是明文的，因此DNS服务器可以轻易知道用户访问了什么网站（一些公司/集团的网关能知道员工访问的网站也就不足为奇了），这就带来了隐私泄漏。为了解决这个问题，DoT（DNS over TLS）和DoH（DNS over HTTPS）先后被提出来，目前看来是DoH胜出了，主流浏览器都支持DoH了。</p>
+<h2>总结</h2>
+<p>开启doh的作用：</p>
+<ul>
+<li>安全，doh就是防止dns泄露和dns劫持的。</li>
+<li>运营商和GFW可以通过墙ip,墙域名的方式,让你用不了某些服务商的doh。比如google的doh被墙，有的地方cf的doh不稳定。</li>
+<li>可以通过自建doh的方式绕过墙。比如在hk/tw/jp区域自建doh服务。这种请求走普通https请求，墙不知道你在进行dns请求。</li>
+</ul>
+<h2>一些知名的DoH汇总</h2>
+<h3>国内大厂</h3>
+<p>阿里: <code class="notranslate">https://dns.alidns.com/dns-query</code>  或者不使用域名直接用ip： <code class="notranslate">https://223.5.5.5/dns-query</code><br>
+腾讯: <code class="notranslate">https://doh.pub/dns-query</code><br>
+360: <code class="notranslate">https://doh.360.cn/dns-query</code></p>
+<p>主要用阿里就行了，这是阿里DoH的<a href="https://alidns.com/articles/6018321800a44d0e45e90d71" rel="nofollow">文档</a>。</p>
+<h3>国外大厂</h3>
+<p>Cloudflare: <code class="notranslate">https://1.1.1.1/dns-query</code><br>
+Google Public DNS: <code class="notranslate">https://dns.google/dns-query</code>   <code class="notranslate">https://8.8.8.8/dns-query</code><br>
+Open DNS: <code class="notranslate">https://doh.opendns.com</code><br>
+QUAD9 DNS: <code class="notranslate">https://dns.quad9.net/dns-query</code></p>
+<h3>其他DoH参考</h3>
+<ul>
+<li><a href="https://github.com/zoonderkins/blahdns">https://github.com/zoonderkins/blahdns</a></li>
+<li><a href="https://www.podipod.com/3868.html" rel="nofollow">https://www.podipod.com/3868.html</a></li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载请注明出处 ❤️</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","notes4ever/notes4ever.github.io");
+    script.setAttribute("issue-term","title");
+    
+    script.setAttribute("theme","github-light");
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+
+</html>
