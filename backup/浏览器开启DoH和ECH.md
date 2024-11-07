@@ -57,3 +57,7 @@
 - gateway：访问者是否使用了[Cloudflare Gateway](https://www.cloudflare.com/teams/gateway/)服务
 - rbi：访问者是否使用了[Cloudflares Remote Browser Isolation(RBI)](https://www.cloudflare.com/learning/access-management/what-is-browser-isolation/)服务
 - kex：TLS密钥交换过程中使用的交换方式
+
+## 参考资料
+
+- https://lxnchan.cn/cloudflare-trace.html
