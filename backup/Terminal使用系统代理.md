@@ -32,3 +32,13 @@ vim  ~/.gitconfig
 ```
 
 sslVerify需要配置，不然可能会报错ssl相关。
+
+## curl使用代理
+![image](https://github.com/user-attachments/assets/cc552a8d-2915-4369-936a-c3b749b9fb75)
+
+```
+vim ~/.bashrc
+export ALL_PROXY="socks5://127.0.0.1:2082"
+source ~/.bashrc
+curl --proxy $ALL_PROXY -I https://www.reddit.com
+```
