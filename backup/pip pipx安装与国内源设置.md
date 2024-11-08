@@ -13,6 +13,11 @@ sudo apt install python3-pip
 
 可以只用python3和pip3。
 
+## 有python但没有pip激活pip
+python3 -m ensurepip --upgrade --default-pip
+
+python -m ensurepip --upgrade --default-pip
+
 ## pipx安装
 
 python12以后是推荐使用pipx。
