@@ -7,17 +7,21 @@
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     
     <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
-<meta name="description" content="`pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`
+<meta name="description" content="## pip设置清华源
+
+`pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`
 
 linux与windows通用。">
-<meta property="og:title" content="pip设置国内源">
-<meta property="og:description" content="`pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`
+<meta property="og:title" content="pip pipx安装与国内源设置">
+<meta property="og:description" content="## pip设置清华源
+
+`pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`
 
 linux与windows通用。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://notes4ever.github.io/post/42.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
-<title>pip设置国内源</title>
+<title>pip pipx安装与国内源设置</title>
 
 
 
@@ -50,7 +54,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">pip设置国内源</h1>
+<h1 class="postTitle">pip pipx安装与国内源设置</h1>
 <div class="title-right">
     <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -74,8 +78,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p><code class="notranslate">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
-<p>linux与windows通用。</p></div>
+<div class="markdown-body" id="postBody"><h2>pip设置清华源</h2>
+<p><code class="notranslate">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
+<p>linux与windows通用。</p>
+<h2>linuxmint设置</h2>
+<p>linuxmint默认就能用python3命令，但不能使用python命令。</p>
+<p>安装pip3：</p>
+<p>sudo apt install python3-pip</p>
+<p>可以只用python3和pip3。</p>
+<h2>pipx安装</h2>
+<p>python12以后是推荐使用pipx。</p>
+<p>sudo apt install pipx</p>
+<p>pipx使用介绍：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/637791135" rel="nofollow">https://zhuanlan.zhihu.com/p/637791135</a></p>
+<p>更好的方式是使用虚拟环境，miniconda。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载请注明出处 ❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
