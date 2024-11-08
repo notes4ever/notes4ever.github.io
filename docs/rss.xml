@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 15:59:25 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>python3编译安装</title><link>https://notes4ever.github.io/post/40.html</link><description>```&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 16:04:37 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>pip离线安装</title><link>https://notes4ever.github.io/post/41.html</link><description>以apscheduler为例：&#13;
+&#13;
+pip download apscheduler -d /media/sf_share/apscheduler&#13;
+&#13;
+将 /media/sf_share/apscheduler目录打包，上传到需要离线安装的机器。</description><guid isPermaLink="true">https://notes4ever.github.io/post/41.html</guid><pubDate>Fri, 08 Nov 2024 16:04:11 +0000</pubDate></item><item><title>python3编译安装</title><link>https://notes4ever.github.io/post/40.html</link><description>```&#13;
 sudo yum groupinstall 'Development Tools'&#13;
 sudo yum install openssl-devel bzip2-devel zlib-devel readline-devel sqlite-devel xz-devel libffi-devel&#13;
 ```&#13;
