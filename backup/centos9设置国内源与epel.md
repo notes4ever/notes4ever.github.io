@@ -2,7 +2,7 @@
 
 > **centos 9 国内源设置**
 
-## centos中科大源设置
+## centos9设置中科大源
 
 yum源目录：/etc/yum.repos.d
 目录下所有的*.repo文件都移动到bak，用不到暂时备份。
