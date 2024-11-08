@@ -1,5 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 16:12:50 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>pip pipx安装与国内源设置</title><link>https://notes4ever.github.io/post/42.html</link><description>## pip设置清华源&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 16:16:56 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>miniconda安装</title><link>https://notes4ever.github.io/post/43.html</link><description>![image](https://github.com/user-attachments/assets/1ce7a9f2-1914-4235-8aaa-bd83f587a67e)&#13;
+&#13;
+miniconda官网：&#13;
+&#13;
+https://docs.anaconda.com/miniconda/&#13;
+&#13;
+参考教程：&#13;
+&#13;
+https://zhuanlan.zhihu.com/p/685496400&#13;
+&#13;
+主要命令：&#13;
+&#13;
+```&#13;
+mkdir -p ~/miniconda3&#13;
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh&#13;
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3&#13;
+rm -rf ~/miniconda3/miniconda.sh&#13;
+&#13;
+~/miniconda3/bin/conda init bash&#13;
+~/miniconda3/bin/conda init zsh&#13;
+```&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/43.html</guid><pubDate>Fri, 08 Nov 2024 16:16:23 +0000</pubDate></item><item><title>pip pipx安装与国内源设置</title><link>https://notes4ever.github.io/post/42.html</link><description>## pip设置清华源&#13;
 &#13;
 `pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple`&#13;
 &#13;
