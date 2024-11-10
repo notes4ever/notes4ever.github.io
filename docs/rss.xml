@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sun, 10 Nov 2024 09:34:14 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之whereis</title><link>https://notes4ever.github.io/post/52.html</link><description>![image](https://github.com/user-attachments/assets/fc231bba-8096-4bb3-b665-d2213d6b2c7d)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sun, 10 Nov 2024 09:36:57 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>service --status-all</title><link>https://notes4ever.github.io/post/53.html</link><description>查看**所有服务的运行状态**信息：&#13;
+&#13;
+**service --status-all**&#13;
+&#13;
+[+] 代表服务是在运行的状态&#13;
+[-] 代表服务是在关闭的状态&#13;
+&#13;
+其他常用：&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/d8c5b73a-dea8-4bae-baa6-e1ab0ec9faf8)&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/53.html</guid><pubDate>Sun, 10 Nov 2024 09:36:33 +0000</pubDate></item><item><title>常用命令之whereis</title><link>https://notes4ever.github.io/post/52.html</link><description>![image](https://github.com/user-attachments/assets/fc231bba-8096-4bb3-b665-d2213d6b2c7d)&#13;
 &#13;
 **显示命令及相关文件的路径位置**。</description><guid isPermaLink="true">https://notes4ever.github.io/post/52.html</guid><pubDate>Sun, 10 Nov 2024 09:33:50 +0000</pubDate></item><item><title>常用命令之kill pkill</title><link>https://notes4ever.github.io/post/51.html</link><description>![image](https://github.com/user-attachments/assets/1a21422b-a18f-4182-91ff-107741c64c78)&#13;
 &#13;
