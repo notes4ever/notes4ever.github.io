@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sun, 10 Nov 2024 09:53:32 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>linux默认shell</title><link>https://notes4ever.github.io/post/56.html</link><description>![image](https://github.com/user-attachments/assets/40403db6-e82d-4a8b-9469-52cbf3a57397)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sun, 10 Nov 2024 12:34:36 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>压缩与归档gzip tar tgz</title><link>https://notes4ever.github.io/post/57.html</link><description>## 最常用tar解压命令&#13;
+&#13;
+```&#13;
+tar -xvf filename.tar&#13;
+tar -zxvf filename.tgz&#13;
+```&#13;
+&#13;
+注意后缀。</description><guid isPermaLink="true">https://notes4ever.github.io/post/57.html</guid><pubDate>Sun, 10 Nov 2024 12:34:14 +0000</pubDate></item><item><title>linux默认shell</title><link>https://notes4ever.github.io/post/56.html</link><description>![image](https://github.com/user-attachments/assets/40403db6-e82d-4a8b-9469-52cbf3a57397)&#13;
 &#13;
 在大多数 Linux 系统中，/etc/shells 文件中列出了各种已安装的 shell。</description><guid isPermaLink="true">https://notes4ever.github.io/post/56.html</guid><pubDate>Sun, 10 Nov 2024 09:53:08 +0000</pubDate></item><item><title>常用命令之history</title><link>https://notes4ever.github.io/post/55.html</link><description>![image](https://github.com/user-attachments/assets/791373b1-8bc8-4c3a-be44-bf55eb6fa583)&#13;
 &#13;
