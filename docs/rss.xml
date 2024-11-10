@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 16:20:47 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>miniconda安装</title><link>https://notes4ever.github.io/post/43.html</link><description>![image](https://github.com/user-attachments/assets/1ce7a9f2-1914-4235-8aaa-bd83f587a67e)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sun, 10 Nov 2024 08:45:16 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>mac安装llvm clang</title><link>https://notes4ever.github.io/post/44.html</link><description>使用brew 安装：&#13;
+&#13;
+`brew install llvm`&#13;
+&#13;
+If you need to have llvm first in your PATH, run:&#13;
+&#13;
+`echo 'export PATH='/usr/local/opt/llvm/bin:$PATH'' &gt;&gt; ~/.zshrc`&#13;
+&#13;
+For compilers to find llvm you may need to set:&#13;
+&#13;
+```&#13;
+export LDFLAGS='-L/usr/local/opt/llvm/lib'&#13;
+export CPPFLAGS='-I/usr/local/opt/llvm/include'&#13;
+```。</description><guid isPermaLink="true">https://notes4ever.github.io/post/44.html</guid><pubDate>Sun, 10 Nov 2024 08:44:53 +0000</pubDate></item><item><title>miniconda安装</title><link>https://notes4ever.github.io/post/43.html</link><description>![image](https://github.com/user-attachments/assets/1ce7a9f2-1914-4235-8aaa-bd83f587a67e)&#13;
 &#13;
 miniconda官网：&#13;
 &#13;
