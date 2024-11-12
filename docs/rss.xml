@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 05:50:55 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>mac电源管理命令</title><link>https://notes4ever.github.io/post/64.html</link><description>电源管理设置，查看当前配置：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 05:56:01 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>man文件存放路径</title><link>https://notes4ever.github.io/post/65.html</link><description>## man文件存放路径&#13;
+man命令通过环境变量`$MANPATH`知道：&#13;
+&#13;
+`echo $MANPATH`&#13;
+&#13;
+## 手动存放man文件&#13;
+知道man路径后，手动存放，比如：&#13;
+&#13;
+`/usr/local/share/man/man1&#13;
+`&#13;
+&#13;
+然后二进制命令xxx存放：&#13;
+&#13;
+`/usr/local/bin&#13;
+`&#13;
+&#13;
+`man xxx `就有文档了。</description><guid isPermaLink="true">https://notes4ever.github.io/post/65.html</guid><pubDate>Tue, 12 Nov 2024 05:55:36 +0000</pubDate></item><item><title>mac电源管理命令</title><link>https://notes4ever.github.io/post/64.html</link><description>电源管理设置，查看当前配置：&#13;
 &#13;
 sudo pmset -g&#13;
 &#13;
