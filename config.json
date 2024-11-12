@@ -1,5 +1,5 @@
 {
-    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
     "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
     "title":"notes4ever",
     "subTitle":"通往奴役之路",
@@ -10,6 +10,7 @@
     "i18n":"CN",
     "UTC":8,
     "needComment":1,
+    "showPostSource":0,
     "rssSplit":"sentence",
     "themeMode":"fix",
     "dayTheme":"light",
