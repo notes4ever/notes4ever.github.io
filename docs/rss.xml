@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 05:46:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>禁止Spotlight对移动设备索引</title><link>https://notes4ever.github.io/post/63.html</link><description>在很多时候Spotlight的确很方便，他可以帮忙快速地找到计算机中的文件或资源。</description><guid isPermaLink="true">https://notes4ever.github.io/post/63.html</guid><pubDate>Tue, 12 Nov 2024 05:45:43 +0000</pubDate></item><item><title>手机上安装linux发行版</title><link>https://notes4ever.github.io/post/62.html</link><description>## 使用termux  &#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>❤️ 睡沙发的人</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 05:50:55 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>mac电源管理命令</title><link>https://notes4ever.github.io/post/64.html</link><description>电源管理设置，查看当前配置：&#13;
+&#13;
+sudo pmset -g&#13;
+&#13;
+禁止网络接口休眠：&#13;
+&#13;
+sudo pmset -a sleep 0&#13;
+&#13;
+这个命令会禁用所有网络接口的节能模式，-a 参数表示对所有电源模式生效。</description><guid isPermaLink="true">https://notes4ever.github.io/post/64.html</guid><pubDate>Tue, 12 Nov 2024 05:50:33 +0000</pubDate></item><item><title>禁止Spotlight对移动设备索引</title><link>https://notes4ever.github.io/post/63.html</link><description>在很多时候Spotlight的确很方便，他可以帮忙快速地找到计算机中的文件或资源。</description><guid isPermaLink="true">https://notes4ever.github.io/post/63.html</guid><pubDate>Tue, 12 Nov 2024 05:45:43 +0000</pubDate></item><item><title>手机上安装linux发行版</title><link>https://notes4ever.github.io/post/62.html</link><description>## 使用termux  &#13;
 官网：https://termux.dev/en/&#13;
 &#13;
 ### 在termux上安装proot-distro&#13;
