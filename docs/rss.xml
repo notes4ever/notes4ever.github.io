@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>通往奴役之路</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 07:14:51 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>DNS与PTR</title><link>https://notes4ever.github.io/post/66.html</link><description>## 关于DNS与PTR基本说明&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>通往奴役之路</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 07:25:34 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>route -n ip route</title><link>https://notes4ever.github.io/post/67.html</link><description>![image](https://github.com/user-attachments/assets/72cd05f6-c279-404a-ad1a-b86c4a09c6a3)&#13;
+&#13;
+&gt; **查看路由表、网关**&#13;
+&#13;
+```&#13;
+netstat -r &#13;
+route -n &#13;
+ip route&#13;
+```&#13;
+&#13;
+netstat被ip和ss取代，尽量使用新的命令。</description><guid isPermaLink="true">https://notes4ever.github.io/post/67.html</guid><pubDate>Tue, 12 Nov 2024 07:25:09 +0000</pubDate></item><item><title>DNS与PTR</title><link>https://notes4ever.github.io/post/66.html</link><description>## 关于DNS与PTR基本说明&#13;
 当你发现针对相同的网络服务，使用 IP 地址快而换成域名却慢很多时，就要想到，有可能是 DNS 在捣鬼。</description><guid isPermaLink="true">https://notes4ever.github.io/post/66.html</guid><pubDate>Tue, 12 Nov 2024 07:14:25 +0000</pubDate></item><item><title>man文件存放路径</title><link>https://notes4ever.github.io/post/65.html</link><description>## man文件存放路径&#13;
 man命令通过环境变量`$MANPATH`知道：&#13;
 &#13;
