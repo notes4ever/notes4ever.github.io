@@ -84,17 +84,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><h2>方式一，通过finder修改</h2>
 <p>可以参考<a href="https://blog.csdn.net/hhi00/article/details/137923625" rel="nofollow">这篇</a>进行尝试。</p>
-<h2>通过chflags命令修改</h2>
-<pre class="notranslate"><code class="notranslate">sudo chflags nouchg /etc/hosts
-sudo chflags noschg /etc/hosts
-sudo chflags -hv noschg /etc/hosts
-</code></pre>
-<h2>通过chmod修改</h2>
+<h2>方式二，通过chmod修改</h2>
 <p>这是stream++ 官网建议的修改方式：</p>
 <pre class="notranslate"><code class="notranslate">sudo chmod +a 'user:molock:allow read' /etc/hosts
 sudo chmod +a 'user:molock:allow write' /etc/hosts
 </code></pre>
-<p>这种貌似有问题，临时可以，过一会又不行了。</p></div>
+<p>这种貌似有问题，临时可以，过一会又不行了。</p>
+<h2>方式三，通过chflags命令修改</h2>
+<pre class="notranslate"><code class="notranslate">sudo chflags nouchg /etc/hosts
+sudo chflags noschg /etc/hosts
+sudo chflags -hv noschg /etc/hosts
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载请注明出处 ❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
