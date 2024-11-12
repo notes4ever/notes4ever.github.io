@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>通往奴役之路</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 07:25:34 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>route -n ip route</title><link>https://notes4ever.github.io/post/67.html</link><description>![image](https://github.com/user-attachments/assets/72cd05f6-c279-404a-ad1a-b86c4a09c6a3)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>通往奴役之路</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Tue, 12 Nov 2024 09:33:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>网速与流量监控</title><link>https://notes4ever.github.io/post/68.html</link><description>![image](https://github.com/user-attachments/assets/372fca56-350a-49b7-b85f-c07846cda847)&#13;
+&#13;
+&gt; **记录一些监控网速与流量的工具**&#13;
+&#13;
+## nload与iftop&#13;
+&#13;
+`nload -m `&#13;
+&#13;
+查看各个网络接口的总体网速，普通用户即可运行，很常用。</description><guid isPermaLink="true">https://notes4ever.github.io/post/68.html</guid><pubDate>Tue, 12 Nov 2024 09:32:43 +0000</pubDate></item><item><title>route -n ip route</title><link>https://notes4ever.github.io/post/67.html</link><description>![image](https://github.com/user-attachments/assets/72cd05f6-c279-404a-ad1a-b86c4a09c6a3)&#13;
 &#13;
 &gt; **查看路由表、网关**&#13;
 &#13;
