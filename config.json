@@ -1,18 +1,18 @@
 {
-    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
-    "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
+    "subTitle":"The Road to Serfdom",
     "title":"notes4ever",
-    "subTitle":"信息 知识 智慧",
     "avatarUrl":"https://avatars.githubusercontent.com/u/186999790",
-    "GMEEK_VERSION":"last",
-    "urlMode": "issue",
     "onePageListNum":10000,
-    "i18n":"CN",
-    "UTC":8,
     "needComment":1,
     "showPostSource":0,
-    "rssSplit":"sentence",
     "themeMode":"fix",
     "dayTheme":"light",
-    "nightTheme":"github-light"
+    "nightTheme":"github-light"，
+    "urlMode": "issue",
+    "i18n":"CN",
+    "UTC":8,
+    "GMEEK_VERSION":"last",
+    "rssSplit":"sentence",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
+    "primerCSS":"<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />"
 }
