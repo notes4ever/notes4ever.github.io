@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>信息 知识 智慧</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 13 Nov 2024 05:59:10 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>浏览器指纹</title><link>https://notes4ever.github.io/post/70.html</link><description>## 浏览器指纹知识&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>信息 知识 智慧</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 13 Nov 2024 06:33:35 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>判断网站支不支持TLS1.3</title><link>https://notes4ever.github.io/post/71.html</link><description>## 浏览器里直接查看&#13;
+F12面板-&gt;安全：&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/6406f67f-8b43-42f9-bb1a-de8f9ab1cf26)&#13;
+&#13;
+## 通过nmap查看&#13;
+&#13;
+`nmap --script ssl-enum-ciphers -p 443 xxx.com`&#13;
+&#13;
+结果示例：&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/669f0cc9-1a49-429e-9c70-abbae99a452f)&#13;
+&#13;
+&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/71.html</guid><pubDate>Wed, 13 Nov 2024 06:33:08 +0000</pubDate></item><item><title>浏览器指纹</title><link>https://notes4ever.github.io/post/70.html</link><description>## 浏览器指纹知识&#13;
 &#13;
 网站通过该技术收集您的信息，如操作系统、浏览器版本、浏览器使用的语言、您所在的时区、屏幕分辨率、电脑安装的字体等等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/70.html</guid><pubDate>Wed, 13 Nov 2024 05:58:48 +0000</pubDate></item><item><title>跨机与单机网络通信</title><link>https://notes4ever.github.io/post/69.html</link><description>## 单次跨机网络通信&#13;
 ![image](https://github.com/user-attachments/assets/55bf9000-90b7-43c9-9926-6d82092cb3b0)&#13;
