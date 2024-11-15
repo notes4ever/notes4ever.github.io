@@ -92,29 +92,34 @@ change ENABLED="false" to ENABLED="true"
 <h2>常用参数与示例</h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/066bc653-8373-4868-84be-c7cb4c55bd7a"><img src="https://github.com/user-attachments/assets/066bc653-8373-4868-84be-c7cb4c55bd7a" alt="image" style="max-width: 100%;"></a></p>
 <p>统计CPU设备的负载信息，每次间隔2秒，共3次：</p>
-<p>[root@linuxcool ~]# sar -u 2 3</p>
+<p>sar -u 2 3</p>
 <p>统计硬盘设备的读写信息，每次间隔2秒，共3次：</p>
-<p>[root@linuxcool ~]# sar -d 2 3</p>
+<p>sar -d 2 3</p>
 <p>统计内存设备的读写信息，每次间隔2秒，共3次：</p>
-<p>[root@linuxcool ~]# sar -r 2 3</p>
+<p>sar -r 2 3</p>
 <p>统计内存设备的分页使用情况，每次间隔5秒，共3次：</p>
-<p>[root@linuxcool ~]# sar -B 5 3</p>
-<p>显示CPU使用率情况： [root@linuxcool ~]# sar -u</p>
-<p>显示系统负载情况： [root@linuxcool ~]# sar -q</p>
-<p>显示硬盘I/O和传输速率情况： [root@linuxcool ~]# sar -b</p>
-<p>显示网卡和网络情况： [root@linuxcool ~]# sar -n  DEV</p>
-<p>查看CPU负载：</p>
-<p>sar -u 1 5   #每隔一秒刷新，刷新5次</p>
-<p>查看队列长度和CPU平均负载：</p>
-<p>sar -q 1 10    #每隔一秒刷新，刷新10次</p>
-<p>查看磁盘读写负载情况：</p>
-<p>sar -d 1 3    #每隔一秒刷新，刷新3次</p>
-<p>查看内存负载：</p>
-<p>sar -r 1 3    #每隔一秒刷新，刷新3次</p>
-<p>查看I/O负载：</p>
-<p>sar -b 1 10 #每隔一秒刷新，刷新10次</p>
+<p>sar -B 5 3</p>
+<p>查看I/O负载，每隔一秒刷新，刷新10次：</p>
+<p>sar -b 1 10</p>
 <p>查看swap分区页面交换情况：</p>
-<p>sar -W 1 3</p></div>
+<p>sar -W 1 3</p>
+<p>显示CPU使用率情况：</p>
+<p>sar -u</p>
+<p>显示系统负载情况：</p>
+<p>sar -q</p>
+<p>查看队列长度和CPU平均负载，每隔一秒刷新，刷新10次：</p>
+<p>sar -q 1 10</p>
+<p>显示硬盘I/O和传输速率情况：</p>
+<p>sar -b</p>
+<p>显示网卡和网络情况：</p>
+<p>sar -n  DEV</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://help.aliyun.com/zh/ecs/support/query-and-analysis-of-system-loads-on-linux-instances" rel="nofollow">Linux实例负载高问题排查和异常处理</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34223218" rel="nofollow">https://zhuanlan.zhihu.com/p/34223218</a></li>
+<li><a href="https://blog.csdn.net/cron_zzx/article/details/87972234" rel="nofollow">https://blog.csdn.net/cron_zzx/article/details/87972234</a></li>
+<li><a href="https://www.linuxcool.com/sar" rel="nofollow">https://www.linuxcool.com/sar</a></li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>

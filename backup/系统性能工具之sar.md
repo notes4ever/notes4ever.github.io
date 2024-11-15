@@ -28,49 +28,52 @@ change ENABLED="false" to ENABLED="true"
 
 统计CPU设备的负载信息，每次间隔2秒，共3次：
 
- [root@linuxcool ~]# sar -u 2 3 
+sar -u 2 3 
 
 统计硬盘设备的读写信息，每次间隔2秒，共3次：
 
- [root@linuxcool ~]# sar -d 2 3 
+sar -d 2 3 
 
 统计内存设备的读写信息，每次间隔2秒，共3次：
 
- [root@linuxcool ~]# sar -r 2 3 
+ sar -r 2 3 
 
 统计内存设备的分页使用情况，每次间隔5秒，共3次：
 
- [root@linuxcool ~]# sar -B 5 3 
+ sar -B 5 3 
 
-显示CPU使用率情况： [root@linuxcool ~]# sar -u 
+查看I/O负载，每隔一秒刷新，刷新10次：
 
-显示系统负载情况： [root@linuxcool ~]# sar -q 
-
-显示硬盘I/O和传输速率情况： [root@linuxcool ~]# sar -b 
-
-显示网卡和网络情况： [root@linuxcool ~]# sar -n  DEV 
-
-查看CPU负载：
-
-sar -u 1 5   #每隔一秒刷新，刷新5次
-
-查看队列长度和CPU平均负载：
-
-sar -q 1 10    #每隔一秒刷新，刷新10次
-
-查看磁盘读写负载情况：
-
-sar -d 1 3    #每隔一秒刷新，刷新3次
-
-查看内存负载：
-
-sar -r 1 3    #每隔一秒刷新，刷新3次
-
-查看I/O负载：
-
-sar -b 1 10 #每隔一秒刷新，刷新10次
+sar -b 1 10 
 
 查看swap分区页面交换情况：
 
 sar -W 1 3
 
+显示CPU使用率情况： 
+
+sar -u 
+
+显示系统负载情况： 
+
+sar -q 
+
+查看队列长度和CPU平均负载，每隔一秒刷新，刷新10次：
+
+sar -q 1 10
+
+显示硬盘I/O和传输速率情况： 
+
+sar -b 
+
+显示网卡和网络情况：
+
+sar -n  DEV 
+
+
+## 参考资料
+
+- [Linux实例负载高问题排查和异常处理](https://help.aliyun.com/zh/ecs/support/query-and-analysis-of-system-loads-on-linux-instances)
+- https://zhuanlan.zhihu.com/p/34223218
+- https://blog.csdn.net/cron_zzx/article/details/87972234
+- https://www.linuxcool.com/sar
