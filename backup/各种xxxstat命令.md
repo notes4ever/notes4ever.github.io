@@ -25,10 +25,10 @@ vmstat 命令来自英文词组 virtual memory statistics 的缩写，其功能�
 
 mpstat、pidstat、vmstat 和 iostat 都是 Linux 系统中用于监控性能的工具，它们各自关注不同的系统资源和性能指标。
 
-- mpstat 用于监控多核 CPU 系统中各个 CPU 核心的性能。
-- pidstat 用于监控进程级别的 CPU、内存、IO 和上下文切换等性能指标。
-- vmstat 提供了系统级别的虚拟内存、进程、内存、IO 和 CPU 的综合统计信息。
-- iostat 用于监控系统 IO 设备的性能，包括磁盘 IO 的统计数据。
+- mpstat 用于监控**多核 CPU** 系统中各个 CPU 核心的性能。
+- pidstat 用于监控**进程级别**的 CPU、内存、IO 和上下文切换等性能指标。
+- vmstat 提供了**系统级别**的虚拟内存、进程、内存、IO 和 CPU 的综合统计信息。
+- iostat 用于监控系统 **IO 设备**的性能，包括**磁盘 IO** 的统计数据。
 
 这些工具可以单独使用，也可以组合使用，以获得更全面的系统性能视图。
 
