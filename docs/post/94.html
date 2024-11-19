@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="> **极客时间课程学习摘要笔记**
+
+在前面的内容中，我为你介绍了很多性能分析的原理、思路以及相关的工具。">
+<meta property="og:title" content="系统监控USE方法">
+<meta property="og:description" content="> **极客时间课程学习摘要笔记**
+
+在前面的内容中，我为你介绍了很多性能分析的原理、思路以及相关的工具。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/94.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>系统监控USE方法</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">系统监控USE方法</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><blockquote>
+<p><strong>极客时间课程学习摘要笔记</strong></p>
+</blockquote>
+<p>在前面的内容中，我为你介绍了很多性能分析的原理、思路以及相关的工具。不过，在实际的性能分析中，一个很常见的现象是，明明发生了性能瓶颈，但当你登录到服务器中想要排查的时候，却发现瓶颈已经消失了。或者说，性能问题总是时不时地发生，但却很难找出发生规律，也很难重现。</p>
+<p>当面对这样的场景时，你可能会发现，我们前面介绍的各种工具、方法都“失效“了。为什么呢？因为它们都需要在性能问题发生的时刻才有效，而在这些事后分析的场景中，我们就很难发挥它们的威力了。</p>
+<p>那该怎么办呢？置之不理吗？其实以往，很多应用都是等到用户抱怨响应慢了，或者系统崩溃了后，才发现系统或者应用程序的性能出现了问题。虽然最终也能发现问题，但显然，这种方法是不可取的，因为严重影响了用户的体验。</p>
+<p>而要解决这个问题，就要搭建监控系统，把系统和应用程序的运行状况监控起来，并定义一系列的策略，在发生问题时第一时间告警通知。一个好的监控系统，不仅可以实时暴露系统的各种问题，更可以根据这些监控到的状态，自动分析和定位大致的瓶颈来源，从而更精确地把问题汇报给相关团队处理。</p>
+<p>要做好监控，最核心的就是全面的、可量化的指标，这包括系统和应用两个方面。</p>
+<p>从系统来说，监控系统要涵盖系统的整体资源使用情况，比如我们前面讲过的 CPU、内存、磁盘和文件系统、网络等各种系统资源。</p>
+<p>而从应用程序来说，监控系统要涵盖应用程序内部的运行状态，这既包括进程的 CPU、磁盘 I/O 等整体运行状况，更需要包括诸如接口调用耗时、执行过程中的错误、内部对象的内存使用等应用程序内部的运行状况。</p>
+<p>今天，我就带你一起来看看，如何对 Linux 系统进行监控。而在下一节，我将继续为你讲解应用程序监控的思路。</p>
+<h2>USE方法</h2>
+<p>在开始监控系统之前，你肯定最想知道，怎么才能用简洁的方法，来描述系统资源的使用情况。你当然可以使用专栏中学到的各种性能工具，来分别收集各种资源的使用情况。不过不要忘记，每种资源的性能指标可都有很多，使用过多指标本身耗时耗力不说，也不容易为你建立起系统整体的运行状况。</p>
+<p>在这里，我为你介绍一种专门用于性能监控的 USE（Utilization Saturation and Errors）法。USE 法把系统资源的性能指标，简化成了三个类别，即使用率、饱和度以及错误数。</p>
+<ul>
+<li>使用率，表示资源用于服务的时间或容量百分比。100% 的使用率，表示容量已经用尽或者全部时间都用于服务。</li>
+<li>饱和度，表示资源的繁忙程度，通常与等待队列的长度相关。100% 的饱和度，表示资源无法接受更多的请求。</li>
+<li>错误数表示发生错误的事件个数。错误数越多，表明系统的问题越严重。</li>
+</ul>
+<p>这三个类别的指标，涵盖了系统资源的常见性能瓶颈，所以常被用来快速定位系统资源的性能瓶颈。这样，无论是对 CPU、内存、磁盘和文件系统、网络等硬件资源，还是对文件描述符数、连接数、连接跟踪数等软件资源，USE 方法都可以帮你快速定位出，是哪一种系统资源出现了性能瓶颈。</p>
+<p>那么，对于每一种系统资源，又有哪些常见的性能指标呢？回忆一下我们讲过的各种系统资源原理，并不难想到相关的性能指标。这里，我把常见的性能指标画了一张表格，方便你在需要时查看。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/2edc684e-ef64-413a-913f-82c44aa0bb45"><img src="https://github.com/user-attachments/assets/2edc684e-ef64-413a-913f-82c44aa0bb45" alt="image" style="max-width: 100%;"></a></p>
+<p>不过，需要注意的是，USE 方法只关注能体现系统资源性能瓶颈的核心指标，但这并不是说其他指标不重要。</p>
+<p>诸如系统日志、进程资源使用量、缓存使用量等其他各类指标，也都需要我们监控起来。只不过，它们通常用作辅助性能分析，而 USE 方法的指标，则直接表明了系统的资源瓶颈。</p>
+<h2>监控系统</h2>
+<p>掌握 USE 方法以及需要监控的性能指标后，接下来要做的，就是建立监控系统，把这些指标保存下来；然后，根据这些监控到的状态，自动分析和定位大致的瓶颈来源；最后，再通过告警系统，把问题及时汇报给相关团队处理。</p>
+<p>可以看出，一个完整的监控系统通常由数据采集、数据存储、数据查询和处理、告警以及可视化展示等多个模块组成。所以，要从头搭建一个监控系统，其实也是一个很大的系统工程。</p>
+<p>不过，幸运的是，现在已经有很多开源的监控工具可以直接使用，比如最常见的 Zabbix、Prometheus 等等。</p>
+<p>下面，我就以 Prometheus 为例，为你介绍这几个组件的基本原理。如下图所示，就是 Prometheus 的基本架构：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6a61a1fd-c5dd-4679-9fc4-c78ecef873ea"><img src="https://github.com/user-attachments/assets/6a61a1fd-c5dd-4679-9fc4-c78ecef873ea" alt="image" style="max-width: 100%;"></a></p>
+<p>第一，先看数据采集模块。最左边的 Prometheus targets 就是数据采集的对象，而 Retrieval 则负责采集这些数据。从图中你也可以看到，Prometheus 同时支持 Push 和 Pull 两种数据采集模式。</p>
+<ul>
+<li>Pull 模式，由服务器端的采集模块来触发采集。只要采集目标提供了 HTTP 接口，就可以自由接入（这也是最常用的采集模式）。</li>
+<li>Push 模式，则是由各个采集目标主动向 Push Gateway（用于防止数据丢失）推送指标，再由服务器端从 Gateway 中拉取过去（这是移动应用中最常用的采集模式）。</li>
+</ul>
+<p>由于需要监控的对象通常都是动态变化的，Prometheus 还提供了服务发现的机制，可以自动根据预配置的规则，动态发现需要监控的对象。这在 Kubernetes 等容器平台中非常有效。</p>
+<p>第二个是数据存储模块。为了保持监控数据的持久化，图中的 TSDB（Time series database）模块，负责将采集到的数据持久化到 SSD 等磁盘设备中。TSDB 是专门为时间序列数据设计的一种数据库，特点是以时间为索引、数据量大并且以追加的方式写入。</p>
+<p>第三个是数据查询和处理模块。刚才提到的 TSDB，在存储数据的同时，其实还提供了数据查询和基本的数据处理功能，而这也就是 PromQL 语言。PromQL 提供了简洁的查询、过滤功能，并且支持基本的数据处理方法，是告警系统和可视化展示的基础。</p>
+<p>第四个是告警模块。右上角的 AlertManager 提供了告警的功能，包括基于 PromQL 语言的触发条件、告警规则的配置管理以及告警的发送等。不过，虽然告警是必要的，但过于频繁的告警显然也不可取。所以，AlertManager 还支持通过分组、抑制或者静默等多种方式来聚合同类告警，并减少告警数量。</p>
+<p>第五，最后一个是可视化展示模块。Prometheus 的 web UI 提供了简单的可视化界面，用于执行 PromQL 查询语句，但结果的展示比较单调。不过，一旦配合 Grafana，就可以构建非常强大的图形界面了。</p>
+<p>介绍完了这些组件，想必你对每个模块都有了比较清晰的认识。接下来，我们再来继续深入了解这些组件结合起来的整体功能。</p>
+<p>比如，以刚才提到的 USE 方法为例，我使用 Prometheus，可以收集 Linux 服务器的 CPU、内存、磁盘、网络等各类资源的使用率、饱和度和错误数指标。然后，通过 Grafana 以及 PromQL 查询语句，就可以把它们以图形界面的方式直观展示出来。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f91578ca-8a94-4e13-bcdb-4fd9b425cc6f"><img src="https://github.com/user-attachments/assets/f91578ca-8a94-4e13-bcdb-4fd9b425cc6f" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/14cbaf7e-3488-49b9-b106-0d096c323c44"><img src="https://github.com/user-attachments/assets/14cbaf7e-3488-49b9-b106-0d096c323c44" alt="image" style="max-width: 100%;"></a></p>
+<p>小结：</p>
+<p>系统监控的核心是资源的使用情况，包括 CPU、内存、磁盘和文件系统、网络等硬件资源，以及文件描述符数、连接数、连接跟踪数等软件资源。而这些资源，都可以通过 USE 法来建立核心性能指标。</p>
+<p>USE 法把系统资源的性能指标，简化成了三个类别，即使用率、饱和度以及错误数。 这三者任一类别过高时，都代表相对应的系统资源有可能存在性能瓶颈。</p>
+<p>基于 USE 法建立性能指标后，还需要通过一套完整的监控系统，把这些指标从采集、存储、查询、处理，再到告警和可视化展示等串联起来。</p>
+<p>你可以基于 Zabbix、Prometheus 等各种开源的监控产品，构建这套监控系统。这样，不仅可以将系统资源的瓶颈快速暴露出来，还可以借助监控的历史，事后追查定位问题。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
