@@ -33,6 +33,6 @@ Initial connection 整个表示建立TCP连接和SSL的时间，TCP握手的时�
 
 这个下载时间**包含浏览器的加载、渲染时间**，换做cmd请求的话，就快很多，这点尤其注意。（在实践中发现这个特别的场景。）
 
+## 参考资料 
 
-
-
+- [HTTP 性能优化面面观](https://zq99299.github.io/note-book2/http-protocol/08/)
