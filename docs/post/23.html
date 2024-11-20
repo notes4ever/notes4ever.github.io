@@ -86,10 +86,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f1052ed9-45b1-4e01-9ff9-1faf470be26f"><img src="https://github.com/user-attachments/assets/f1052ed9-45b1-4e01-9ff9-1faf470be26f" alt="image" style="max-width: 100%;"></a></p>
 <p>du命令，主要就是-h和-s参数的使用，还可以做一些简单的统计。</p>
 <p>当前目录下的<strong>文件和目录</strong>，按照大小排序：</p>
-<p><code class="notranslate">du -sh * | sort -rh</code></p>
+<pre class="notranslate"><code class="notranslate">du -sh * | sort -rh
+</code></pre>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/cf9be8d3-e820-44a3-baff-16114c1cc6fb"><img src="https://github.com/user-attachments/assets/cf9be8d3-e820-44a3-baff-16114c1cc6fb" alt="image" style="max-width: 100%;"></a></p>
 <p>查看当前目录下的所有<strong>目录</strong>大小：</p>
-<p><code class="notranslate">du -h --max-depth=1</code></p>
+<pre class="notranslate"><code class="notranslate">du -h --max-depth=1
+</code></pre>
 <p>当前目录下，找出大小最大的20个<strong>目录</strong>：</p>
 <pre class="notranslate"><code class="notranslate">du | \
 sort -r -n | \
