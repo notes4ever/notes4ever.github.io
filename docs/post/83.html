@@ -9,15 +9,77 @@
     <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
 <meta name="description" content="关于文件描述符：
 
-查看进程允许打开的最大文件句柄数：`ulimit -n`；
+查看进程允许打开的最大文件句柄数：
+```
+ulimit -n
+```
 
-设置进程能打开的最大文件句柄数：`ulimit -n xxx`。">
+设置进程能打开的最大文件句柄数：
+```
+ulimit -n xxx
+```
+
+## 配置修改
+### 编辑/etc/security/limits.conf
+
+```
+* soft nofile 65535
+* soft noproc 65535
+* hard nofile 65535
+* hard noproc 65535
+root soft nofile 65535
+root soft noproc 65535
+root hard nofile 65535
+root hard noproc 65535
+```
+
+如果只改文件描述符，不改进程数量：
+
+```
+* soft nofile 65535
+* hard nofile 65535
+root soft nofile 65535
+root hard nofile 65535
+```
+
+如果是debian系列，需要指出具体的用户，不能用通配符*，centos可以。">
 <meta property="og:title" content="修改文件描述符">
 <meta property="og:description" content="关于文件描述符：
 
-查看进程允许打开的最大文件句柄数：`ulimit -n`；
+查看进程允许打开的最大文件句柄数：
+```
+ulimit -n
+```
 
-设置进程能打开的最大文件句柄数：`ulimit -n xxx`。">
+设置进程能打开的最大文件句柄数：
+```
+ulimit -n xxx
+```
+
+## 配置修改
+### 编辑/etc/security/limits.conf
+
+```
+* soft nofile 65535
+* soft noproc 65535
+* hard nofile 65535
+* hard noproc 65535
+root soft nofile 65535
+root soft noproc 65535
+root hard nofile 65535
+root hard noproc 65535
+```
+
+如果只改文件描述符，不改进程数量：
+
+```
+* soft nofile 65535
+* hard nofile 65535
+root soft nofile 65535
+root hard nofile 65535
+```
+
+如果是debian系列，需要指出具体的用户，不能用通配符*，centos可以。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://notes4ever.github.io/post/83.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
@@ -83,8 +145,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>关于文件描述符：</p>
-<p>查看进程允许打开的最大文件句柄数：<code class="notranslate">ulimit -n</code>；</p>
-<p>设置进程能打开的最大文件句柄数：<code class="notranslate">ulimit -n xxx</code>。</p>
+<p>查看进程允许打开的最大文件句柄数：</p>
+<pre class="notranslate"><code class="notranslate">ulimit -n
+</code></pre>
+<p>设置进程能打开的最大文件句柄数：</p>
+<pre class="notranslate"><code class="notranslate">ulimit -n xxx
+</code></pre>
 <h2>配置修改</h2>
 <h3>编辑/etc/security/limits.conf</h3>
 <pre class="notranslate"><code class="notranslate">* soft nofile 65535
