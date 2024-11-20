@@ -78,9 +78,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><strong>tee命令：读取标准输入内容（包括缓冲区比如vim编辑刷新内容），将读取到的数据写到标准输出和文件。</strong></p>
 </blockquote>
 <h2>基本用法</h2>
-<p><code class="notranslate">echo "Hello, Linux!" | tee output.txt </code></p>
+<pre class="notranslate"><code class="notranslate">echo "Hello, Linux!" | tee output.txt
+</code></pre>
 <p>没有-a参数，表示直接覆盖output.txt里面的内容。</p>
-<p><code class="notranslate">echo "Appended Text" | tee -a output.txt </code></p>
+<pre class="notranslate"><code class="notranslate">echo "Appended Text" | tee -a output.txt
+</code></pre>
 <p>-a：追加到文件而不是覆盖。使用该选项，可以将输出内容追加到指定文件的末尾。</p>
 <p>适合用来添加内容到文件，比如日志等：</p>
 <pre class="notranslate"><code class="notranslate">some_command | tee -a operation.log
@@ -88,9 +90,11 @@ command_with_error 2&gt;&amp;1 | tee output.txt
 echo "Data" | sudo tee file.txt &gt; /dev/null
 </code></pre>
 <p>同时写入多个文件：</p>
-<p><code class="notranslate">echo "Data" | tee file1.txt file2.txt file3.txt </code></p>
+<pre class="notranslate"><code class="notranslate">echo "Data" | tee file1.txt file2.txt file3.txt
+</code></pre>
 <p>同时查看日志文件的变化并保存到文件：</p>
-<p><code class="notranslate">tail -f /var/log/syslog | tee syslog_monitor.log </code></p>
+<pre class="notranslate"><code class="notranslate">tail -f /var/log/syslog | tee syslog_monitor.log
+</code></pre>
 <p>这个例子中，tail -f用于实时跟踪日志文件的变化，而tee则将输出同时显示在终端并保存到syslog_monitor.log文件中。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
