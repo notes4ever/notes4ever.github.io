@@ -82,19 +82,24 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><a href="https://www.brendangregg.com/perf.html" rel="nofollow">https://www.brendangregg.com/perf.html</a></p>
 <h2>摘录一些用法</h2>
 <h3>实时性能监控</h3>
-<p><code class="notranslate">perf top</code></p>
+<pre class="notranslate"><code class="notranslate">perf top
+</code></pre>
 <p>这个命令会实时显示当前系统中占用CPU资源最多的函数或指令，类似于top命令，但是专注于性能事件。</p>
 <h3>统计程序性能</h3>
-<p><code class="notranslate">perf stat ls </code></p>
+<pre class="notranslate"><code class="notranslate">perf stat ls
+</code></pre>
 <p>这个命令会运行ls命令，并在执行前后显示这段时间内系统的性能统计数据，如CPU时间、上下文切换、缓存事件等。</p>
 <h3>记录性能数据</h3>
-<p><code class="notranslate">perf record -e cpu-cycles -g ./your_program </code></p>
+<pre class="notranslate"><code class="notranslate">perf record -e cpu-cycles -g ./your_program
+</code></pre>
 <p>这个命令会记录./your_program运行时的CPU周期事件，并开启调用栈记录。</p>
 <h3>报告性能分析结果</h3>
-<p><code class="notranslate">perf report </code></p>
+<pre class="notranslate"><code class="notranslate">perf report
+</code></pre>
 <p>这个命令会读取由perf record命令生成的性能数据文件，并生成易于理解的性能报告 。</p>
 <h3>分析特定进程的性能</h3>
-<p><code class="notranslate">perf stat -p &lt;PID&gt; </code></p>
+<pre class="notranslate"><code class="notranslate">perf stat -p &lt;PID&gt;
+</code></pre>
 <p>用-p选项指定进程ID，可以分析特定进程的性能概况 。</p>
 <h3>生成火焰图</h3>
 <pre class="notranslate"><code class="notranslate">perf record -F 99 -a -g -- sleep 60

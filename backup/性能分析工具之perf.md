@@ -9,35 +9,41 @@ https://www.brendangregg.com/perf.html
 
 ### 实时性能监控
 
-`perf top`
+```
+perf top
+```
 
 这个命令会实时显示当前系统中占用CPU资源最多的函数或指令，类似于top命令，但是专注于性能事件。
 
 ### 统计程序性能
 
-`perf stat ls
-`
+```
+perf stat ls
+````
 
 这个命令会运行ls命令，并在执行前后显示这段时间内系统的性能统计数据，如CPU时间、上下文切换、缓存事件等。
 
 ### 记录性能数据
 
-`perf record -e cpu-cycles -g ./your_program
-`
+```
+perf record -e cpu-cycles -g ./your_program
+```
 
 这个命令会记录./your_program运行时的CPU周期事件，并开启调用栈记录。
 
 ### 报告性能分析结果
 
-`perf report
-`
+```
+perf report
+```
 
 这个命令会读取由perf record命令生成的性能数据文件，并生成易于理解的性能报告 。
 
 ### 分析特定进程的性能
 
-`perf stat -p <PID>
-`
+```
+perf stat -p <PID>
+```
 
 用-p选项指定进程ID，可以分析特定进程的性能概况 。
 
