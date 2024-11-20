@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 01:44:21 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>查看系统信息neofetch</title><link>https://notes4ever.github.io/post/99.html</link><description>![image](https://github.com/user-attachments/assets/ab8a69ab-ddb8-46a5-81ab-bcb58e42b505)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 01:55:08 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用命令之sort</title><link>https://notes4ever.github.io/post/100.html</link><description>## sort -n&#13;
+![image](https://github.com/user-attachments/assets/902f1227-cd3b-48bc-a848-a369e809fe15)&#13;
+&#13;
+## sort -M&#13;
+![image](https://github.com/user-attachments/assets/9d5d51e8-faf4-4f6d-a256-957101a0243a)&#13;
+&#13;
+## 其他参数&#13;
+![image](https://github.com/user-attachments/assets/6da01569-2ff5-40c6-95df-3d32f9282ba6)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/7511fa86-b9e3-418e-9711-f15de3895cc3)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/45db71c3-119a-40e8-acab-a51a50cf118e)&#13;
+&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/100.html</guid><pubDate>Wed, 20 Nov 2024 01:54:41 +0000</pubDate></item><item><title>查看系统信息neofetch</title><link>https://notes4ever.github.io/post/99.html</link><description>![image](https://github.com/user-attachments/assets/ab8a69ab-ddb8-46a5-81ab-bcb58e42b505)&#13;
 &#13;
 Neofetch 是一个简单但有用的命令行系统信息工具，它用 Bash 编写。</description><guid isPermaLink="true">https://notes4ever.github.io/post/99.html</guid><pubDate>Wed, 20 Nov 2024 01:43:56 +0000</pubDate></item><item><title>文件互传lrzsz</title><link>https://notes4ever.github.io/post/98.html</link><description>rz，sz是Linux/Unix同Windows进行ZModem文件传输的命令行工具。</description><guid isPermaLink="true">https://notes4ever.github.io/post/98.html</guid><pubDate>Wed, 20 Nov 2024 01:39:42 +0000</pubDate></item><item><title>服务降级的理解</title><link>https://notes4ever.github.io/post/97.html</link><description>在IT领域，特别是在软件开发和系统架构中，**降级**通常指的是在系统遇到问题或故障时，为了保持系统的可用性和稳定性，采取的一种降低服务级别的措施。</description><guid isPermaLink="true">https://notes4ever.github.io/post/97.html</guid><pubDate>Wed, 20 Nov 2024 01:36:01 +0000</pubDate></item><item><title>手机去广告之GKD</title><link>https://notes4ever.github.io/post/96.html</link><description>## 项目与安装&#13;
 github项目主页：https://github.com/gkd-kit/gkd&#13;
