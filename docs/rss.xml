@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 02:18:16 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>cat命令清空文件</title><link>https://notes4ever.github.io/post/105.html</link><description>big_filename是大文件:&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 02:19:56 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>crontab基本使用</title><link>https://notes4ever.github.io/post/106.html</link><description>查看当前:&#13;
+```&#13;
+crontab -l&#13;
+```&#13;
+修改:&#13;
+```&#13;
+crontab -e&#13;
+```。</description><guid isPermaLink="true">https://notes4ever.github.io/post/106.html</guid><pubDate>Wed, 20 Nov 2024 02:19:25 +0000</pubDate></item><item><title>cat命令清空文件</title><link>https://notes4ever.github.io/post/105.html</link><description>big_filename是大文件:&#13;
 ```&#13;
 cat /dev/null &gt; /xxx/big_filename&#13;
 ```。</description><guid isPermaLink="true">https://notes4ever.github.io/post/105.html</guid><pubDate>Wed, 20 Nov 2024 02:17:55 +0000</pubDate></item><item><title>shell内建命令与外部命令</title><link>https://notes4ever.github.io/post/104.html</link><description>![image](https://github.com/user-attachments/assets/5a662f9f-2ce2-437a-9108-4c8a13381269)&#13;
