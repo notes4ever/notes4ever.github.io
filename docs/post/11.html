@@ -83,7 +83,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><strong>删除命令相关，rm权力太大，要限制，尤其是root和sudo执行rm。</strong></p>
 </blockquote>
 <h2>配置里直接echo来禁用</h2>
-<p><code class="notranslate">alias rm='echo " rm command is disabled."'</code></p>
+<pre class="notranslate"><code class="notranslate">alias rm='echo " rm command is disabled."'
+</code></pre>
 <p>这种方式不好，就像是直接弹窗说，别用rm命令。</p>
 <h2>配置alias，引导到trash-cli</h2>
 <pre class="notranslate"><code class="notranslate">sudo apt install trash-cli

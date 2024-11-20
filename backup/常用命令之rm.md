@@ -3,7 +3,9 @@
 > **删除命令相关，rm权力太大，要限制，尤其是root和sudo执行rm。**
 
 ## 配置里直接echo来禁用
-`alias rm='echo " rm command is disabled."'`
+```
+alias rm='echo " rm command is disabled."'
+```
 
 这种方式不好，就像是直接弹窗说，别用rm命令。
 
