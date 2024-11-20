@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 00:46:20 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>手机去广告之GKD</title><link>https://notes4ever.github.io/post/96.html</link><description>## 项目与安装&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 01:11:49 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>手机去广告之GKD</title><link>https://notes4ever.github.io/post/96.html</link><description>## 项目与安装&#13;
 github项目主页：https://github.com/gkd-kit/gkd&#13;
 &#13;
 官网：https://gkd.li/&#13;
@@ -21,15 +21,16 @@ github项目主页：https://github.com/gkd-kit/gkd&#13;
 wrk（linux用）项目主页：https://github.com/wg/wrk&#13;
 &#13;
 运行30秒的基准测试, 使用2个线程、100个http连接:&#13;
-&#13;
-`wrk -t2 -c100 -d30s http://127.0.0.1:8080/index.html&#13;
-`&#13;
+```&#13;
+wrk -t2 -c100 -d30s http://127.0.0.1:8080/index.html&#13;
+```&#13;
 &#13;
 更常用的，会加上延迟分布于超时设置，比如，&#13;
 &#13;
 显示延时分布的统计信息   测试1分钟  100个连接   20线程  设置超时5秒 &#13;
-&#13;
-`wrk --latency  -d 60s   -c 100  -t  20 --timeout 5   http://127.0.0.1:8080/index.html`&#13;
+```&#13;
+wrk --latency  -d 60s   -c 100  -t  20 --timeout 5   http://127.0.0.1:8080/index.html&#13;
+```&#13;
 &#13;
 ### wrk安装记录&#13;
 如果没有lua就先安装lua：&#13;
