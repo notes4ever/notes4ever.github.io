@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 02:59:45 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>服务器时间同步chronyc</title><link>https://notes4ever.github.io/post/108.html</link><description>chronyc 命令：设置时间与时间服务器同步。</description><guid isPermaLink="true">https://notes4ever.github.io/post/108.html</guid><pubDate>Wed, 20 Nov 2024 02:59:22 +0000</pubDate></item><item><title>shell变量与export</title><link>https://notes4ever.github.io/post/107.html</link><description>## 全局变量&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 20 Nov 2024 05:23:35 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>网络分层与对应协议和工具</title><link>https://notes4ever.github.io/post/109.html</link><description>&gt; **极客时间学习课程笔记摘要**&#13;
+&#13;
+## OSI七层互联参考模型&#13;
+![image](https://github.com/user-attachments/assets/8f434493-0601-4ad4-bc15-ab0f7297ee7a)&#13;
+&#13;
+## 网络分层与对应的数据包术语&#13;
+![image](https://github.com/user-attachments/assets/be700def-31d8-43b0-87e6-e8fae33dc6fd)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/b76e2ecf-9a09-4b10-8ab0-2f4731ddb494)&#13;
+&#13;
+实际上正在使用的TCP/IP是四层或者五层，都有人说，但平时讨论的时候，约定俗成使用七层讨论。</description><guid isPermaLink="true">https://notes4ever.github.io/post/109.html</guid><pubDate>Wed, 20 Nov 2024 05:23:12 +0000</pubDate></item><item><title>服务器时间同步chronyc</title><link>https://notes4ever.github.io/post/108.html</link><description>chronyc 命令：设置时间与时间服务器同步。</description><guid isPermaLink="true">https://notes4ever.github.io/post/108.html</guid><pubDate>Wed, 20 Nov 2024 02:59:22 +0000</pubDate></item><item><title>shell变量与export</title><link>https://notes4ever.github.io/post/107.html</link><description>## 全局变量&#13;
 全局环境变量对于 shell 会话和所有生成的子 shell 都是可见的。</description><guid isPermaLink="true">https://notes4ever.github.io/post/107.html</guid><pubDate>Wed, 20 Nov 2024 02:45:44 +0000</pubDate></item><item><title>crontab基本使用</title><link>https://notes4ever.github.io/post/106.html</link><description>查看当前:&#13;
 ```&#13;
 crontab -l&#13;
