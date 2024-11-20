@@ -1,10 +1,16 @@
-`curl -vk https://www.baidu.com`
+```
+curl -vk https://www.baidu.com
+```
 
-`openssl s_client -tlsextdebug -showcerts -connect www.baidu.com:443`
+```
+openssl s_client -tlsextdebug -showcerts -connect www.baidu.com:443
+```
 
 用strace跟踪：
 
-`strace openssl s_client -tlsextdebug -showcerts -connect www.baidu.com:443`
+```
+strace openssl s_client -tlsextdebug -showcerts -connect www.baidu.com:443
+```
 
 在需要分析 OpenSSL 为什么报错的时候，你可以在前面加上 strace，这对于排查根因有不少的帮助。
 
