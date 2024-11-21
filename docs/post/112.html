@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="> **核心网络知识，学习笔记汇总和摘抄**
+
+## 三次握手示意图
+![image](https://github.com/user-attachments/assets/446190eb-3b34-474e-8b42-e91ee2ae56b2)
+
+## 四次挥手示意图
+![image](https://github.com/user-attachments/assets/97335f72-044f-4c34-af70-ba882f12791f)
+
+## 三次握手+四次挥手
+![image](https://github.com/user-attachments/assets/445f9f37-268e-4865-8790-2c656756335c)
+
+## 关于三次挥手
+实际挥手过程可能只有三个包，而不是四个。">
+<meta property="og:title" content="TCP、UDP、Socket">
+<meta property="og:description" content="> **核心网络知识，学习笔记汇总和摘抄**
+
+## 三次握手示意图
+![image](https://github.com/user-attachments/assets/446190eb-3b34-474e-8b42-e91ee2ae56b2)
+
+## 四次挥手示意图
+![image](https://github.com/user-attachments/assets/97335f72-044f-4c34-af70-ba882f12791f)
+
+## 三次握手+四次挥手
+![image](https://github.com/user-attachments/assets/445f9f37-268e-4865-8790-2c656756335c)
+
+## 关于三次挥手
+实际挥手过程可能只有三个包，而不是四个。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/112.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>TCP、UDP、Socket</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">TCP、UDP、Socket</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><blockquote>
+<p><strong>核心网络知识，学习笔记汇总和摘抄</strong></p>
+</blockquote>
+<h2>三次握手示意图</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/446190eb-3b34-474e-8b42-e91ee2ae56b2"><img src="https://github.com/user-attachments/assets/446190eb-3b34-474e-8b42-e91ee2ae56b2" alt="image" style="max-width: 100%;"></a></p>
+<h2>四次挥手示意图</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/97335f72-044f-4c34-af70-ba882f12791f"><img src="https://github.com/user-attachments/assets/97335f72-044f-4c34-af70-ba882f12791f" alt="image" style="max-width: 100%;"></a></p>
+<h2>三次握手+四次挥手</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/445f9f37-268e-4865-8790-2c656756335c"><img src="https://github.com/user-attachments/assets/445f9f37-268e-4865-8790-2c656756335c" alt="image" style="max-width: 100%;"></a></p>
+<h2>关于三次挥手</h2>
+<p>实际挥手过程可能只有三个包，而不是四个。之所以有三个包，是因为服务器端收到客户端的 FIN 后，服务器端同时也要关闭连接，这样就可以<strong>把 ACK 和 FIN 合并到一起发送，节省了一个包</strong>，变成了“三次挥手”。</p>
+<p>而<strong>通常情况</strong>下，服务器端收到客户端的 FIN 后，很可能还没发送完数据，所以就<strong>会先回复客户端一个 ACK 包</strong>。<strong>稍等一会儿，完成所有数据包的发送后，才会发送 FIN 包</strong>。这也就是四次挥手了。</p>
+<h2>更加详细的三次握手细节</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7601c0db-5ee4-461a-aebe-12d9914f4c28"><img src="https://github.com/user-attachments/assets/7601c0db-5ee4-461a-aebe-12d9914f4c28" alt="image" style="max-width: 100%;"></a></p>
+<p>关注：半连接队列与全连接队列。</p>
+<h2>连接队列满了的场景</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/65ff4037-cb06-4320-a340-47ecb4544cb0"><img src="https://github.com/user-attachments/assets/65ff4037-cb06-4320-a340-47ecb4544cb0" alt="image" style="max-width: 100%;"></a></p>
+<p>如果半连接队列满了，⽽且ipv4.tep_syncookies参数设置为0，那么来⾃客户端的握⼿包将goto drop， 意思就是直接丢弃！</p>
+<p>SYN Flood攻击就是通过<strong>耗光服务端上的半连接队列来使得正常的⽤户连接请求⽆法被响应</strong>。不过在现在的Linux内核⾥只要打开tcp_ syncookies，半连接队列满了仍然可以保证正常握⼿的进⾏。</p>
+<p>当半连接队列判断通过以后，紧接着还有全连接队列满的相关判断。如果满了，服务器对握⼿包的处理还是会goto drop，丢奔它。</p>
+<p>技术细节总结，顺便回答问题：服务端半/全连接队列满了会怎么样？</p>
+<ul>
+<li>服务端响应第一次握手的时候会进行半连接队列和全连接队列是否满的判断
+<ul>
+<li>如果半连接队列满了且未开启tcp_syncookies，丢弃握手包</li>
+<li>如果全连接队列满了且存在young_acck，丢弃握手包</li>
+</ul>
+</li>
+<li>服务端响应第三次握手的时候会进行全连接队列是否满的判断<br>
+如果全连接队列满了则丢弃握手包</li>
+</ul>
+<p>假如服务端第⼀次握⼿的时候出现了半/全连接队列溢出导致的丢包，那么我们的接口响应时间将⾄少是1秒以上（在某些⽼版本的内核上，SYN第⼀次的重试就需要等3 秒)，⽽正常的在同机房的情况下只是不到1毫秒的事情，整整⾼了1000倍左右。</p>
+<p>如果连续两三次握⼿都失败，那七⼋秒就出去了，很可能Nginx等不及⼆次重试，这个⽤户访问直接就超时了，⽤户体验将会受到较⼤影响。</p>
+<p>对于半连接队列来说，只要保证tcp syncookies这个内核参数是1就能保证不会有因为半连接队列满⽽发⽣的丢包。</p>
+<p>全连接满了如何查看：</p>
+<pre class="notranslate"><code class="notranslate">watch 'netstat -s 1 grep overﬂowed'
+</code></pre>
+<h2>端口不足导致cpu飙升的场景</h2>
+<p>有一个场景是，connect系统调⽤的CPU⼤幅度上涨。又经过追查发现根本原因是事发当时可⽤端口⼜不是特别充⾜。端口数量和CPU消耗这⼆者貌似没啥关联呀，为啥端口不⾜会导致CPU消耗⼤幅上涨呢？</p>
+<p>客户端在发起connect系统调⽤的时候，服务端主要⼯作就是端口选择。<strong>在选择的过程中， 有个⼤循环，以ip_local_ port range的⼀个随机位置开始把这个范围遍历⼀遍，找到可⽤端口则退出循环。</strong></p>
+<p>如果端口很充⾜，那么循环只需要执⾏少数⼏次就可以退出。但假设端口消耗掉很多已经不充⾜，或者⼲脆就没有可⽤的了，那么这个循环就得执⾏很多遍。</p>
+<h2>一台机器可以开多少个tcp连接</h2>
+<p>一台机器最多能支持多少条 TCP 连接? 这个公式是什么？怎么计算，64GB 的 Linux 服务器，可以支持多少条？</p>
+<p>答：只说服务器端，一是受限于 Linux 里配置的<strong>可打开文件句柄数等内核参数</strong>，但这些都很好修改，调几个参数就行了。二就是<strong>内存</strong>了，这个是硬性限制。最少也得是 3.3 KB 左右。所以如果算极限情况下的TCP连接数，64 GB 除以 3.3KB 就行了。但一般都会给收发缓存区以及其它应用留一些 buffer。</p>
+<p>总结：受限于机器的内核参数和机器的内存资源，<strong>一条tcp大概是3.3KB</strong>。</p>
+<p>其他类似的问题：</p>
+<p>一条 TCP 连接需要消耗多大的内存 ，像mysql这种连接数，和用户登录这种 session 信息，也是一条 tcp 连接吗？</p>
+<p>答：TCP 连接在内核里消耗内存主要是两块，一是表示 TCP 连接的 socket，大约是 3.3K 左右。二是<strong>接收和发送数据的缓存区</strong>，这个可大可小，大了收发速度更快，小了更省内存。但在较新的版本里，只要收发结束，内存就都可以回收了。</p>
+<p>你说的 mysql 的用户登录、session 等信息这个数据 TCP 里传输的数据。这个数据就看用户进程里是怎么存储的了，如果存在内存里就占内存，存到磁盘里就占磁盘。</p>
+<h2>应用程序与tcp协议栈交互</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f33df279-0f68-4097-8492-9cff1b935da5"><img src="https://github.com/user-attachments/assets/f33df279-0f68-4097-8492-9cff1b935da5" alt="image" style="max-width: 100%;"></a></p>
+<h2>tcp_window_scaling</h2>
+<p>TCP窗口缩放机制在所有主要平台上都是<strong>默认启用</strong>的。</p>
+<p>不过，<strong>中间节点和路由器可以重写，甚至完全去掉这个选项</strong>。</p>
+<p>如果你的服务器或客户端的连接不能完全利用现有带宽，那往往该先查一查窗口大小。</p>
+<p>在Linux中，可以通过如下命令检查和启用窗口缩放选项：</p>
+<pre class="notranslate"><code class="notranslate">sysctl net.ipv4.tcp_window_scaling
+</code></pre>
+<p>临时设置，重启失效：</p>
+<pre class="notranslate"><code class="notranslate">sysctl -w net.ipv4.tcp_window_scaling=1 
+</code></pre>
+<h2>TCP对数据包的应答细节</h2>
+<p>为了保证顺序性，每一个包都有一个 ID。在建立连接的时候，会商定起始的 ID 是什么，然后按照 ID 一个个发送。</p>
+<p>为了保证不丢包，对于发送的包都要进行应答，但是这个应答也不是一个一个来的，而是会应答某个之前的 ID，表示都收到了，这种模式称为累计确认或者累计应答（cumulative acknowledgment）。</p>
+<h2>tcp stream与datagram</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/07de5961-8ad8-45c6-8c8b-9fc671922565"><img src="https://github.com/user-attachments/assets/07de5961-8ad8-45c6-8c8b-9fc671922565" alt="image" style="max-width: 100%;"></a></p>
+<h2>参考资料</h2>
+<ul>
+<li>《极客时间 趣谈网络协议 作者 刘超》</li>
+<li>《深入理解Linux网络 作者 张彦飞》</li>
+<li><a href="https://dbwu.tech/posts/network/what-is-tcp-fast-open/" rel="nofollow">TCP Fast Open</a></li>
+<li><a href="https://coolshell.cn/articles/11564.html" rel="nofollow">TCP 的那些事儿（上）</a></li>
+<li><a href="https://coolshell.cn/articles/11609.html" rel="nofollow">TCP 的那些事儿（下）</a></li>
+<li><a href="https://coolshell.cn/articles/22263.html" rel="nofollow">从一次经历谈 TIME_WAIT 的那些事</a></li>
+<li><a href="https://coolshell.cn/articles/1484.html" rel="nofollow">TCP网络关闭的状态变换时序图</a></li>
+<li><a href="https://joytsing.cn/posts/42952/" rel="nofollow">TCP协议中三次握手和四次挥手</a></li>
+<li><a href="https://joytsing.cn/posts/20149/" rel="nofollow">深入理解Linux网络学习笔记(一)</a></li>
+<li><a href="https://joytsing.cn/posts/36369/" rel="nofollow">深入理解Linux网络学习笔记(二)</a></li>
+<li><a href="https://joytsing.cn/posts/7859/" rel="nofollow">深入理解Linux网络学习笔记(三)</a></li>
+<li><a href="https://joytsing.cn/posts/34895/" rel="nofollow">深入理解Linux网络学习笔记(四)</a></li>
+<li><a href="https://joytsing.cn/posts/36379/" rel="nofollow">深入理解Linux网络学习笔记(五)</a></li>
+<li><a href="https://joytsing.cn/posts/11832/" rel="nofollow">深入理解Linux网络学习笔记(六)</a></li>
+<li><a href="https://joytsing.cn/posts/48821/" rel="nofollow">深入理解Linux网络学习笔记(七)</a></li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
