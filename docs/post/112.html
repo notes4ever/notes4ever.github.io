@@ -192,6 +192,35 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>拥塞控制是通过拥塞窗口来解决的，相当于往管道里面倒水，快了容易溢出，慢了浪费带宽，要摸着石头过河，找到最优值。</p>
 <p>TCP <strong>BBR 拥塞算法</strong>。它企图找到一个平衡点，就是通过不断的加快发送速度，将管道填满，但是不要填满中间设备的缓存，因为这样时延会增加，在这个平衡点可以很好的达到高带宽和低时延的平衡。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3ba99961-47f1-4f1d-a3fb-16414dec34a1"><img src="https://github.com/user-attachments/assets/3ba99961-47f1-4f1d-a3fb-16414dec34a1" alt="image" style="max-width: 100%;"></a></p>
+<h2>基于 TCP 和 UDP 协议的 Socket 编程</h2>
+<p>Socket 这个名字很有意思，可以作插口或者插槽讲。虽然我们是写软件程序，但是你可以<strong>想象为弄一根网线，一头插在客户端，一头插在服务端，然后进行通信</strong>。所以在通信之前，双方都要建立一个 Socket。</p>
+<p>在建立 Socket 的时候，应该设置什么参数呢？Socket 编程进行的是端到端的通信，往往意识不到中间经过多少局域网，多少路由器，因而能够设置的参数，也只能是端到端协议之上<strong>网络层和传输层</strong>的。</p>
+<p>在网络层，Socket 函数需要指定到底是 IPv4 还是 IPv6，分别对应设置为 AF_INET 和 AF_INET6。</p>
+<p>在传输层，还要指定到底是 TCP 还是 UDP。还记得咱们前面讲过的，TCP 协议是基于数据流的，所以设置为 SOCK_STREAM，而 UDP 是基于数据报的，因而设置为 SOCK_DGRAM。</p>
+<h3>基于 TCP 的 Socket 程序函数调用过程</h3>
+<p>两端创建了 Socket 之后，接下来的过程中，TCP 和 UDP 稍有不同，我们先来看 TCP。</p>
+<p>TCP 的服务端要先监听一个端口，一般是先调用 bind 函数，给这个 Socket 赋予一个 IP 地址和端口。</p>
+<p>为什么需要端口呢？要知道，你写的是一个应用程序，当一个网络包来的时候，内核要通过 TCP 头里面的这个端口，来找到你这个应用程序，把包给你。</p>
+<p>为什么要 IP 地址呢？有时候，一台机器会有多个网卡，也就会有多个 IP 地址，你可以选择监听所有的网卡，也可以选择监听一个网卡，这样，只有发给这个网卡的包，才会给你。</p>
+<p>当服务端有了 IP 和端口号，就可以调用 listen 函数进行监听。在 TCP 的状态图里面，有一个 listen 状态，当调用这个函数之后，服务端就进入了这个状态，这个时候客户端就可以发起连接了。</p>
+<p>在内核中，为每个 Socket 维护两个队列。一个是已经建立了连接的队列，这时候连接三次握手已经完毕，处于 established 状态；一个是还没有完全建立连接的队列，这个时候三次握手还没完成，处于 syn_rcvd 的状态。</p>
+<p>接下来，服务端调用 accept 函数，拿出一个已经完成的连接进行处理。如果还没有完成，就要等着。</p>
+<p>在服务端等待的时候，客户端可以通过 connect 函数发起连接。先在参数中指明要连接的 IP 地址和端口号，然后开始发起三次握手。</p>
+<p>内核会给客户端分配一个临时的端口。一旦握手成功，服务端的 accept 就会返回另一个 Socket。</p>
+<p>这是一个经常考的知识点，<strong>就是监听的 Socket 和真正用来传数据的 Socket 是两个，一个叫作监听 Socket，一个叫作已连接 Socket。</strong></p>
+<p>连接建立成功之后，双方开始通过 read 和 write 函数来读写数据，就像往一个文件流里面写东西一样。</p>
+<p>这个图就是基于 TCP 协议的 Socket 程序函数调用过程。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a1a773a9-cbcd-4648-b68a-4b68779ccfdf"><img src="https://github.com/user-attachments/assets/a1a773a9-cbcd-4648-b68a-4b68779ccfdf" alt="image" style="max-width: 100%;"></a></p>
+<p>说 TCP 的 Socket 就是一个文件流，是非常准确的。因为，Socket 在 Linux 中就是以文件的形式存在的。除此之外，还存在文件描述符。写入和读出，也是通过文件描述符。</p>
+<p>在内核中，Socket 是一个文件，那对应就有文件描述符。每一个进程都有一个数据结构 task_struct，里面指向一个文件描述符数组，来列出这个进程打开的所有文件的文件描述符。文件描述符是一个整数，是这个数组的下标。</p>
+<p>这个数组中的内容是一个指针，指向内核中所有打开的文件的列表。既然是一个文件，就会有一个 inode，只不过 Socket 对应的 inode 不像真正的文件系统一样，保存在硬盘上的，而是在内存中的。在这个 inode 中，指向了 Socket 在内核中的 Socket 结构。</p>
+<p>在这个结构里面，主要的是两个队列，一个是发送队列，一个是接收队列。在这两个队列里面保存的是一个缓存 sk_buff。这个缓存里面能够看到完整的包的结构。看到这个，是不是能和前面讲过的收发包的场景联系起来了？</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b7fb77f9-e693-429f-97d7-14324671a975"><img src="https://github.com/user-attachments/assets/b7fb77f9-e693-429f-97d7-14324671a975" alt="image" style="max-width: 100%;"></a></p>
+<h3>基于 UDP 的 Socket 程序函数调用过程</h3>
+<p>对于 UDP 来讲，过程有些不一样。UDP 是没有连接的，所以不需要三次握手，也就不需要调用 listen 和 connect，但是，UDP 的的交互仍然需要 IP 和端口号，因而也需要 bind。</p>
+<p>UDP 是没有维护连接状态的，因而不需要每对连接建立一组 Socket，而是只要有一个 Socket，就能够和多个客户端通信。也正是因为没有连接状态，每次通信的时候，都调用 sendto 和 recvfrom，都可以传入 IP 地址和端口。</p>
+<p>这个图的内容就是基于 UDP 协议的 Socket 程序函数调用过程。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e12b7eb8-db6e-48ee-b593-3c1ebd77fc9a"><img src="https://github.com/user-attachments/assets/e12b7eb8-db6e-48ee-b593-3c1ebd77fc9a" alt="image" style="max-width: 100%;"></a></p>
 <h2>参考资料</h2>
 <ul>
 <li>《极客时间 趣谈网络协议 作者 刘超》</li>
