@@ -78,7 +78,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><h2>ss和netstat的区别</h2>
 <p>了解当前系统开放了哪些端口，并且要查看开放这些端口的具体进程和用户。</p>
-<p>主要参考：<a href="https://blog.csdn.net/weixin_42816196/article/details/86580834" rel="nofollow">https://blog.csdn.net/weixin_42816196/article/details/86580834</a></p>
 <p>netstat和ss都是网络相关的监控，netstat在协议栈中每一层都可以做监控统计：TCP、路由表、网络接口、协议等，但是在Linux中，netstat已经不为推荐，取而代之的是ss。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3c78658b-7cf0-4b3a-8033-d67e6b248b45"><img src="https://github.com/user-attachments/assets/3c78658b-7cf0-4b3a-8033-d67e6b248b45" alt="image" style="max-width: 100%;"></a></p>
 <p>原理对比：</p>
@@ -226,7 +225,11 @@ TIME_WAIT        572</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/11a35876-315b-4700-8c09-f7da086f0430"><img src="https://github.com/user-attachments/assets/11a35876-315b-4700-8c09-f7da086f0430" alt="image" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/4056e72a-1b0c-4a4f-81a4-afa6c61a70f2"><img src="https://github.com/user-attachments/assets/4056e72a-1b0c-4a4f-81a4-afa6c61a70f2" alt="image" style="max-width: 100%;"></a></p>
 <p>这些协议栈的统计信息都很直观。ss 只显示已经连接、关闭、孤儿套接字等简要统计，而 netstat 则提供的是更详细的网络协议栈信息。</p>
-<p>比如，上面 netstat 的输出示例，就展示了 TCP 协议的主动连接、被动连接、失败重试、发送和接收的分段数量等各种信息。</p></div>
+<p>比如，上面 netstat 的输出示例，就展示了 TCP 协议的主动连接、被动连接、失败重试、发送和接收的分段数量等各种信息。</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_42816196/article/details/86580834" rel="nofollow">https://blog.csdn.net/weixin_42816196/article/details/86580834</a></li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>

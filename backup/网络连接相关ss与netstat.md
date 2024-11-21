@@ -1,8 +1,6 @@
 ## ss和netstat的区别
 了解当前系统开放了哪些端口，并且要查看开放这些端口的具体进程和用户。
 
-主要参考：https://blog.csdn.net/weixin_42816196/article/details/86580834
-
 netstat和ss都是网络相关的监控，netstat在协议栈中每一层都可以做监控统计：TCP、路由表、网络接口、协议等，但是在Linux中，netstat已经不为推荐，取而代之的是ss。
 
 ![image](https://github.com/user-attachments/assets/3c78658b-7cf0-4b3a-8033-d67e6b248b45)
@@ -227,3 +225,7 @@ Recv-Q 表示 syn backlog 的当前值。
 这些协议栈的统计信息都很直观。ss 只显示已经连接、关闭、孤儿套接字等简要统计，而 netstat 则提供的是更详细的网络协议栈信息。
 
 比如，上面 netstat 的输出示例，就展示了 TCP 协议的主动连接、被动连接、失败重试、发送和接收的分段数量等各种信息。
+
+## 参考资料
+
+- https://blog.csdn.net/weixin_42816196/article/details/86580834
