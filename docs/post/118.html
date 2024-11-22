@@ -67,6 +67,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="markdown-body" id="postBody"><blockquote>
 <p><strong>关于TLS/SSL证书与公钥私钥的理解，内容参考了AI回答，如Kimi等。</strong></p>
 </blockquote>
+<h2>知识笔记</h2>
 <p>在HTTPS协议中，公钥和私钥是确保数据传输安全性的关键技术。公钥和私钥是一对非对称加密密钥，它们在SSL/TLS协议中使用，以确保数据的机密性和完整性。</p>
 <ul>
 <li>公钥：它是可以公开的密钥，用于加密数据。在HTTPS中，服务器的公钥被包含在SSL证书中，客户端（如浏览器）使用这个公钥来加密敏感信息，如登录凭据或信用卡信息。这样，只有拥有对应私钥的服务器才能解密这些信息。</li>
@@ -84,7 +85,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>.pfx 或 .p12：这两种扩展名用于表示PKCS#12文件，它是一种二进制格式，通常用于存储证书及其私钥，以及可能的中间证书。</li>
 </ul>
 <p>数字证书文件的具体后缀可能会根据证书的用途和颁发机构而有所不同。在实际应用中，证书文件的后缀名有助于区分证书的格式和用途。</p>
-<p>总结来说，HTTPS协议使用公钥和私钥来建立一个安全的通信通道，确保数据在客户端和服务器之间传输的过程中不会被未授权的第三方窃听或篡改。<strong>公钥用于加密数据，私钥用于解密数据，而数字证书用于验证公钥的合法性</strong>。</p></div>
+<p>总结来说，HTTPS协议使用公钥和私钥来建立一个安全的通信通道，确保数据在客户端和服务器之间传输的过程中不会被未授权的第三方窃听或篡改。<strong>公钥用于加密数据，私钥用于解密数据，而数字证书用于验证公钥的合法性</strong>。</p>
+<h2>在线检测域名证书是否正确配置</h2>
+<ul>
+<li><a href="https://www.ssllabs.com/ssltest/analyze.html" rel="nofollow">https://www.ssllabs.com/ssltest/analyze.html</a></li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
