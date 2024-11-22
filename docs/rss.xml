@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 22 Nov 2024 02:36:54 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>常用网络工具之nmap</title><link>https://notes4ever.github.io/post/115.html</link><description>## nmap常用命令示例&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>The Road to Serfdom</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 22 Nov 2024 02:44:17 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>网络工具之ethtool</title><link>https://notes4ever.github.io/post/116.html</link><description>![image](https://github.com/user-attachments/assets/c247c4aa-16cf-47b7-b93e-23763b473416)&#13;
+&#13;
+&gt; **数据链路层和物理层工具：ethtool**&#13;
+&#13;
+linux自带的工具和命令：&#13;
+&#13;
+```&#13;
+ethtool -S enp0s5&#13;
+```&#13;
+&#13;
+如果这一层有问题，就会直接体现在**网络层**表现上面，比如 IP 会有丢包和延迟等现象，然后会引发**传输层**异常 （如丢包、乱序、重传等）。</description><guid isPermaLink="true">https://notes4ever.github.io/post/116.html</guid><pubDate>Fri, 22 Nov 2024 02:43:55 +0000</pubDate></item><item><title>常用网络工具之nmap</title><link>https://notes4ever.github.io/post/115.html</link><description>## nmap常用命令示例&#13;
 &#13;
 ```&#13;
 nmap -Pn 192.168.12.104&#13;
