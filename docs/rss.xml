@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sat, 23 Nov 2024 14:01:13 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>ITSM、一线运维与其他运维</title><link>https://notes4ever.github.io/post/125.html</link><description>&gt; **关于ITSM与一线运维以及其他运维的概念厘清；内容参考AI汇总，如Kimi，genspark等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/125.html</guid><pubDate>Fri, 22 Nov 2024 08:02:00 +0000</pubDate></item><item><title>从零设计DevOps运维服务体系</title><link>https://notes4ever.github.io/post/124.html</link><description>&gt; **好文学习**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Sat, 23 Nov 2024 14:01:53 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>ITSM、一线运维与其他运维</title><link>https://notes4ever.github.io/post/125.html</link><description>&gt; **关于ITSM与一线运维以及其他运维的概念厘清；内容参考AI汇总，如Kimi，genspark等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/125.html</guid><pubDate>Fri, 22 Nov 2024 08:02:00 +0000</pubDate></item><item><title>从零设计DevOps运维服务体系</title><link>https://notes4ever.github.io/post/124.html</link><description>&gt; **好文学习**&#13;
 &#13;
 原文链接：https://zhuanlan.zhihu.com/p/181415402&#13;
 &#13;
@@ -780,7 +780,7 @@ sudo apt install -y nodejs&#13;
 sudo apt install -y npm&#13;
 ```&#13;
 &#13;
-之前nodejs安装完成后npm就自带了，现在比较新的发行版貌似是要单独安装npm才行。</description><guid isPermaLink="true">https://notes4ever.github.io/post/15.html</guid><pubDate>Wed, 06 Nov 2024 05:25:05 +0000</pubDate></item><item><title>home目录下中英文名字切换</title><link>https://notes4ever.github.io/post/14.html</link><description>&gt; **linuxmint下一种中英文目录名切换的方式**&#13;
+之前nodejs安装完成后npm就自带了，现在比较新的发行版貌似是要单独安装npm才行。</description><guid isPermaLink="true">https://notes4ever.github.io/post/15.html</guid><pubDate>Wed, 06 Nov 2024 05:25:05 +0000</pubDate></item><item><title>home目录中英文切换</title><link>https://notes4ever.github.io/post/14.html</link><description>&gt; **linuxmint下一种中英文目录名切换的方式**&#13;
 &#13;
 打开终端，在终端下输入命令：&#13;
 ```&#13;
