@@ -83,8 +83,7 @@ curl -w "@curl-format.txt" -o /dev/null -s -L "https://baidu.com"/
 可以看到 time_appconnect 和 time_redirect 都不是 0 了，其中 SSL 协议处理时间为 328-18=310ms。而且 pretransfer 和 starttransfer 的时间都缩短了，这是重定向之后请求的时间。（有重定向以后，需要考虑的比较多，实际拨测中，不要选取可能重定向的）
 
 ## shell脚本使用指引
-根据curl的-w参数功能，可以写脚本用来分析http请求耗时，以及tls是否超时，然后告警出来，是可行的拨测监控方式。
-定时方式，可以结合crontab，或者使用更加靠谱的python定时任务包：crond。
+根据curl的-w参数功能，可以写脚本用来分析http请求耗时，以及tls是否超时，然后告警出来，是可行的拨测监控方式。设置定时方式，可以使用crontab，或者使用更加靠谱的python定时任务包：crond。
 
 shell脚本示例：
 ```
