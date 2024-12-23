@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="**设置参数：sendfile on；**
+
+参数用于开启文件的高效传输模式。">
+<meta property="og:title" content="nginx一些参数解释">
+<meta property="og:description" content="**设置参数：sendfile on；**
+
+参数用于开启文件的高效传输模式。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/146.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>nginx一些参数解释</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">nginx一些参数解释</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p><strong>设置参数：sendfile on；</strong></p>
+<p>参数用于开启文件的高效传输模式。同时将tcp_nopush 和tcp_nodelay两个指令设置为on，可防止网络及磁盘I/O阻塞，提升 Nginx工作效率。</p>
+<p>sendfile参数作用：激活或禁用sendfile（）功能。sendfile（）是作用 于两个文件描述符之间的数据复制函数，这个复制操作是发生在内核 之中的，被称为“零复制”，sendfile（）比read和write函数要高效 很多，因为，read和wrtie函数要把数据复制到应用层再进行操作。相关控制参数还有sendfile_max_chunk，读者可以自行查询。</p>
+<p>tcp_nopush参数作用：激活或禁用Linux上的TCP_CORK socket选项，此选项 仅仅当开启sendfile时才生效，激活这个tcp_nopush参数可以允许把 http response header和文件的开始部分放在一个文件里发布，其积极的作用是减少网络报文段的数量。</p>
+<p>tcp_nodelay参数作用：默认情况下当数据发送时，内核并不会马上发送，可能会等待更多的字节组成一个数据包，这样可以提高I/O性能。但是， 在每次只发送很少字节的业务场景中，使用tcp_nodelay功能，等待时间会比较长。设置为on，意思是马上发送，默认是off，不会马上发送。</p>
+<p><strong>设置参数：keepalive_timeout 60；</strong></p>
+<p>用于设置客户端连接保持会话的超时时间为60秒。若超过这个时 间，服务器就会关闭该连接，此数值仅为参考值。参数作用：keep-alive可以使客户端到服务器端已经建立的连接 一直工作不退出，当服务器有持续请求时，keep-alive会使用已经建立的连接提供服务，从而避免服务器重新建立新连接处理请求。</p>
+<p><strong>设置参数：client_header_timeout 15；</strong></p>
+<p>用于设置读取客户端请求头数据的超时时间。此处的数值为15， 其单位是秒，为经验参考值。</p>
+<p>参数作用：设置读取客户端请求头数据的超时时间。如果超过这个时间，客户端还没有发送完整的header数据，那么服务器端将返回<br>
+“Request time out（408）”错误，可指定一个超时时间，防止客户 端利用http协议进行攻击。</p>
+<p><strong>设置参数：client_body_timeout 15；</strong></p>
+<p>用于设置读取客户端请求主体的超时时间，默认值是60。</p>
+<p>参数作用：设置读取客户端请求主体的超时时间。这个超时仅仅为两次成功读取操作之间的一个超时，而不是请求整个主体数据的超时时间，如果在这个超时时间内，客户端没有发送任何数据，Nginx将返回“Request time out（408）”错误，默认值是60，这样效果更好。</p>
+<p><strong>设置参数：send_timeout 25；</strong></p>
+<p>用于指定响应客户端的超时时间。这个超时仅限于两个连接活动 之间的时间，如果超过这个时间，客户端没有任何活动，Nginx将会关<br>
+闭连接，默认值为60秒，可以改为参考值25秒。</p>
+<p>参数作用：设置服务器端传送HTTP响应信息到客户端的超时时间，这个超时仅仅为两次成功握手后的一个超时，而不是请求整个响应数据的超时时间，如在这个超时时间内，客户端没有接收任何数据，那么连接将被关闭。</p>
+<p><strong>设置参数：client_max_body_size 8m;</strong></p>
+<p>上传文件大小的限制，具体大小可根据公司的业务做调整，如果不清楚就先设置为8m</p>
+<p>参数作用：设置允许的最大客户端请求主体大小，在请求头域有“Content-Length”，如果超过了此配置值，则客户端会收到413错<br>
+误，意思是请求的条目过大，有可能浏览器不能正确显示。设置为0则表示禁止检查客户端请求主体大小。此参数对提高服务器端的安全性 有一定的作用。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
