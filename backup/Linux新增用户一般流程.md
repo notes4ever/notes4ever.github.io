@@ -1,5 +1,43 @@
 > **内容基于Kimi修改**
 
+## 基于linuxmint实操记录
+
+使用root创建一个能登录bash的用户test：
+```
+useradd -m -s /bin/bash test
+```
+
+修改密码：
+```
+passwd test
+```
+
+复制一个用户的home目录过去test用户的home目录：
+```
+cp -R /home/w/.  /home/test/
+chown -R test:test /home/test
+```
+
+注意`.`和`*`的区别，前者包括隐藏的文件和目录，后者只包括非隐藏的，这里的复制主要是要复制一些配置文件，所以只能使用前者。
+
+加入sudoers：
+```
+vim  /etc/sudoers
+test  ALL=(ALL) NOPASSWD: ALL
+```
+
+加入一些用户组：
+```
+usermod -aG vboxsf test
+usermod -aG docker test
+usermod -aG docker test
+usermod -aG  www-data test
+```
+
+修改一些硬编码，bashrc vimrc profile 等。
+
+## 一般通用流程
+
 在Linux系统中创建用户是一个常见的系统管理任务。以下是创建新用户的步骤：
 
 1. **使用`useradd`命令**：
@@ -35,24 +73,3 @@ sudo useradd -m -s /bin/bash username
    - 如果需要解锁用户，可以使用 `sudo passwd -u 用户名` 命令。
 
 请记得，创建用户和修改系统配置通常需要管理员权限，所以你可能需要使用`sudo`来执行上述命令。此外，确保你了解每个命令的用途和潜在的安全影响，以免不小心锁定了错误的用户或创建了不安全的账户。
-
-## 基于linuxmint实操记录
-使用root创建一个能登录bash的用户test：
-```
-useradd -m -s /bin/bash test
-```
-
-修改密码：
-```
-passwd test
-```
-
-复制一个用户的home目录过去test用户的home目录：
-```
-cp -R /home/w/.  /home/test/
- chown -R test:test /home/test
-```
-
-注意`.`和`*`的区别，前者包括隐藏的文件和目录，后者只包括非隐藏的，这里的复制主要是要复制一些配置文件，所以只能使用前者。
-
-修改一些硬编码，bashrc vimrc profile 等。
