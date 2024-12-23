@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 08:00:38 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>nginx一些参数解释</title><link>https://notes4ever.github.io/post/146.html</link><description>**设置参数：sendfile on；**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 08:36:16 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>网络安全相关学习</title><link>https://notes4ever.github.io/post/147.html</link><description>## 慢速攻击&#13;
+HTTP慢连接攻击的原理和防范措施：&#13;
+&#13;
+https://blog.csdn.net/dexunyun/article/details/138128570&#13;
+&#13;
+Nginx解决Http慢攻击(Slow HTTP Attack)：&#13;
+&#13;
+https://blog.csdn.net/cole2295/article/details/135402726&#13;
+&#13;
+Slowhttptest使用教程：&#13;
+&#13;
+https://blog.csdn.net/weixin_44406011/article/details/131569271&#13;
+&#13;
+## 网络资产搜索&#13;
+搜索网络资产，确认资产漏洞影响范围&#13;
+- fofa中国的，已被禁。</description><guid isPermaLink="true">https://notes4ever.github.io/post/147.html</guid><pubDate>Mon, 23 Dec 2024 08:35:51 +0000</pubDate></item><item><title>nginx一些参数解释</title><link>https://notes4ever.github.io/post/146.html</link><description>**设置参数：sendfile on；**&#13;
 &#13;
 参数用于开启文件的高效传输模式。</description><guid isPermaLink="true">https://notes4ever.github.io/post/146.html</guid><pubDate>Mon, 23 Dec 2024 08:00:03 +0000</pubDate></item><item><title>http请求工具 hcurl</title><link>https://notes4ever.github.io/post/145.html</link><description>使用教程参考：&#13;
 &#13;
