@@ -36,11 +36,17 @@ usermod -aG  www-data test
 
 修改一些硬编码，bashrc vimrc profile 等。
 
+安装或修改conda（miniforge），参考：https://github.com/conda-forge/miniforge
+
+
+
 测试conda是否正常：
 ```
 source ~/.bashrc
 conda deactivate
 ```
+
+以上基本就创建了一个跟之前大致不差的新用户了。
 
 ## 一般通用流程
 
