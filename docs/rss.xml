@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 02:16:05 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>Linux新增用户一般流程</title><link>https://notes4ever.github.io/post/140.html</link><description>&gt; **内容基于Kimi修改**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 02:20:35 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>nginx连接数统计</title><link>https://notes4ever.github.io/post/141.html</link><description>在默认主机里面加上location或者你希望能访问到的主机里面加上如下配置：&#13;
+```&#13;
+location /status &#13;
+{&#13;
+        stub_status on;&#13;
+        access_log off;            &#13;
+}&#13;
+```&#13;
+&#13;
+重启nginx&#13;
+在浏览器中输入nginx的地址：`http://127.0.0.1/status`，即可查看nginx的状态信息:&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/fc1219ba-c5f5-4739-b3a3-5fc8b297cf60)&#13;
+&#13;
+**Active connections – 活跃的连接数量**&#13;
+server accepts handled requests — 总共处理了7个连接 , 成功创建7次握手, 总共处理了36个请求。</description><guid isPermaLink="true">https://notes4ever.github.io/post/141.html</guid><pubDate>Mon, 23 Dec 2024 02:20:08 +0000</pubDate></item><item><title>Linux新增用户一般流程</title><link>https://notes4ever.github.io/post/140.html</link><description>&gt; **内容基于Kimi修改**&#13;
 &#13;
 在Linux系统中创建用户是一个常见的系统管理任务。</description><guid isPermaLink="true">https://notes4ever.github.io/post/140.html</guid><pubDate>Mon, 23 Dec 2024 00:15:30 +0000</pubDate></item><item><title>nginx事件处理</title><link>https://notes4ever.github.io/post/139.html</link><description>Nginx的连接处理机制在不同的操作系统中会采用不同的I/O模型，在Linux下，Nginx使用**epoll**的I/O多路复用模型，在Freebsd中使用**kqueue**的I/O多路复用模型，在Solaris中使用/dev/poll方式的I/O多路复用模型，在Windows中使用的是**icop**，等等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/139.html</guid><pubDate>Thu, 19 Dec 2024 07:01:34 +0000</pubDate></item><item><title>nginx worker进程</title><link>https://notes4ever.github.io/post/138.html</link><description>类比：Nginx服务就相当于饭店，网站用户就相当于顾客，Nginx的进程就相当于服务员，饭店要根据客户的流量及并发量来调整接待的服务人员数量，然后根据顾客量变化的监测结果及时调整到最佳的配置。</description><guid isPermaLink="true">https://notes4ever.github.io/post/138.html</guid><pubDate>Thu, 19 Dec 2024 06:58:55 +0000</pubDate></item><item><title>nginx 499状态码</title><link>https://notes4ever.github.io/post/137.html</link><description>首先，我们要知道，Nginx 499 是 Nginx 自身定义的状态码，并非任何 RFC 中定义的 HTTP 状态码。</description><guid isPermaLink="true">https://notes4ever.github.io/post/137.html</guid><pubDate>Thu, 19 Dec 2024 06:50:40 +0000</pubDate></item><item><title>nginx压缩相关</title><link>https://notes4ever.github.io/post/136.html</link><description>## 动态压缩&#13;
 服务器给客户端返回响应时，消耗自身的资源进行实时压缩，保证客户端拿到 gzip 格式的文件，这个模块是默认编译的。</description><guid isPermaLink="true">https://notes4ever.github.io/post/136.html</guid><pubDate>Thu, 19 Dec 2024 01:41:33 +0000</pubDate></item><item><title>nginx安装相关</title><link>https://notes4ever.github.io/post/135.html</link><description>## linuxmint上使用apt安装&#13;
