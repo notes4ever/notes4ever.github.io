@@ -1,4 +1,4 @@
-> **内容来自Kimi**
+> **内容基于Kimi修改**
 
 在Linux系统中创建用户是一个常见的系统管理任务。以下是创建新用户的步骤：
 
@@ -6,7 +6,9 @@
    - 打开终端。
    - 输入命令 `sudo useradd -m 用户名`，其中“用户名”是你想要创建的新用户的名称。`-m`选项表示创建用户的主目录。
    
-以上添加完用户后，默认的shell可能不是bash，而是sh，具体要创建完，查看/etc/passwd 才知道。linuxmint下默认应该是sh，不是bash，创建后要修改/etc/passwd的值，要么在创建前明确指定：
+  以上添加完用户后，默认的shell可能不是bash，而是sh，具体要创建完，查看/etc/passwd 才知道。
+
+  linuxmint下默认应该是sh，不是bash，创建后要修改/etc/passwd的值，要么在创建前明确指定：
 ```
 sudo useradd -m -s /bin/bash username
 ```
@@ -26,6 +28,7 @@ sudo useradd -m -s /bin/bash username
 6. **复制或创建用户的配置文件**（可选）：
    - 有时你可能需要复制一个现有用户的配置文件到新用户的主目录，可以使用 `cp -R /home/原用户目录/. /home/新用户目录/` 命令。
    - `sudo chown -R 新用户:新用户 /home/新用户/`
+   - 实际上有不少配置会写死硬编码，尤其是涉及到当前用户的路径，需要注意更改，比如bashrc vimrc profile 等等
 
 7. **锁定或解锁用户**（可选）：
    - 如果你需要锁定用户，使其无法登录，可以使用 `sudo passwd -l 用户名` 命令。

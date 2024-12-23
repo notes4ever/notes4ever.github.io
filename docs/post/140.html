@@ -7,11 +7,11 @@
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     
     <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
-<meta name="description" content="> **内容来自Kimi**
+<meta name="description" content="> **内容基于Kimi修改**
 
 在Linux系统中创建用户是一个常见的系统管理任务。">
 <meta property="og:title" content="Linux新增用户一般流程">
-<meta property="og:description" content="> **内容来自Kimi**
+<meta property="og:description" content="> **内容基于Kimi修改**
 
 在Linux系统中创建用户是一个常见的系统管理任务。">
 <meta property="og:type" content="article">
@@ -79,7 +79,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><blockquote>
-<p><strong>内容来自Kimi</strong></p>
+<p><strong>内容基于Kimi修改</strong></p>
 </blockquote>
 <p>在Linux系统中创建用户是一个常见的系统管理任务。以下是创建新用户的步骤：</p>
 <ol>
@@ -90,7 +90,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 </li>
 </ol>
-<p>以上添加完用户后，默认的shell可能不是bash，而是sh，具体要创建完，查看/etc/passwd 才知道。linuxmint下默认应该是sh，不是bash，创建后要修改/etc/passwd的值，要么在创建前明确指定：</p>
+<p>以上添加完用户后，默认的shell可能不是bash，而是sh，具体要创建完，查看/etc/passwd 才知道。</p>
+<p>linuxmint下默认应该是sh，不是bash，创建后要修改/etc/passwd的值，要么在创建前明确指定：</p>
 <pre class="notranslate"><code class="notranslate">sudo useradd -m -s /bin/bash username
 </code></pre>
 <ol start="2">
@@ -123,6 +124,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li>有时你可能需要复制一个现有用户的配置文件到新用户的主目录，可以使用 <code class="notranslate">cp -R /home/原用户目录/. /home/新用户目录/</code> 命令。</li>
 <li><code class="notranslate">sudo chown -R 新用户:新用户 /home/新用户/</code></li>
+<li>实际上有不少配置会写死硬编码，尤其是涉及到当前用户的路径，需要注意更改，比如bashrc vimrc profile 等等</li>
 </ul>
 </li>
 <li>
