@@ -36,6 +36,12 @@ usermod -aG  www-data test
 
 修改一些硬编码，bashrc vimrc profile 等。
 
+测试conda是否正常：
+```
+source ~/.bashrc
+conda deactivate
+```
+
 ## 一般通用流程
 
 在Linux系统中创建用户是一个常见的系统管理任务。以下是创建新用户的步骤：
