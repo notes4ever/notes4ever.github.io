@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 08:41:32 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>timsort原理学习</title><link>https://notes4ever.github.io/post/148.html</link><description>Timsort是一种混合稳定排序算法，源自归并排序（merge sort）和插入排序（insertion sort）。</description><guid isPermaLink="true">https://notes4ever.github.io/post/148.html</guid><pubDate>Mon, 23 Dec 2024 08:41:02 +0000</pubDate></item><item><title>网络安全相关学习</title><link>https://notes4ever.github.io/post/147.html</link><description>## 慢速攻击&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 08:49:22 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>排序算法相关汇总</title><link>https://notes4ever.github.io/post/149.html</link><description>排序算法动画演示：&#13;
+&#13;
+https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html&#13;
+&#13;
+十大经典排序算法动画与解析：&#13;
+&#13;
+https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/87910210&#13;
+&#13;
+重点：归并、快排、堆排。</description><guid isPermaLink="true">https://notes4ever.github.io/post/149.html</guid><pubDate>Mon, 23 Dec 2024 08:48:54 +0000</pubDate></item><item><title>timsort原理学习</title><link>https://notes4ever.github.io/post/148.html</link><description>Timsort是一种混合稳定排序算法，源自归并排序（merge sort）和插入排序（insertion sort）。</description><guid isPermaLink="true">https://notes4ever.github.io/post/148.html</guid><pubDate>Mon, 23 Dec 2024 08:41:02 +0000</pubDate></item><item><title>网络安全相关学习</title><link>https://notes4ever.github.io/post/147.html</link><description>## 慢速攻击&#13;
 HTTP慢连接攻击的原理和防范措施：&#13;
 &#13;
 https://blog.csdn.net/dexunyun/article/details/138128570&#13;
