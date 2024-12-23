@@ -5,6 +5,11 @@
 1. **使用`useradd`命令**：
    - 打开终端。
    - 输入命令 `sudo useradd -m 用户名`，其中“用户名”是你想要创建的新用户的名称。`-m`选项表示创建用户的主目录。
+   
+以上添加完用户后，默认的shell可能不是bash，而是sh，具体要创建完，查看/etc/passwd 才知道。linuxmint下默认应该是sh，不是bash，创建后要修改/etc/passwd的值，要么在创建前明确指定：
+```
+sudo useradd -m -s /bin/bash username
+```
 
 2. **设置密码**：
    - 创建用户后，你需要为新用户设置密码。使用命令 `sudo passwd 用户名`，然后按照提示输入密码。
