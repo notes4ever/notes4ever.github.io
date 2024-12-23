@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 07:50:17 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>命令增强工具 x-cmd</title><link>https://notes4ever.github.io/post/144.html</link><description>x-cmd官网：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 07:53:30 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>http请求工具 hcurl</title><link>https://notes4ever.github.io/post/145.html</link><description>使用教程参考：&#13;
+&#13;
+https://www.cnblogs.com/jinjiangongzuoshi/p/18109848&#13;
+&#13;
+项目主页：&#13;
+&#13;
+https://github.com/Orange-OpenSource/hurl&#13;
+&#13;
+官网:&#13;
+&#13;
+https://hurl.dev/&#13;
+&#13;
+基于curl，专注http应用相关，支持认证，链式请求等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/145.html</guid><pubDate>Mon, 23 Dec 2024 07:52:58 +0000</pubDate></item><item><title>命令增强工具 x-cmd</title><link>https://notes4ever.github.io/post/144.html</link><description>x-cmd官网：&#13;
 &#13;
 https://cn.x-cmd.com/&#13;
 &#13;
