@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 05:46:47 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>nginx连接数统计</title><link>https://notes4ever.github.io/post/141.html</link><description>在默认主机里面加上location或者你希望能访问到的主机里面加上如下配置：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 06:06:41 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>vimrc配置-无第三方插件</title><link>https://notes4ever.github.io/post/142.html</link><description>```&#13;
+''''''必需的设置 vim最小化配置&#13;
+set nocompatible ' 不兼容vi&#13;
+filetype plugin indent on ' 激活Vim内置文件类型插件 一般还会加indent启用根据文件类型缩进&#13;
+syntax on ' 语法高亮&#13;
+&#13;
+''''''复制粘贴 剪切板 解释与配置&#13;
+'vim --version | grep clipboard&#13;
+'+clipboard  代表支持与系统剪切板交互，-代表不支持。</description><guid isPermaLink="true">https://notes4ever.github.io/post/142.html</guid><pubDate>Mon, 23 Dec 2024 06:06:15 +0000</pubDate></item><item><title>nginx连接数统计</title><link>https://notes4ever.github.io/post/141.html</link><description>在默认主机里面加上location或者你希望能访问到的主机里面加上如下配置：&#13;
 ```&#13;
 location /status &#13;
 {&#13;
