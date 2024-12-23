@@ -135,7 +135,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 </li>
 </ol>
-<p>请记得，创建用户和修改系统配置通常需要管理员权限，所以你可能需要使用<code class="notranslate">sudo</code>来执行上述命令。此外，确保你了解每个命令的用途和潜在的安全影响，以免不小心锁定了错误的用户或创建了不安全的账户。</p></div>
+<p>请记得，创建用户和修改系统配置通常需要管理员权限，所以你可能需要使用<code class="notranslate">sudo</code>来执行上述命令。此外，确保你了解每个命令的用途和潜在的安全影响，以免不小心锁定了错误的用户或创建了不安全的账户。</p>
+<h2>基于linuxmint实操记录</h2>
+<p>使用root创建一个能登录bash的用户test：</p>
+<pre class="notranslate"><code class="notranslate">useradd -m -s /bin/bash test
+</code></pre>
+<p>修改密码：</p>
+<pre class="notranslate"><code class="notranslate">passwd test
+</code></pre>
+<p>复制一个用户的home目录过去test用户的home目录：</p>
+<pre class="notranslate"><code class="notranslate">cp -R /home/w/.  /home/test/
+ chown -R test:test /home/test
+</code></pre>
+<p>注意<code class="notranslate">.</code>和<code class="notranslate">*</code>的区别，前者包括隐藏的文件和目录，后者只包括非隐藏的，这里的复制主要是要复制一些配置文件，所以只能使用前者。</p>
+<p>修改一些硬编码，bashrc vimrc profile 等。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
