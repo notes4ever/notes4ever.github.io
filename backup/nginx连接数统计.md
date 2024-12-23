@@ -7,8 +7,7 @@ location /status
 }
 ```
 
-重启nginx
-在浏览器中输入nginx的地址：`http://127.0.0.1/status`，即可查看nginx的状态信息:
+重启nginx，在浏览器中输入nginx的地址：`http://127.0.0.1/status`，即可查看nginx的状态信息:
 
 ![image](https://github.com/user-attachments/assets/fc1219ba-c5f5-4739-b3a3-5fc8b297cf60)
 

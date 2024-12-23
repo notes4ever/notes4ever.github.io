@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 02:20:35 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>nginx连接数统计</title><link>https://notes4ever.github.io/post/141.html</link><description>在默认主机里面加上location或者你希望能访问到的主机里面加上如下配置：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 02:22:55 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>nginx连接数统计</title><link>https://notes4ever.github.io/post/141.html</link><description>在默认主机里面加上location或者你希望能访问到的主机里面加上如下配置：&#13;
 ```&#13;
 location /status &#13;
 {&#13;
@@ -8,8 +8,7 @@ location /status &#13;
 }&#13;
 ```&#13;
 &#13;
-重启nginx&#13;
-在浏览器中输入nginx的地址：`http://127.0.0.1/status`，即可查看nginx的状态信息:&#13;
+重启nginx，在浏览器中输入nginx的地址：`http://127.0.0.1/status`，即可查看nginx的状态信息:&#13;
 &#13;
 ![image](https://github.com/user-attachments/assets/fc1219ba-c5f5-4739-b3a3-5fc8b297cf60)&#13;
 &#13;
