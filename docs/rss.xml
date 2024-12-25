@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 23 Dec 2024 09:07:23 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>图相关的学习笔记</title><link>https://notes4ever.github.io/post/156.html</link><description>广度优先搜索的特征为从起点开始，由近及远进行广泛的搜索。</description><guid isPermaLink="true">https://notes4ever.github.io/post/156.html</guid><pubDate>Mon, 23 Dec 2024 09:07:00 +0000</pubDate></item><item><title>题解：最大利润</title><link>https://notes4ever.github.io/post/155.html</link><description>![image](https://github.com/user-attachments/assets/0b0913bc-94b6-44bf-8f0b-98a59940957a)&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 07:42:34 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>linuxmint安装clang</title><link>https://notes4ever.github.io/post/157.html</link><description>linuxmint下安装，直接使用apt：&#13;
+```&#13;
+sudo apt update &amp;&amp; sudo apt upgrade&#13;
+sudo apt install clang&#13;
+```&#13;
+&#13;
+验证是否成功，查看版本：&#13;
+```&#13;
+clang --version&#13;
+```&#13;
+&#13;
+使用：&#13;
+```&#13;
+clang hello.c -o hello&#13;
+```&#13;
+&#13;
+参考：https://zhuanlan.zhihu.com/p/647388977。</description><guid isPermaLink="true">https://notes4ever.github.io/post/157.html</guid><pubDate>Wed, 25 Dec 2024 07:42:09 +0000</pubDate></item><item><title>图相关的学习笔记</title><link>https://notes4ever.github.io/post/156.html</link><description>广度优先搜索的特征为从起点开始，由近及远进行广泛的搜索。</description><guid isPermaLink="true">https://notes4ever.github.io/post/156.html</guid><pubDate>Mon, 23 Dec 2024 09:07:00 +0000</pubDate></item><item><title>题解：最大利润</title><link>https://notes4ever.github.io/post/155.html</link><description>![image](https://github.com/user-attachments/assets/0b0913bc-94b6-44bf-8f0b-98a59940957a)&#13;
 &#13;
 ```C&#13;
 #include &lt;stdio.h&gt;&#13;
