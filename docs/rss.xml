@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:41:43 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>Linux禁用谷歌登录密钥环</title><link>https://notes4ever.github.io/post/164.html</link><description>删除以下两个文件的可执行权限，重启桌面：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:46:23 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>CentOS系统变化</title><link>https://notes4ever.github.io/post/165.html</link><description>**centos与centos stream关联**：&#13;
+&#13;
+fedora -&gt;  红帽收费（企业版） -&gt; centos&#13;
+&#13;
+改版后变成：&#13;
+&#13;
+fedora -&gt;  centos stream -&gt;  红帽收费（企业版）&#13;
+&#13;
+参考：&#13;
+- https://www.cnblogs.com/linuxprobe/p/17206595.html。</description><guid isPermaLink="true">https://notes4ever.github.io/post/165.html</guid><pubDate>Wed, 25 Dec 2024 09:45:53 +0000</pubDate></item><item><title>Linux禁用谷歌登录密钥环</title><link>https://notes4ever.github.io/post/164.html</link><description>删除以下两个文件的可执行权限，重启桌面：&#13;
 ```&#13;
 sudo chmod -x /usr/bin/gnome-keyring&#13;
 sudo chmod -x /usr/bin/gnome-keyring-daemon&#13;
