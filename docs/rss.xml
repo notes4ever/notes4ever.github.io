@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:37:48 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>vscode编辑器设置</title><link>https://notes4ever.github.io/post/163.html</link><description>## 文件编码自动检测&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:41:43 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>Linux禁用谷歌登录密钥环</title><link>https://notes4ever.github.io/post/164.html</link><description>删除以下两个文件的可执行权限，重启桌面：&#13;
+```&#13;
+sudo chmod -x /usr/bin/gnome-keyring&#13;
+sudo chmod -x /usr/bin/gnome-keyring-daemon&#13;
+```&#13;
+&#13;
+ 参考：&#13;
+- https://blog.csdn.net/m0_55776033/article/details/134141386&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/164.html</guid><pubDate>Wed, 25 Dec 2024 09:41:18 +0000</pubDate></item><item><title>vscode编辑器设置</title><link>https://notes4ever.github.io/post/163.html</link><description>## 文件编码自动检测&#13;
 ![image](https://github.com/user-attachments/assets/6255a4c3-2dc8-4950-a0d0-fa299221c25e)&#13;
 &#13;
 ## 终端UTF-8 配置&#13;
