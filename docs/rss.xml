@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:26:05 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>查看gcc支持的语言版本</title><link>https://notes4ever.github.io/post/161.html</link><description>查看方式：gcc后面输入 -std=c版本或者c++版本&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:29:49 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>编译器对c和cpp的识别</title><link>https://notes4ever.github.io/post/162.html</link><description>编译器针对不同后缀文件，一般是按照以下这样对待：&#13;
+- .c文件当成c编译&#13;
+- .cpp当成c++编译&#13;
+- **.c文件用纯c编写，当后缀改成cpp时，可以当成c++编译**&#13;
+&#13;
+具体场景示例：&#13;
+比如bool，**纯c是c99才有的**，并且要引入`#include &lt;stdbool.h&gt;`。</description><guid isPermaLink="true">https://notes4ever.github.io/post/162.html</guid><pubDate>Wed, 25 Dec 2024 09:29:25 +0000</pubDate></item><item><title>查看gcc支持的语言版本</title><link>https://notes4ever.github.io/post/161.html</link><description>查看方式：gcc后面输入 -std=c版本或者c++版本&#13;
 &#13;
 报错表示明确不支持，没有报错表示支持；具体支持的版本详情，要用man进去查看更具体的说明。</description><guid isPermaLink="true">https://notes4ever.github.io/post/161.html</guid><pubDate>Wed, 25 Dec 2024 09:25:24 +0000</pubDate></item><item><title>Linux与Windows产生EOF</title><link>https://notes4ever.github.io/post/160.html</link><description>**Linux**：&#13;
 &#13;
