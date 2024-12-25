@@ -33,18 +33,23 @@ K&R 很重要，代码基本都是大家参考的对象。
 ![image](https://github.com/user-attachments/assets/e5e25424-d3a7-4c7e-8efc-61d8ca09ac4d)
 
 来自k&r 第二版。除了上面所表示的容易出错的风格，其他的花括号，k&r风格总是在if  for  while等，只要下面最多一个语句块，即（最多一个块，或者一行语句以分号;结尾），后面省略花括号，如果超过1个，那就加上花括号。简洁为主。比如下面的风格：
+
 ![image](https://github.com/user-attachments/assets/2a48db98-14f9-460b-8989-62e4cb470c37)
 
 kernel风格与K&R风格的case处理一致，都是不缩进，并且case后面冒号没有花括号。个人总结，case缩进不缩进都可以。既然无所谓还是与大佬观点保持一致。
+
 ![image](https://github.com/user-attachments/assets/89f5f0e9-d0e1-4378-a78f-a077535b0ee5)
 
 K&R的if与else处理：
+
 ![image](https://github.com/user-attachments/assets/2a47ea45-5804-4607-a46e-a75a888bff07)
 
 其他风格比如google和内核风格是不鼓励这种，if和else应该保持一致，都有花括号。个人总结：倾向google和内核的方式。
+
 ![image](https://github.com/user-attachments/assets/7343307a-7cd0-4b5f-a122-2b76f23dbd14)
 
 K&R while有时加花括号，有时不加，没有固定套路。
+
 ![image](https://github.com/user-attachments/assets/3fd6653f-4ee8-4f97-9f32-9e5fcfc392dc)
 
 很多地方都是，有的加有的不加。
