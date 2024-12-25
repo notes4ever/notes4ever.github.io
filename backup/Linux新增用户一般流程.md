@@ -30,7 +30,6 @@ test  ALL=(ALL) NOPASSWD: ALL
 ```
 usermod -aG vboxsf test
 usermod -aG docker test
-usermod -aG docker test
 usermod -aG  www-data test
 ```
 
