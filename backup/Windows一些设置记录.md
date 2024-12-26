@@ -51,6 +51,15 @@ Windows系统按WIN+R输入“RegEdit”运行注册表管理，删除注册表`
 ```
 npm config set prefix "C:\Program Files\nodejs\node_global"　　//修改 npm 的全局安装模块路径
 npm config set cache "C:\Program Files\nodejs\node_cache"　　　//修改 npm 的缓存路径
-
-
 ```
+
+##  API测试 reqable
+官网：https://reqable.com/zh-CN/download
+
+Reqable是什么?
+
+Reqable = Fiddler + Charles + Postman
+
+Reqable拥有极简的设计、丰富的功能、高效的性能和桌面手机双端平台。
+
+先进API生产力工具，新一代API调试 + API测试一站化解决方案。全平台、免登录、轻量级、高性能、无广告，让API更快更简单。基于经典的MITM中间人代理方案捕获和分析您的应用流量，自适应HTTP/HTTPS/SOCKS4/SOCKS5等多种代理协议，并全面支持HTTP2协议，助您完整还原BUG现场。支持多种过滤器，例如应用、域名、数据类型、书签以及多条件自定义搜索，帮您在茫茫数据中准确找到想要查找的内容。
