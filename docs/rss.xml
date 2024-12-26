@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 06:41:33 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>adguard公共dns</title><link>https://notes4ever.github.io/post/177.html</link><description>官网：https://adguard-dns.io/en/public-dns.html&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 06:44:29 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>隐性知识是危险的</title><link>https://notes4ever.github.io/post/178.html</link><description>英文原文：https://er4hn.info/blog/2023.08.26-tacit-knowledge-dangerous/&#13;
+&#13;
+摘抄来源：https://github.com/ruanyf/weekly/blob/master/docs/issue-314.md&#13;
+&#13;
+隐性知识又称为“部落知识”，指的是有些知识没有文档，只掌握在团队成员的头脑里面。</description><guid isPermaLink="true">https://notes4ever.github.io/post/178.html</guid><pubDate>Thu, 26 Dec 2024 06:44:05 +0000</pubDate></item><item><title>adguard公共dns</title><link>https://notes4ever.github.io/post/177.html</link><description>官网：https://adguard-dns.io/en/public-dns.html&#13;
 &#13;
 ## 明文dns server&#13;
 **Default servers**&#13;
