@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 00:35:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>C-Leetcode-30天</title><link>https://notes4ever.github.io/post/166.html</link><description># 学习&amp;做题&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 00:52:49 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>C和C++标准库</title><link>https://notes4ever.github.io/post/167.html</link><description>## 标准库相关文档资料&#13;
+比较有权威参考性的网址：&#13;
+- https://pubs.opengroup.org/onlinepubs/9699919799/&#13;
+- https://www.cprogramming.com/&#13;
+- https://en.cppreference.com/w/&#13;
+- http://www.crasseux.com/books/ctutorial/&#13;
+&#13;
+## 标准库的历史&#13;
+随着语言的发展新的papers（指官方的叫标准的书）会被发布，每一次都定义一个新的标准。</description><guid isPermaLink="true">https://notes4ever.github.io/post/167.html</guid><pubDate>Thu, 26 Dec 2024 00:52:17 +0000</pubDate></item><item><title>C-Leetcode-30天</title><link>https://notes4ever.github.io/post/166.html</link><description># 学习&amp;做题&#13;
 - [C语言入门-油管主页](https://www.youtube.com/@KenYiLee)&#13;
 - [搭配leetcode30天挑战-b站视频主页](https://www.bilibili.com/video/BV1LX4y1X7i3/)&#13;
 &#13;
