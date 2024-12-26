@@ -6,5 +6,5 @@ https://github.com/jaywcjlove/linux-command
 
 应该是最好的Linux命令搜索和学习网站了。
 
-web版本：https://wangchujiang.com/linux-command/
+在线搜索命令：https://wangchujiang.com/linux-command/
 
