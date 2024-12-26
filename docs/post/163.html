@@ -105,11 +105,26 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </code></pre>
 <h2>.editorconfig文件使用示例</h2>
 <p>使用示例：</p>
-<pre class="notranslate"><code class="notranslate"># .editorconfig
-[*.py]
-indent_style = space
-indent_size = 4
-max_line_length = 100
+<pre class="notranslate"><code class="notranslate"># http://editorconfig.org
+# vscode 安装 EditorConfig for VS Code 插件，该插件会自动读取项目的 .editorconfig 文件，对项目进行配置
+
+root = true
+
+[*] # 表示所有文件适用
+charset = utf-8 # 设置文件字符集为 utf-8
+indent_style = space # 缩进风格（tab | space）
+indent_size = 4 # 缩进大小
+end_of_line = lf # 控制换行类型(lf | cr | crlf)
+trim_trailing_whitespace = true # 去除行首的任意空白字符
+insert_final_newline = true # 始终在文件末尾插入一个新行
+
+[*.md] # 表示仅 md 文件适用以下规则
+max_line_length = off
+trim_trailing_whitespace = false
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
 </code></pre>
 <h2>settings.json文件使用示例</h2>
 <pre class="notranslate"><code class="notranslate">{
