@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 25 Dec 2024 09:46:23 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>CentOS系统变化</title><link>https://notes4ever.github.io/post/165.html</link><description>**centos与centos stream关联**：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 00:29:05 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>C-Leetcode-30天</title><link>https://notes4ever.github.io/post/166.html</link><description># 学习&amp;做题&#13;
+- [C语言入门-油管主页](https://www.youtube.com/@KenYiLee)&#13;
+- [搭配leetcode30天挑战-b站视频主页](https://www.bilibili.com/video/BV1LX4y1X7i3/)&#13;
+&#13;
+## Day 1&#13;
+[136. 只出现一次的数字](https://leetcode.cn/problems/single-number/)&#13;
+&#13;
+20240528完成。</description><guid isPermaLink="true">https://notes4ever.github.io/post/166.html</guid><pubDate>Thu, 26 Dec 2024 00:28:34 +0000</pubDate></item><item><title>CentOS系统变化</title><link>https://notes4ever.github.io/post/165.html</link><description>**centos与centos stream关联**：&#13;
 &#13;
 fedora -&gt;  红帽收费（企业版） -&gt; centos&#13;
 &#13;
