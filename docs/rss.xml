@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 09:21:24 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>kill -USR1 命令使用场景</title><link>https://notes4ever.github.io/post/180.html</link><description>kill -USR1 是一个在Unix和类Unix操作系统中使用的命令，它用于向一个进程发送SIGUSR1信号。</description><guid isPermaLink="true">https://notes4ever.github.io/post/180.html</guid><pubDate>Thu, 26 Dec 2024 09:20:38 +0000</pubDate></item><item><title>跨域问题</title><link>https://notes4ever.github.io/post/179.html</link><description>常见问题：引荐来源网址政策 strict-origin-when-cross-origin&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 09:40:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>github代理stream++</title><link>https://notes4ever.github.io/post/181.html</link><description>官网：https://steampp.net/&#13;
+&#13;
+下载：&#13;
+&#13;
+- https://steampp.net/download&#13;
+- https://gitee.com/rmbgame/SteamTools/releases/tag/3.0.0-rc.9&#13;
+- https://github.com/BeyondDimension/SteamTools/releases/&#13;
+&#13;
+github主页：https://github.com/BeyondDimension/SteamTools&#13;
+&#13;
+本地反代来支持更快的访问游戏网站（包括github），使用的微软开源技术：&#13;
+&#13;
+YARP project：https://github.com/microsoft/reverse-proxy&#13;
+&#13;
+另外基于yarp项目做的开源项目：&#13;
+&#13;
+- yarp用EFCore存储配置，可视化面板配置，支持热更新：https://github.com/fanslead/ReverseProxy.Store&#13;
+- YARP demo showing how tunneling can be implemented over websockets：https://github.com/davidfowl/YarpTunnelDemo&#13;
+&#13;
+测试代理访问github：mac和windows下正常使用。</description><guid isPermaLink="true">https://notes4ever.github.io/post/181.html</guid><pubDate>Thu, 26 Dec 2024 09:39:43 +0000</pubDate></item><item><title>kill -USR1 命令使用场景</title><link>https://notes4ever.github.io/post/180.html</link><description>kill -USR1 是一个在Unix和类Unix操作系统中使用的命令，它用于向一个进程发送SIGUSR1信号。</description><guid isPermaLink="true">https://notes4ever.github.io/post/180.html</guid><pubDate>Thu, 26 Dec 2024 09:20:38 +0000</pubDate></item><item><title>跨域问题</title><link>https://notes4ever.github.io/post/179.html</link><description>常见问题：引荐来源网址政策 strict-origin-when-cross-origin&#13;
 &#13;
 原因以及解决：&#13;
 &#13;
