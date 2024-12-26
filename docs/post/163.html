@@ -103,6 +103,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
   },
   "terminal.integrated.defaultProfile.windows": "PowerShell -NoProfile",
 </code></pre>
+<h2>重要参数配置</h2>
+<p>code-runner.runInTerminal  参数：</p>
+<p>开启则在vscode终端执行，windows下不需要输入参数的话，可以关闭；然后就会在输出界面输出结果。</p>
+<p>vscode输出界面每次运行时自动清屏后再输出，这样每次都能定位到最新的输出（最后一行）  ，配置参数：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/dc8c4348-2ccd-4c9a-9c9e-04d384b73855"><img src="https://github.com/user-attachments/assets/dc8c4348-2ccd-4c9a-9c9e-04d384b73855" alt="image" style="max-width: 100%;"></a></p>
 <h2>.editorconfig文件使用示例</h2>
 <p>使用示例：</p>
 <pre class="notranslate"><code class="notranslate"># http://editorconfig.org
@@ -126,27 +131,383 @@ trim_trailing_whitespace = false
 [Makefile]
 indent_style = tab
 </code></pre>
-<h2>settings.json文件使用示例</h2>
+<h2>settings.json - Windows</h2>
 <pre class="notranslate"><code class="notranslate">{
+    // 主题
+    "workbench.colorTheme": "GitHub Dark",
+
+    // 关于缩进 tab 空格
+    // 检测第一个tab后面就tab 设置为false禁止这种智能判断
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,    // 按 Tab 键时插入空格
+    "editor.renderControlCharacters": true, //制表符显示-&gt;
+    "editor.renderWhitespace": "selection", // 显示空格 tab 设置selection或者all
+
+    // 字体设置
+    "editor.fontFamily": "JetBrains Mono,HONOR Sans Cn,Consolas,monospace",
+    "terminal.integrated.fontFamily": "JetBrains Mono,monospace",
+    "terminal.integrated.fontWeight": "normal",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
+    "editor.fontLigatures": false,
+    "editor.fontVariations": false,
+    // 注释字体设置为斜体
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": "comment",
+            "settings": {
+            "fontStyle": "italic"
+        }}],
+    },
+
+    // 换行与换行竖线 设置80字符
+    "editor.rulers": [80],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+
+    // 文件编码与自动保存
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+
+    // 格式化相关
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+
+    // 右边小地图
+    "editor.minimap.enabled": true,
+
+    // 语言相关的配置
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.formatting": "clangFormat",
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.autopep8",
-        "editor.formatOnSave": true
+        "editor.formatOnType": true
     },
-    "code-runner.runInTerminal": false,
-    "python.pythonPath": "C:\\miniconda3\\python.exe",
+    "python.defaultInterpreterPath": "C:\\miniconda3\\python.exe",
+
+    // 插件配置 code-runner
     "code-runner.executorMap": {
-        "python": "set PYTHONIOENCODING=utf8 &amp; $pythonPath $fullFileName",
+        "c": "cd $dir &amp;&amp; gcc -std=c17 -g -Wall $fileName -o D:\\TMP\\BUILD\\$fileNameWithoutExt.exe &amp;&amp; D:\\TMP\\BUILD\\$fileNameWithoutExt.exe",
+        "cpp": "cd $dir &amp;&amp; g++ -std=c++17 -g -Wall $fileName -o D:\\TMP\\BUILD\\$fileNameWithoutExt.exe &amp;&amp; D:\\TMP\\BUILD\\$fileNameWithoutExt.exe"
     },
-    "editor.fontSize": 12,
-    "editor.fontFamily": "Hack,Fira Code,HONOR Sans Cn,Consolas,monospace",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "debug.terminal.clearBeforeReusing": true,
+
+    // 注释插件 doxygen 配置
+    "doxdocgen.file.copyrightTag": [
+      "@copyright Copyright (c) {year}"
+    ],
+    "doxdocgen.file.fileTemplate": "@file {name}",
+    "doxdocgen.file.versionTag": "@version 1.0",
+    "doxdocgen.generic.authorEmail": "yianny@163.com",
+    "doxdocgen.generic.authorName": "yianny",
+    "doxdocgen.generic.authorTag": "@author {author} ({email})",
+    "doxdocgen.generic.order": [
+        "brief",
+        "tparam",
+        "param",
+        "return"
+    ],
+    "doxdocgen.generic.paramTemplate": "@param {param}",
+    "doxdocgen.generic.returnTemplate": "@return {type}",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "brief",
+        "version",
+        "date",
+        "author",
+        "copyright",
+    ],
+
+    // 解决windows下 部分场景下的终端乱码
+    "terminal.integrated.profiles.windows": {
+        "PowerShell -NoProfile": {
+            "source": "PowerShell",
+            "args": ["-NoProfile",
+                "-NoExit",
+                "-Command",
+                "chcp 65001"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell -NoProfile",
+
+    // 当前行的高亮设置
+    // "workbench.colorCustomizations": {
+    //     "editor.lineHighlightBackground": "#00000000",
+    //     "editor.lineHighlightBorder": "#00000000"
+    // },
+
+    // 其他
+    "files.associations": {
+    },
+    "files.exclude": {
+        "**/*.exe": true,
+        "**/build": true,
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+    },
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+    },
+
+    "editor.accessibilitySupport": "off",
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "output.smartScroll.enabled": false,
+    "Codegeex.Comment.LanguagePreference": "中文",
+    "Codegeex.Chat.LanguagePreference": "中文",
+    "Codegeex.SidebarUI.LanguagePreference": "中文",
+    "Codegeex.Explanation.LanguagePreference": "zh-CN",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.startupPrompt": "never",
+    "Codegeex.Privacy": true,
+
 }
 </code></pre>
-<h2>重要参数配置</h2>
-<p>code-runner.runInTerminal  参数：</p>
-<p>开启则在vscode终端执行，windows下不需要输入参数的话，可以关闭；然后就会在输出界面输出结果。</p>
-<p>vscode输出界面每次运行时自动清屏后再输出，这样每次都能定位到最新的输出（最后一行）  ，配置参数：</p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/dc8c4348-2ccd-4c9a-9c9e-04d384b73855"><img src="https://github.com/user-attachments/assets/dc8c4348-2ccd-4c9a-9c9e-04d384b73855" alt="image" style="max-width: 100%;"></a></p></div>
+<h2>settings.json - Mac</h2>
+<pre class="notranslate"><code class="notranslate">{
+    "workbench.colorTheme": "GitHub Light",
+    // 关于缩进 tab 空格
+    // 检测第一个tab后面就tab 设置为false禁止这种智能判断
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true, // 按 Tab 键时插入空格
+    "editor.renderControlCharacters": true, //制表符显示-&gt;
+    "editor.renderWhitespace": "selection", // 显示空格 tab 设置selection或者all
+    // 字体设置
+    "editor.fontFamily": "Iosevka,JetBrains Mono,Menlo,HONOR Sans Cn,Consolas,monospace",
+    "terminal.integrated.fontFamily": "JetBrains Mono,monospace",
+    "terminal.integrated.fontWeight": "normal",
+    "editor.fontSize": 13.5,
+    "terminal.integrated.fontSize": 11,
+    "editor.fontLigatures": false,
+    "editor.fontVariations": false,
+    // 注释字体设置为斜体
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ],
+    },
+    // 换行与换行竖线 设置80字符
+    "editor.rulers": [
+        80
+    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    // 文件编码与自动保存
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    // 格式化相关
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+    // 右边小地图
+    "editor.minimap.enabled": true,
+    // 语言相关的配置
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.formatting": "clangFormat",
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.defaultInterpreterPath": "/usr/local/Caskroom/miniconda/base/bin/python",
+    "python.condaPath": "/usr/local/Caskroom/miniconda/base/bin/conda",
+    // 插件配置 code-runner
+    "code-runner.executorMap": {
+        "c": "cd $dir &amp;&amp; gcc -std=c17 -g -Wall $fileName -o ~/build/$fileNameWithoutExt_c &amp;&amp; ~/build/$fileNameWithoutExt_c",
+        "cpp": "cd $dir &amp;&amp; g++ -std=c++17 -g -Wall $fileName -o ~/build/$fileNameWithoutExt_cpp &amp;&amp; ~/build/$fileNameWithoutExt_cpp"
+    },
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "debug.terminal.clearBeforeReusing": true,
+    // 注释插件 doxygen 配置
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}"
+    ],
+    "doxdocgen.file.fileTemplate": "@file {name}",
+    "doxdocgen.file.versionTag": "@version 1.0",
+    "doxdocgen.generic.authorEmail": "yianny@163.com",
+    "doxdocgen.generic.authorName": "yianny",
+    "doxdocgen.generic.authorTag": "@author {author} ({email})",
+    "doxdocgen.generic.order": [
+        "brief",
+        "tparam",
+        "param",
+        "return"
+    ],
+    "doxdocgen.generic.paramTemplate": "@param {param}",
+    "doxdocgen.generic.returnTemplate": "@return {type}",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    "doxdocgen.file.fileOrder": [
+        "file",
+        "brief",
+        "version",
+        "date",
+        "author",
+        "copyright",
+    ],
+    // 解决windows下 部分场景下的终端乱码
+    "terminal.integrated.profiles.windows": {
+        "PowerShell -NoProfile": {
+            "source": "PowerShell",
+            "args": [
+                "-NoProfile",
+                "-NoExit",
+                "-Command",
+                "chcp 65001"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell -NoProfile",
+    // 当前行的高亮设置
+    // "workbench.colorCustomizations": {
+    //     "editor.lineHighlightBackground": "#00000000",
+    //     "editor.lineHighlightBorder": "#00000000"
+    // },
+    // 其他
+    "files.associations": {},
+    "files.exclude": {
+        "**/*.exe": true,
+        "**/build": true,
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+    },
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+    },
+    "editor.accessibilitySupport": "off",
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "output.smartScroll.enabled": false,
+    "Codegeex.Comment.LanguagePreference": "中文",
+    "Codegeex.Chat.LanguagePreference": "中文",
+    "Codegeex.SidebarUI.LanguagePreference": "中文",
+    "Codegeex.Explanation.LanguagePreference": "zh-CN",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.startupPrompt": "never",
+    "Codegeex.Privacy": true,
+}
+</code></pre>
+<h2>c_cpp_properties.json - Mac</h2>
+<pre class="notranslate"><code class="notranslate">{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/local/Cellar/gcc/14.1.0_2/lib/gcc/current/gcc/x86_64-apple-darwin21/14/include",
+                "/usr/local/Cellar/gcc/14.1.0_2/lib/gcc/current/gcc/x86_64-apple-darwin21/14/finclude",
+                "/usr/local/Cellar/gcc/14.1.0_2/lib/gcc/current/gcc/x86_64-apple-darwin21/14/include-fixed",
+                "/usr/local/Cellar/gcc/14.1.0_2/include/c++/14",
+                "/usr/local/Cellar/gcc/14.1.0_2/lib/gcc/current/gcc/x86_64-apple-darwin21/14",
+                "/usr/local/Cellar/gcc/14.1.0_2"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/local/Cellar/gcc/14.1.0_2/bin/gcc-14",
+            "intelliSenseMode": "macos-gcc-x64",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
+</code></pre>
+<h2>task.json - Windows</h2>
+<pre class="notranslate"><code class="notranslate">{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe 生成活动文件",
+      "command": "D:\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "调试器生成的任务。"
+    }
+  ],
+  "version": "2.0.0"
+}
+</code></pre>
+<h2>launch.json - Windows</h2>
+<pre class="notranslate"><code class="notranslate">{
+  "configurations": [
+    {
+      "name": "C/C++: g++.exe 生成和调试活动文件",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\Dev-Cpp\\MinGW64\\bin\\gdb.exe",
+      "setupCommands": [
+        {
+          "description": "为 gdb 启用整齐打印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "将反汇编风格设置为 Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+    }
+  ],
+  "version": "2.0.0"
+}
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
