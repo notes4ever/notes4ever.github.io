@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 26 Dec 2024 09:40:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>github代理stream++</title><link>https://notes4ever.github.io/post/181.html</link><description>官网：https://steampp.net/&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 27 Dec 2024 08:54:19 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>进程与文件句柄</title><link>https://notes4ever.github.io/post/182.html</link><description>## 进程与文件句柄的区别&#13;
+![image](https://github.com/user-attachments/assets/40ab4dbb-b3a6-4e48-a56d-240b2fe7012a)&#13;
+&#13;
+## 进程与文件句柄的关联&#13;
+![image](https://github.com/user-attachments/assets/2c23d93d-b9de-443c-82b5-7fdf0271ee07)&#13;
+&#13;
+## 进程的组成&#13;
+进程是操作系统进行资源分配和调度的基本单位，一个进程的完整组成通常包括以下几个部分：&#13;
+&#13;
+1. **进程控制块（Process Control Block, PCB）**：&#13;
+   - 这是操作系统用于跟踪和管理进程的数据结构，包含了进程的几乎所有状态信息，如进程ID、状态、优先级、调度信息、程序计数器、寄存器集合、堆栈指针、进程状态信息等。</description><guid isPermaLink="true">https://notes4ever.github.io/post/182.html</guid><pubDate>Fri, 27 Dec 2024 08:53:47 +0000</pubDate></item><item><title>github代理stream++</title><link>https://notes4ever.github.io/post/181.html</link><description>官网：https://steampp.net/&#13;
 &#13;
 下载：&#13;
 &#13;
