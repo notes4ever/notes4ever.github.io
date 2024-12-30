@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 30 Dec 2024 07:25:31 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>docker-compose常用操作记录</title><link>https://notes4ever.github.io/post/188.html</link><description>&gt; **以elasticsearch skywalking安装过程作为示例。</description><guid isPermaLink="true">https://notes4ever.github.io/post/188.html</guid><pubDate>Mon, 30 Dec 2024 07:24:59 +0000</pubDate></item><item><title>docker一些操作记录</title><link>https://notes4ever.github.io/post/187.html</link><description>参考：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 30 Dec 2024 09:58:38 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>网络相关学习笔记</title><link>https://notes4ever.github.io/post/189.html</link><description>&gt; **拉勾教育，网络相关的课程，笔记摘要**&#13;
+&#13;
+## Socket与IO多路复用、epoll、红黑树&#13;
+![image](https://github.com/user-attachments/assets/bd55a15f-4c28-4b73-adbc-12a20489449d)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/ef3372db-e50a-42a0-9372-3b3130e52af4)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/be598710-9fb9-4792-88b6-8bc56878d14d)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/0583367b-264a-42f0-8a0c-57f6b4c7273c)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/a6c13e90-6c3a-49a8-b206-29f015116dab)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/eea65443-253b-4dac-904c-efff31025bb7)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/fe3f807c-c35f-49d8-980d-b1074aaec14d)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/a7bcbea6-93cc-42d7-9cbf-841a284a2224)&#13;
+&#13;
+## 三层交互机的意义&#13;
+三层交换机是有路由功能的交换机。</description><guid isPermaLink="true">https://notes4ever.github.io/post/189.html</guid><pubDate>Mon, 30 Dec 2024 09:58:09 +0000</pubDate></item><item><title>docker-compose常用操作记录</title><link>https://notes4ever.github.io/post/188.html</link><description>&gt; **以elasticsearch skywalking安装过程作为示例。</description><guid isPermaLink="true">https://notes4ever.github.io/post/188.html</guid><pubDate>Mon, 30 Dec 2024 07:24:59 +0000</pubDate></item><item><title>docker一些操作记录</title><link>https://notes4ever.github.io/post/187.html</link><description>参考：&#13;
 - [Docker快速入门总结笔记](https://blog.csdn.net/huangjhai/article/details/118854733)&#13;
 &#13;
 记录一些相对常用的docker操作命令。</description><guid isPermaLink="true">https://notes4ever.github.io/post/187.html</guid><pubDate>Mon, 30 Dec 2024 07:04:18 +0000</pubDate></item><item><title>Dos模拟器dosbox</title><link>https://notes4ever.github.io/post/186.html</link><description>官网：https://www.dosbox.com/&#13;

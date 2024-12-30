@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="> **拉勾教育，网络相关的课程，笔记摘要**
+
+## Socket与IO多路复用、epoll、红黑树
+![image](https://github.com/user-attachments/assets/bd55a15f-4c28-4b73-adbc-12a20489449d)
+
+![image](https://github.com/user-attachments/assets/ef3372db-e50a-42a0-9372-3b3130e52af4)
+
+![image](https://github.com/user-attachments/assets/be598710-9fb9-4792-88b6-8bc56878d14d)
+
+![image](https://github.com/user-attachments/assets/0583367b-264a-42f0-8a0c-57f6b4c7273c)
+
+![image](https://github.com/user-attachments/assets/a6c13e90-6c3a-49a8-b206-29f015116dab)
+
+![image](https://github.com/user-attachments/assets/eea65443-253b-4dac-904c-efff31025bb7)
+
+![image](https://github.com/user-attachments/assets/fe3f807c-c35f-49d8-980d-b1074aaec14d)
+
+![image](https://github.com/user-attachments/assets/a7bcbea6-93cc-42d7-9cbf-841a284a2224)
+
+## 三层交互机的意义
+三层交换机是有路由功能的交换机。">
+<meta property="og:title" content="网络相关学习笔记">
+<meta property="og:description" content="> **拉勾教育，网络相关的课程，笔记摘要**
+
+## Socket与IO多路复用、epoll、红黑树
+![image](https://github.com/user-attachments/assets/bd55a15f-4c28-4b73-adbc-12a20489449d)
+
+![image](https://github.com/user-attachments/assets/ef3372db-e50a-42a0-9372-3b3130e52af4)
+
+![image](https://github.com/user-attachments/assets/be598710-9fb9-4792-88b6-8bc56878d14d)
+
+![image](https://github.com/user-attachments/assets/0583367b-264a-42f0-8a0c-57f6b4c7273c)
+
+![image](https://github.com/user-attachments/assets/a6c13e90-6c3a-49a8-b206-29f015116dab)
+
+![image](https://github.com/user-attachments/assets/eea65443-253b-4dac-904c-efff31025bb7)
+
+![image](https://github.com/user-attachments/assets/fe3f807c-c35f-49d8-980d-b1074aaec14d)
+
+![image](https://github.com/user-attachments/assets/a7bcbea6-93cc-42d7-9cbf-841a284a2224)
+
+## 三层交互机的意义
+三层交换机是有路由功能的交换机。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/189.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>网络相关学习笔记</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">网络相关学习笔记</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><blockquote>
+<p><strong>拉勾教育，网络相关的课程，笔记摘要</strong></p>
+</blockquote>
+<h2>Socket与IO多路复用、epoll、红黑树</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/bd55a15f-4c28-4b73-adbc-12a20489449d"><img src="https://github.com/user-attachments/assets/bd55a15f-4c28-4b73-adbc-12a20489449d" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/ef3372db-e50a-42a0-9372-3b3130e52af4"><img src="https://github.com/user-attachments/assets/ef3372db-e50a-42a0-9372-3b3130e52af4" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/be598710-9fb9-4792-88b6-8bc56878d14d"><img src="https://github.com/user-attachments/assets/be598710-9fb9-4792-88b6-8bc56878d14d" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0583367b-264a-42f0-8a0c-57f6b4c7273c"><img src="https://github.com/user-attachments/assets/0583367b-264a-42f0-8a0c-57f6b4c7273c" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a6c13e90-6c3a-49a8-b206-29f015116dab"><img src="https://github.com/user-attachments/assets/a6c13e90-6c3a-49a8-b206-29f015116dab" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/eea65443-253b-4dac-904c-efff31025bb7"><img src="https://github.com/user-attachments/assets/eea65443-253b-4dac-904c-efff31025bb7" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/fe3f807c-c35f-49d8-980d-b1074aaec14d"><img src="https://github.com/user-attachments/assets/fe3f807c-c35f-49d8-980d-b1074aaec14d" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a7bcbea6-93cc-42d7-9cbf-841a284a2224"><img src="https://github.com/user-attachments/assets/a7bcbea6-93cc-42d7-9cbf-841a284a2224" alt="image" style="max-width: 100%;"></a></p>
+<h2>三层交互机的意义</h2>
+<p>三层交换机是有路由功能的交换机。一般来说交换机是工作在二层的，所以这里强 调“三层”交换机，就是突出了它带有三层（路由）功能。</p>
+<h2>MTU与MSS的关系</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e4c5bbe5-bca2-48ce-8915-5482a10f0c23"><img src="https://github.com/user-attachments/assets/e4c5bbe5-bca2-48ce-8915-5482a10f0c23" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/16d2de3a-f3f5-4e2b-9676-3692cbdf8db1"><img src="https://github.com/user-attachments/assets/16d2de3a-f3f5-4e2b-9676-3692cbdf8db1" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/747d4739-49a3-480c-b46e-f9a18fcfb923"><img src="https://github.com/user-attachments/assets/747d4739-49a3-480c-b46e-f9a18fcfb923" alt="image" style="max-width: 100%;"></a></p>
+<h2>流和缓冲区</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/aa6ee475-98f6-4de8-8057-6533d8cf7331"><img src="https://github.com/user-attachments/assets/aa6ee475-98f6-4de8-8057-6533d8cf7331" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/691645f5-c737-482f-ac14-4344e7ef2e6a"><img src="https://github.com/user-attachments/assets/691645f5-c737-482f-ac14-4344e7ef2e6a" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/25f8d101-2d50-4172-b9eb-fb9433f1d1ac"><img src="https://github.com/user-attachments/assets/25f8d101-2d50-4172-b9eb-fb9433f1d1ac" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/af014686-46dd-4111-83ab-2fdfd4c39bde"><img src="https://github.com/user-attachments/assets/af014686-46dd-4111-83ab-2fdfd4c39bde" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9addedf6-ba72-4d82-a582-bb1b81665425"><img src="https://github.com/user-attachments/assets/9addedf6-ba72-4d82-a582-bb1b81665425" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/bd76c125-5df7-4c15-bf92-4e97d9bd4d97"><img src="https://github.com/user-attachments/assets/bd76c125-5df7-4c15-bf92-4e97d9bd4d97" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/5d348102-3fa2-4c2f-851f-dbc786a567b4"><img src="https://github.com/user-attachments/assets/5d348102-3fa2-4c2f-851f-dbc786a567b4" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b86e1d08-ddd0-474c-9cd2-c85d3292a364"><img src="https://github.com/user-attachments/assets/b86e1d08-ddd0-474c-9cd2-c85d3292a364" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/928f633e-3d90-4052-8a01-bff254957ac1"><img src="https://github.com/user-attachments/assets/928f633e-3d90-4052-8a01-bff254957ac1" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/4231f7d2-53e5-438c-a1f6-856ffd01fb13"><img src="https://github.com/user-attachments/assets/4231f7d2-53e5-438c-a1f6-856ffd01fb13" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/69d9f012-1137-481e-b0e3-6059135404b0"><img src="https://github.com/user-attachments/assets/69d9f012-1137-481e-b0e3-6059135404b0" alt="image" style="max-width: 100%;"></a></p>
+<h2>BIO、NIO、AIO</h2>
+<p>IO模型：BIO、NIO、AIO</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e23ea29f-6153-499c-b6ee-7ff844c39215"><img src="https://github.com/user-attachments/assets/e23ea29f-6153-499c-b6ee-7ff844c39215" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/aff8a73b-2b28-4c6e-9ee9-c082ac296b61"><img src="https://github.com/user-attachments/assets/aff8a73b-2b28-4c6e-9ee9-c082ac296b61" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3c158538-5397-40e6-9516-2beb2bdc5a5c"><img src="https://github.com/user-attachments/assets/3c158538-5397-40e6-9516-2beb2bdc5a5c" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/478fce66-9b21-4710-b1b9-46d01be8455c"><img src="https://github.com/user-attachments/assets/478fce66-9b21-4710-b1b9-46d01be8455c" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/62748766-3c7c-4cda-ba07-174984e421c4"><img src="https://github.com/user-attachments/assets/62748766-3c7c-4cda-ba07-174984e421c4" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/fbbd2742-f039-457a-8b86-6450e81ca153"><img src="https://github.com/user-attachments/assets/fbbd2742-f039-457a-8b86-6450e81ca153" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/270e1920-929e-4cea-a57e-3c5f4d17cb94"><img src="https://github.com/user-attachments/assets/270e1920-929e-4cea-a57e-3c5f4d17cb94" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/14488ab4-6e82-4aa6-a568-f90e1ed12776"><img src="https://github.com/user-attachments/assets/14488ab4-6e82-4aa6-a568-f90e1ed12776" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/fa0c2201-24b1-4d5d-9538-46558f5f29da"><img src="https://github.com/user-attachments/assets/fa0c2201-24b1-4d5d-9538-46558f5f29da" alt="image" style="max-width: 100%;"></a></p>
+<p>数据拷贝是cpu密集操作。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/c4fba6ba-6edf-4c65-ac2a-e9e636614d79"><img src="https://github.com/user-attachments/assets/c4fba6ba-6edf-4c65-ac2a-e9e636614d79" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6f444cae-05e5-4a5a-b42f-78a4a1e1d9a9"><img src="https://github.com/user-attachments/assets/6f444cae-05e5-4a5a-b42f-78a4a1e1d9a9" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f463bb81-a2d7-4631-883c-06d9cd334a26"><img src="https://github.com/user-attachments/assets/f463bb81-a2d7-4631-883c-06d9cd334a26" alt="image" style="max-width: 100%;"></a></p>
+<p>缓冲的意义，这几个图解释得很好。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0eabd014-5df5-44b4-bbed-2a0c88795204"><img src="https://github.com/user-attachments/assets/0eabd014-5df5-44b4-bbed-2a0c88795204" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/4457b3a8-14a4-4a51-addd-52e621c2760b"><img src="https://github.com/user-attachments/assets/4457b3a8-14a4-4a51-addd-52e621c2760b" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/378bec8a-66ba-489a-b422-9468489e0bbe"><img src="https://github.com/user-attachments/assets/378bec8a-66ba-489a-b422-9468489e0bbe" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/26930039-b755-4d48-af50-38d6be43f898"><img src="https://github.com/user-attachments/assets/26930039-b755-4d48-af50-38d6be43f898" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/ab0b81d3-2a90-4990-91b3-919fdc9a47ff"><img src="https://github.com/user-attachments/assets/ab0b81d3-2a90-4990-91b3-919fdc9a47ff" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/dbd64753-1b15-4e77-b14f-f738ac4a15f4"><img src="https://github.com/user-attachments/assets/dbd64753-1b15-4e77-b14f-f738ac4a15f4" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/aff9a421-2775-4efc-a40a-ebadc2b461e3"><img src="https://github.com/user-attachments/assets/aff9a421-2775-4efc-a40a-ebadc2b461e3" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f2673cad-76ff-4cba-95dd-0ffbf4858c6a"><img src="https://github.com/user-attachments/assets/f2673cad-76ff-4cba-95dd-0ffbf4858c6a" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/1bdd2413-5814-41d2-b7e5-c7959827fb3d"><img src="https://github.com/user-attachments/assets/1bdd2413-5814-41d2-b7e5-c7959827fb3d" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/95547f40-f2b9-4528-80e9-b2dc39acc47b"><img src="https://github.com/user-attachments/assets/95547f40-f2b9-4528-80e9-b2dc39acc47b" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e68aca32-4a39-4744-a26d-1e31873fce75"><img src="https://github.com/user-attachments/assets/e68aca32-4a39-4744-a26d-1e31873fce75" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0673db3a-195e-4d62-a8ac-814ee9432c1e"><img src="https://github.com/user-attachments/assets/0673db3a-195e-4d62-a8ac-814ee9432c1e" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/990797a5-dedd-4dde-a6be-f77b6d3baeb7"><img src="https://github.com/user-attachments/assets/990797a5-dedd-4dde-a6be-f77b6d3baeb7" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/81485261-fa7e-4d69-a704-1ed6625bd0ab"><img src="https://github.com/user-attachments/assets/81485261-fa7e-4d69-a704-1ed6625bd0ab" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9dba8728-7753-45af-b75d-0052b9b5f9a3"><img src="https://github.com/user-attachments/assets/9dba8728-7753-45af-b75d-0052b9b5f9a3" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3ca75193-6281-4d71-98fc-4c156fe064c8"><img src="https://github.com/user-attachments/assets/3ca75193-6281-4d71-98fc-4c156fe064c8" alt="image" style="max-width: 100%;"></a></p>
+<p>解耦，分而治之。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/bc361904-fc48-492d-9c69-4ceb19658d86"><img src="https://github.com/user-attachments/assets/bc361904-fc48-492d-9c69-4ceb19658d86" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/28b1986a-7504-43d0-a7b7-0d914c933dd0"><img src="https://github.com/user-attachments/assets/28b1986a-7504-43d0-a7b7-0d914c933dd0" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/14a22ca8-1ab6-4cbf-988d-276f670e3796"><img src="https://github.com/user-attachments/assets/14a22ca8-1ab6-4cbf-988d-276f670e3796" alt="image" style="max-width: 100%;"></a></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
