@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 30 Dec 2024 05:42:19 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>汇编与汇编编译器</title><link>https://notes4ever.github.io/post/185.html</link><description>## 开源汇编编译器&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Mon, 30 Dec 2024 05:49:07 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>Dos模拟器dosbox</title><link>https://notes4ever.github.io/post/186.html</link><description>官网：https://www.dosbox.com/&#13;
+&#13;
+官网下载太慢，百度网盘：https://zhuanlan.zhihu.com/p/690971183&#13;
+&#13;
+官方文档：https://www.dosbox.com/wiki&#13;
+&#13;
+Mac相关：&#13;
+- https://www.dosbox.com/wiki/DOSBox_and_Mac_OS_X&#13;
+- https://www.dosbox.com/wiki/Mac_OSX_Advanced&#13;
+&#13;
+使用教程参考：https://blog.csdn.net/YuzuruHanyu/article/details/80287419&#13;
+&#13;
+里面有github，下载masm.exe, link.exe, debug.exe, exe2bin.exe后，放到~/dos文件夹，然后挂载到dosbox就完成环境搭建了。</description><guid isPermaLink="true">https://notes4ever.github.io/post/186.html</guid><pubDate>Mon, 30 Dec 2024 05:48:45 +0000</pubDate></item><item><title>汇编与汇编编译器</title><link>https://notes4ever.github.io/post/185.html</link><description>## 开源汇编编译器&#13;
 NASM 与 YASM、FASM，这三个都是免费开源的汇编编译器，总体上都是采用的Intel的语法。</description><guid isPermaLink="true">https://notes4ever.github.io/post/185.html</guid><pubDate>Mon, 30 Dec 2024 05:41:47 +0000</pubDate></item><item><title>mint编译apue.3e源码</title><link>https://notes4ever.github.io/post/184.html</link><description>目的是要生成apue.h头文件和静态链接库libapue.a&#13;
 &#13;
 qpue.h是所有函数的声明以及宏定义，gcc在搜索头文件的时候默认会去搜索/usr/include/中的文件。</description><guid isPermaLink="true">https://notes4ever.github.io/post/184.html</guid><pubDate>Mon, 30 Dec 2024 05:12:31 +0000</pubDate></item><item><title>书单与课程</title><link>https://notes4ever.github.io/post/183.html</link><description>## 网络相关&#13;
