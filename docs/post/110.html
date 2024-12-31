@@ -110,7 +110,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>pathping/mtr：道路怎么走以及道路的路况如何（丢包率等）</li>
 </ul>
 <h3>traceroute与tracert</h3>
-<p>linux上traceroute 默认使用udp协议，<strong>很多网络设备不会对udp做出回应</strong>，可以加上**-I参数**（i大写，代表icmp），就有回应了，下面是加不加**-I参数**的区别：</p>
+<p>linux上traceroute 默认使用udp协议，<strong>很多网络设备不会对udp做出回应</strong>，可以加上<code class="notranslate">-I参数</code>（i大写，代表icmp），就有回应了，下面是加不加<code class="notranslate">-I参数</code>的区别：</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/69fa50d9-62f8-4703-9fa3-37eb3257356b"><img src="https://github.com/user-attachments/assets/69fa50d9-62f8-4703-9fa3-37eb3257356b" alt="image" style="max-width: 100%;"></a></p>
 <p>windows上对应的tracert默认使用icmp协议，所以tracert不用加参数就是icmp了。</p>
 <p>tracert的-dR参数：不解析主机名，使用『参考路由』。</p>
