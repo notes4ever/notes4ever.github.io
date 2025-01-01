@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 01 Jan 2025 07:45:18 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>wireshark使用笔记</title><link>https://notes4ever.github.io/post/191.html</link><description>&gt; **记录wireshark常用命令**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Wed, 01 Jan 2025 08:53:18 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>tcpdump使用笔记</title><link>https://notes4ever.github.io/post/192.html</link><description>&gt; **记录tcpdump常用命令**&#13;
+&#13;
+## tcpdump常用实践命令&#13;
+```&#13;
+tcpdump -D 确认要抓的网卡 知道顺序即可&#13;
+&#13;
+tcpdump -nni 3  src host 112.93.42.135 and dst port 443 -c 100&#13;
+&#13;
+tcpdump -nni 3  src host 112.93.42.135 or dst port 80 -C 100 -W 3 -w abc&#13;
+```&#13;
+&#13;
+-C 1表示1M 文件大小 -W 表示文件数量，超过以后会覆盖之前的，生成的结果是abc0 abc1 &#13;
+&#13;
+总体上还是推荐使用tshark。</description><guid isPermaLink="true">https://notes4ever.github.io/post/192.html</guid><pubDate>Wed, 01 Jan 2025 08:52:54 +0000</pubDate></item><item><title>wireshark使用笔记</title><link>https://notes4ever.github.io/post/191.html</link><description>&gt; **记录wireshark常用命令**&#13;
 &#13;
 ## wireshark配置用户组&#13;
 tcpdump需要使用root，tshark可也需要root，普通用户会报错。</description><guid isPermaLink="true">https://notes4ever.github.io/post/191.html</guid><pubDate>Wed, 01 Jan 2025 07:44:53 +0000</pubDate></item><item><title>性能优化-网络性能</title><link>https://notes4ever.github.io/post/190.html</link><description>&gt; **极客时间《Linux性能优化实战》倪朋飞  学习笔记**&#13;
