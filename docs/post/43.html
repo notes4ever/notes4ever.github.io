@@ -17,7 +17,7 @@ https://docs.anaconda.com/miniconda/
 
 https://zhuanlan.zhihu.com/p/685496400
 
-主要命令：
+## 主要安装命令
 
 ```
 mkdir -p ~/miniconda3
@@ -28,7 +28,49 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
 ```
-。">
+
+## conda使用示例
+```
+清除缓存：
+conda clean --index-cache
+
+更新conda本身：
+conda update -n base -c defaults conda
+conda update conda
+
+使用示例：
+conda create -n py310 python=3.10
+conda activate py310
+conda deactivate
+
+移除环境 如果没有'--all',会出现移除不干净的情况:
+conda remove -n 'envName' --all 
+
+查看所有环境：
+conda info -e
+conda info --envs
+
+查看当前环境已安装的包列表：
+conda list
+
+查看conda、环境相关信息:
+conda info
+```
+
+## conda中使用jupyterlab
+官网：https://jupyter.org/install 
+
+安装:
+```
+pip install jupyterlab
+```
+
+启动：
+```
+jupyter lab
+```
+
+参考：https://www.jianshu.com/p/c0275f9113e3。">
 <meta property="og:title" content="miniconda安装">
 <meta property="og:description" content="![image](https://github.com/user-attachments/assets/1ce7a9f2-1914-4235-8aaa-bd83f587a67e)
 
@@ -40,7 +82,7 @@ https://docs.anaconda.com/miniconda/
 
 https://zhuanlan.zhihu.com/p/685496400
 
-主要命令：
+## 主要安装命令
 
 ```
 mkdir -p ~/miniconda3
@@ -51,7 +93,49 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
 ```
-。">
+
+## conda使用示例
+```
+清除缓存：
+conda clean --index-cache
+
+更新conda本身：
+conda update -n base -c defaults conda
+conda update conda
+
+使用示例：
+conda create -n py310 python=3.10
+conda activate py310
+conda deactivate
+
+移除环境 如果没有'--all',会出现移除不干净的情况:
+conda remove -n 'envName' --all 
+
+查看所有环境：
+conda info -e
+conda info --envs
+
+查看当前环境已安装的包列表：
+conda list
+
+查看conda、环境相关信息:
+conda info
+```
+
+## conda中使用jupyterlab
+官网：https://jupyter.org/install 
+
+安装:
+```
+pip install jupyterlab
+```
+
+启动：
+```
+jupyter lab
+```
+
+参考：https://www.jianshu.com/p/c0275f9113e3。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://notes4ever.github.io/post/43.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
@@ -121,7 +205,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><a href="https://docs.anaconda.com/miniconda/" rel="nofollow">https://docs.anaconda.com/miniconda/</a></p>
 <p>参考教程：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/685496400" rel="nofollow">https://zhuanlan.zhihu.com/p/685496400</a></p>
-<p>主要命令：</p>
+<h2>主要安装命令</h2>
 <pre class="notranslate"><code class="notranslate">mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
@@ -129,7 +213,42 @@ rm -rf ~/miniconda3/miniconda.sh
 
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
-</code></pre></div>
+</code></pre>
+<h2>conda使用示例</h2>
+<pre class="notranslate"><code class="notranslate">清除缓存：
+conda clean --index-cache
+
+更新conda本身：
+conda update -n base -c defaults conda
+conda update conda
+
+使用示例：
+conda create -n py310 python=3.10
+conda activate py310
+conda deactivate
+
+移除环境 如果没有"--all",会出现移除不干净的情况:
+conda remove -n "envName" --all 
+
+查看所有环境：
+conda info -e
+conda info --envs
+
+查看当前环境已安装的包列表：
+conda list
+
+查看conda、环境相关信息:
+conda info
+</code></pre>
+<h2>conda中使用jupyterlab</h2>
+<p>官网：<a href="https://jupyter.org/install" rel="nofollow">https://jupyter.org/install</a></p>
+<p>安装:</p>
+<pre class="notranslate"><code class="notranslate">pip install jupyterlab
+</code></pre>
+<p>启动：</p>
+<pre class="notranslate"><code class="notranslate">jupyter lab
+</code></pre>
+<p>参考：<a href="https://www.jianshu.com/p/c0275f9113e3" rel="nofollow">https://www.jianshu.com/p/c0275f9113e3</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
