@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 09:06:30 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>transformer笔记</title><link>https://notes4ever.github.io/post/199.html</link><description>huggingface 学习记录：&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 09:27:32 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《UNIX环境高级编程》</title><link>https://notes4ever.github.io/post/200.html</link><description>&gt; **读书笔记**&#13;
+&#13;
+**UNIX操作系统的体系结构：**&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/5a19c56e-89f4-4ab5-91d2-877ddf1a235d)&#13;
+&#13;
+从广义上说，**操作系统包括了内核和一些其他软件**，这些软件使得计算机能够发挥作用，并使计算机具有自己的特性。</description><guid isPermaLink="true">https://notes4ever.github.io/post/200.html</guid><pubDate>Thu, 02 Jan 2025 09:27:01 +0000</pubDate></item><item><title>transformer笔记</title><link>https://notes4ever.github.io/post/199.html</link><description>huggingface 学习记录：&#13;
 &#13;
 - https://huggingface.co/&#13;
 - https://huggingface.co/chat/&#13;
