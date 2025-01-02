@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 08:29:30 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>让函数返回NamedTuple</title><link>https://notes4ever.github.io/post/195.html</link><description>对于这种未来可能会变动的多返回值函数来说，如果一开始就使用 NamedTuple 类型对返回结果进行建模，兼容性会好不少。</description><guid isPermaLink="true">https://notes4ever.github.io/post/195.html</guid><pubDate>Thu, 02 Jan 2025 08:29:09 +0000</pubDate></item><item><title>与None比较时使用is运算符</title><link>https://notes4ever.github.io/post/194.html</link><description>== 的行为可被魔法方法改变，那我们如何严格检查某个对象是否为 None 呢？答案是使用 is 运算符。</description><guid isPermaLink="true">https://notes4ever.github.io/post/194.html</guid><pubDate>Thu, 02 Jan 2025 08:25:58 +0000</pubDate></item><item><title>重要网址收藏</title><link>https://notes4ever.github.io/post/193.html</link><description>&gt; **重要的github repo等**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 08:33:24 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>别在遍历列表时修改</title><link>https://notes4ever.github.io/post/196.html</link><description>许多人在初学 Python 时会写出类似下面的代码——遍历列表的同时根据某些条件修改它：&#13;
+```&#13;
+def remove_even(numbers):&#13;
+    '''去掉列表里所有的偶数'''&#13;
+    for number in numbers:&#13;
+        if number % 2 == 0:&#13;
+            # 有问题的代码&#13;
+             numbers.remove(number)&#13;
+&#13;
+numbers = [1, 2, 7, 4, 8, 11]&#13;
+remove_even(numbers)&#13;
+print(numbers)&#13;
+```&#13;
+&#13;
+运行上述代码会输出下面的结果：&#13;
+```&#13;
+[1, 7, 8, 11]&#13;
+```&#13;
+&#13;
+注意到那个本不该出现的数字 8 了吗？遍历列表的同时修改列表就会发生这样的怪事。</description><guid isPermaLink="true">https://notes4ever.github.io/post/196.html</guid><pubDate>Thu, 02 Jan 2025 08:33:00 +0000</pubDate></item><item><title>让函数返回NamedTuple</title><link>https://notes4ever.github.io/post/195.html</link><description>对于这种未来可能会变动的多返回值函数来说，如果一开始就使用 NamedTuple 类型对返回结果进行建模，兼容性会好不少。</description><guid isPermaLink="true">https://notes4ever.github.io/post/195.html</guid><pubDate>Thu, 02 Jan 2025 08:29:09 +0000</pubDate></item><item><title>与None比较时使用is运算符</title><link>https://notes4ever.github.io/post/194.html</link><description>== 的行为可被魔法方法改变，那我们如何严格检查某个对象是否为 None 呢？答案是使用 is 运算符。</description><guid isPermaLink="true">https://notes4ever.github.io/post/194.html</guid><pubDate>Thu, 02 Jan 2025 08:25:58 +0000</pubDate></item><item><title>重要网址收藏</title><link>https://notes4ever.github.io/post/193.html</link><description>&gt; **重要的github repo等**&#13;
 &#13;
 ## app、软件、工具&#13;
 - Linux软件集合&#13;
