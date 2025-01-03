@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Thu, 02 Jan 2025 09:28:12 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《UNIX环境高级编程》</title><link>https://notes4ever.github.io/post/200.html</link><description>&gt; **apue3e 读书笔记**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 00:09:52 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《图解TCP/IP》</title><link>https://notes4ever.github.io/post/201.html</link><description>&gt; **读书笔记**&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/821d2d2a-5db3-4c32-a15a-13cc353ed717)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/9ee728fc-2c24-45ce-a0c3-019cd85506b4)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/3eba23d3-f516-477f-a82a-47de0f29ba9c)&#13;
+&#13;
+浏览器与服务端之间通信所用的协议是HTTP（HyperText Transfer Protocol）。</description><guid isPermaLink="true">https://notes4ever.github.io/post/201.html</guid><pubDate>Fri, 03 Jan 2025 00:09:26 +0000</pubDate></item><item><title>《UNIX环境高级编程》</title><link>https://notes4ever.github.io/post/200.html</link><description>&gt; **apue3e 读书笔记**&#13;
 &#13;
 **UNIX操作系统的体系结构：**&#13;
 &#13;
