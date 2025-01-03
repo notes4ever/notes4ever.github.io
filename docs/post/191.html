@@ -373,7 +373,26 @@ Transfer/sec:     10.04MB
 <p>果然，现在延迟已经缩短成了 9ms，跟我们测试的官方 Nginx 镜像是一样的（Nginx 默认就是开启 tcp_nodelay 的） 。</p>
 <p>作为对比，我们用 tcpdump ，抓取优化后的网络包（这儿实际上抓取的是官方 Nginx 监听的 80 端口）。你可以得到下面的结果：</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b7c72b8e-4ff1-4d81-ba0d-e4d63af120c4"><img src="https://github.com/user-attachments/assets/b7c72b8e-4ff1-4d81-ba0d-e4d63af120c4" alt="image" style="max-width: 100%;"></a></p>
-<p>从图中你可以发现，由于 Nginx 不用再等 ACK，536 和 540 两个分组是连续发送的；而客户端呢，虽然仍开启了延迟确认，但这时收到了两个需要回复 ACK 的包，所以也不用等 40ms，可以直接合并回复 ACK。</p></div>
+<p>从图中你可以发现，由于 Nginx 不用再等 ACK，536 和 540 两个分组是连续发送的；而客户端呢，虽然仍开启了延迟确认，但这时收到了两个需要回复 ACK 的包，所以也不用等 40ms，可以直接合并回复 ACK。</p>
+<h2>其他笔记 wireshark 基本用法</h2>
+<p>Wireshark 既可以分析抓包文件，也可以直接用来抓包，起到跟 tcpdump 类似的作用。 而且比 tcpdump 方便的是，如果直接用 Wireshark 发起抓包，窗口里就直接显示抓取到 的报文了，这省去了 tcpdump 抓包后，再用 Wireshark 打开的小小的麻烦。</p>
+<p>怎么知道抓包文件是在哪一端抓取的？</p>
+<p>这是一个有趣的问题。尽管我们做抓包的时候很清楚是在哪端做了抓包，但是把文件传给 别人后，对方就未必知道这一点，甚至我们自己过段时间也迷糊了：我上次这个抓包文件 到底是在客户端上，还是服务端上抓取的？</p>
+<p>要搞清楚这一点也很简单，我们可以利用 IP 的 TTL 属性。显然，无论是哪一端，它的报 文在发出时，其 TTL 就是原始值，也就是 64、128、255 中的某一个。而对端报文的 TTL，因为会经过若干个网络跳数，所以一般都会比 64、128、255 这几个数值要小一 些。</p>
+<p>所以，我们只要看一下抓包文件中任何一个客户端报文（也就是源端口为高端口）的 TTL，如果它是 64、128 或 255，那说明这个抓包文件就是在客户端做的。反之，就是在服务端做的。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a51ee655-3f9d-4f03-a6b6-cf84a8ad409f"><img src="https://github.com/user-attachments/assets/a51ee655-3f9d-4f03-a6b6-cf84a8ad409f" alt="image" style="max-width: 100%;"></a></p>
+<p>如何定位到应用层的请求和返回的报文？</p>
+<p>在众多报文中找到应用层请求和对应的响应报文，这个任务用人工去做的话是很繁琐的。 还好，用 Wireshark 就很方便。在 Wireshark 界面中，我们很容易找到请求和返回的报 文。比如这样：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/8c5c06d3-da74-4de4-a2c2-b10cb1a38540"><img src="https://github.com/user-attachments/assets/8c5c06d3-da74-4de4-a2c2-b10cb1a38540" alt="image" style="max-width: 100%;"></a></p>
+<p>我们只要选中请求报文，Wireshark 就会自动帮我们匹配到对应的响应报文，反过来也一 样。从图上看，应用层请求（这里是 HTTP 请求）是一个向右的箭头，表示数据是进来的 方向；应用层响应是一个向左的箭头，表示数据是出去的方向。</p>
+<p>只截到报文的一部分，这个问题有什么影响吗？</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/efe713d5-b6a1-4895-9f26-b3c9a166e0f2"><img src="https://github.com/user-attachments/assets/efe713d5-b6a1-4895-9f26-b3c9a166e0f2" alt="image" style="max-width: 100%;"></a></p>
+<p>实际上，这不是什么大的问题，并不影响整体的抓包分析。造成这个报错的原因是，当时 tcpdump 程序并不是用 Ctrl+C 等正常方式终止的，而是可能用了操作系统的 SIGKILL 信 号，比如用了 kill -9 命令。这样的话，tcpdump 就被强行终止了，导致一部分被抓取的报文还在内存中，还没来得及由 tcpdump 程序正常写入到 pcap 文件里。</p>
+<p>要避免这个报错，我们可以在停止 tcpdump 时，用正常退出的方式，比如 Ctrl+C，或者 timeout 命令，或者 kill 但不要用 -9 作为参数。</p>
+<p>乱序一定会引起问题吗？</p>
+<p>乱序（Out-of-Order），也是我们时常能在 Wireshark 里看到的一类现象。那么，乱序一 定会引起问题吗？有一句话叫“脱离了剂量谈毒性就是耍流氓”。其实，乱序是否是问 题，也取决于乱序的严重程度。</p>
+<p>那第二个问题随之就来了：乱序包达到什么程度，就会真的引起问题？</p>
+<p>这个问题，跟实际场景的具体情况也有很大的关系，不同的操作系统以及 TCP 实现细节， 都可能有挺大的差异。不过，我还是想正面回答一下这个问题。我的经验是，如果乱序报文达到 10% 以上，就是严重的传输质量问题了，甚至可能导致传输失败，或者应用层的各种卡顿、报错等症状。所以，你可以统计一下乱序包的占比，如果它超过了 10%，就要重视了。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
