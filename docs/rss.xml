@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 00:30:48 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《趣谈Linux》</title><link>https://notes4ever.github.io/post/204.html</link><description>&gt; **课程学习笔记**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 00:51:10 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《x86汇编语言》</title><link>https://notes4ever.github.io/post/205.html</link><description>副标题：从实模式到保护模式&#13;
+&#13;
+作者： 李忠 王晓波 余洁&#13;
+&#13;
+第一版：2012&#13;
+&#13;
+第二版：2022&#13;
+&#13;
+作者也写过《穿越计算机的迷雾》，计算机原理的基础。</description><guid isPermaLink="true">https://notes4ever.github.io/post/205.html</guid><pubDate>Fri, 03 Jan 2025 00:50:30 +0000</pubDate></item><item><title>《趣谈Linux》</title><link>https://notes4ever.github.io/post/204.html</link><description>&gt; **课程学习笔记**&#13;
 &#13;
 ## 第一部分 Linux操作系统综述&#13;
 ![image](https://github.com/user-attachments/assets/2442f616-64fd-47ce-9610-4871806ea7fa)&#13;
