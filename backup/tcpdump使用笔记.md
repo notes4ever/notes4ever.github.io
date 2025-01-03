@@ -212,3 +212,8 @@ sudo apt install tcptree
 
 ![image](https://github.com/user-attachments/assets/89200138-e1b0-47ae-a17b-a367571c66a8)
 
+## tcpdump和iptables的路径制约
+tcpdump和iptables的关系，总结下来有如下2点。
+
+- tcpdump可以抓取到被iptables在INPUT链上DROP掉的数据包。
+- tcpdump不能抓取到被iptables在OUTPUT链上DROP掉的数据包。

@@ -228,7 +228,13 @@ sudo tcpdump –i eth0 –w packets.pcap -c20
 <p>报文都是按时间线原样展示的，缺乏逻辑关系，是不是难以组织起有效的分析？比如，要搞清楚里面有几条 TCP 连接都不太容易。这时候怎么办呢？</p>
 <p>其实，还有一个工具能帮上忙，它就是 tcptrace。它不能用来抓包，但是可以用来分析。 知道这个工具的人不算很多，但其实 tcptrace 是一个挺“古老”的工具了。在 Wireshark 工具集（Wireshark 图形界面和 tshark 等命令行工具）还没一统江湖的时候，tcptrace 也 有其独到的价值，因为它不仅可以读取 pcap 格式的抓包文件，也可以读取 snoop 等其他 格式的抓包文件。</p>
 <p>比如下面这样，tcptrace 告诉我们，这个抓包文件里有 2 个 TCP 连接，并且是以 RST 结束的：</p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/89200138-e1b0-47ae-a17b-a367571c66a8"><img src="https://github.com/user-attachments/assets/89200138-e1b0-47ae-a17b-a367571c66a8" alt="image" style="max-width: 100%;"></a></p></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/89200138-e1b0-47ae-a17b-a367571c66a8"><img src="https://github.com/user-attachments/assets/89200138-e1b0-47ae-a17b-a367571c66a8" alt="image" style="max-width: 100%;"></a></p>
+<h2>tcpdump和iptables的路径制约</h2>
+<p>tcpdump和iptables的关系，总结下来有如下2点。</p>
+<ul>
+<li>tcpdump可以抓取到被iptables在INPUT链上DROP掉的数据包。</li>
+<li>tcpdump不能抓取到被iptables在OUTPUT链上DROP掉的数据包。</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
