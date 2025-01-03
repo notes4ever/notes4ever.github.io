@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 00:25:13 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《趣谈网络协议》</title><link>https://notes4ever.github.io/post/203.html</link><description>&gt; **课程学习笔记**&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>notes4ever</title><link>https://notes4ever.github.io</link><description>Anyone who keeps learning stays young.</description><copyright>notes4ever</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/186999790</url><title>avatar</title><link>https://notes4ever.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 00:30:48 +0000</lastBuildDate><managingEditor>notes4ever</managingEditor><ttl>60</ttl><webMaster>notes4ever</webMaster><item><title>《趣谈Linux》</title><link>https://notes4ever.github.io/post/204.html</link><description>&gt; **课程学习笔记**&#13;
+&#13;
+## 第一部分 Linux操作系统综述&#13;
+![image](https://github.com/user-attachments/assets/2442f616-64fd-47ce-9610-4871806ea7fa)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/cd2f18d5-ae78-47b5-8dc2-2384fc7699b3)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/a2b4e550-1117-4997-a3f7-759418a75467)&#13;
+&#13;
+## 第二部分 系统初始化&#13;
+![image](https://github.com/user-attachments/assets/e0b213e9-8d1b-4122-b0df-15ead5d3fef2)&#13;
+&#13;
+![image](https://github.com/user-attachments/assets/5476dc23-51eb-4f1a-8fb2-fe88c14e4566)&#13;
+。</description><guid isPermaLink="true">https://notes4ever.github.io/post/204.html</guid><pubDate>Fri, 03 Jan 2025 00:30:19 +0000</pubDate></item><item><title>《趣谈网络协议》</title><link>https://notes4ever.github.io/post/203.html</link><description>&gt; **课程学习笔记**&#13;
 &#13;
 MTU1500 是指什么意思呢？是哪一层的概念呢？最大传输单元 MTU 为 1500，这是以太网的默认值。</description><guid isPermaLink="true">https://notes4ever.github.io/post/203.html</guid><pubDate>Fri, 03 Jan 2025 00:24:41 +0000</pubDate></item><item><title>《TCP/IP详解卷一》</title><link>https://notes4ever.github.io/post/202.html</link><description>&gt; **读书笔记**&#13;
 &#13;
