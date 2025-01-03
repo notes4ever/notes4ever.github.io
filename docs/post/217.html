@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content=">  读书笔记，其中穿插一些《程序员的自我修养》的摘抄，哈工大本书课程的讲义。">
+<meta property="og:title" content="《深入理解计算机系统》">
+<meta property="og:description" content=">  读书笔记，其中穿插一些《程序员的自我修养》的摘抄，哈工大本书课程的讲义。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/217.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>《深入理解计算机系统》</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">《深入理解计算机系统》</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><blockquote>
+<p>读书笔记，其中穿插一些《程序员的自我修养》的摘抄，哈工大本书课程的讲义。</p>
+</blockquote>
+<p>视频讲解：</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1hf4y1P7qW/" rel="nofollow">Dr.Dng陪跑CSAPP: bigONE《深入理解计算机系统》</a></li>
+<li><a href="https://www.bilibili.com/video/BV1RK4y1R7Kf/" rel="nofollow">深入理解计算机系统 - CSAPP重点导读</a></li>
+<li><a href="https://www.bilibili.com/video/BV1a54y1k7YE/" rel="nofollow">深入理解计算机系统 - 原书作者授课视频</a></li>
+</ul>
+<h2>第1章 计算机系统漫游</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/079e2303-f0d7-4e95-9cfa-8afd6d0f13a0"><img src="https://github.com/user-attachments/assets/079e2303-f0d7-4e95-9cfa-8afd6d0f13a0" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/45d0a8eb-b814-4a6d-8d95-ee90a84b36a4"><img src="https://github.com/user-attachments/assets/45d0a8eb-b814-4a6d-8d95-ee90a84b36a4" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/58d4945a-545d-4be6-857a-cd3dc0990f5f"><img src="https://github.com/user-attachments/assets/58d4945a-545d-4be6-857a-cd3dc0990f5f" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3873f4ac-e498-4591-8daa-2d557a740274"><img src="https://github.com/user-attachments/assets/3873f4ac-e498-4591-8daa-2d557a740274" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0c8197b1-0ecf-4e6b-a1d1-38d22972613b"><img src="https://github.com/user-attachments/assets/0c8197b1-0ecf-4e6b-a1d1-38d22972613b" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/203b8bb8-173b-4280-a2ae-9982f5f05b33"><img src="https://github.com/user-attachments/assets/203b8bb8-173b-4280-a2ae-9982f5f05b33" alt="image" style="max-width: 100%;"></a></p>
+<h2>第2章 信息的表示和处理</h2>
+<p>整数的表示虽然只能编码一个相对较小的数值范围，但这种表示是精确的；</p>
+<p>浮点数可以编码一个较大的范围，但这种表示只是近似的。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/24ec091a-15ed-407f-ba02-f1b336afcc4b"><img src="https://github.com/user-attachments/assets/24ec091a-15ed-407f-ba02-f1b336afcc4b" alt="image" style="max-width: 100%;"></a></p>
+<p>32位程序和64位程序，区别在于程序是如何编译的，而不是其运行的机器类型。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/1c105389-7e59-490a-a58e-ef6cf0b9d6ca"><img src="https://github.com/user-attachments/assets/1c105389-7e59-490a-a58e-ef6cf0b9d6ca" alt="image" style="max-width: 100%;"></a></p>
+<p>指针大小，32位编译下是4字节，64位编译是8字节。long的大小也不一样，其他基本一样。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/d1aa57dc-7be7-4cee-aa8f-b2dede05cbea"><img src="https://github.com/user-attachments/assets/d1aa57dc-7be7-4cee-aa8f-b2dede05cbea" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/34d60b32-9905-4cc0-80bb-daf8e2fad140"><img src="https://github.com/user-attachments/assets/34d60b32-9905-4cc0-80bb-daf8e2fad140" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/c83dac3a-1dd9-415e-a491-ad37da5e0156"><img src="https://github.com/user-attachments/assets/c83dac3a-1dd9-415e-a491-ad37da5e0156" alt="image" style="max-width: 100%;"></a></p>
+<p>关于大端与小端，总结，<strong>目前基本所有移动设备和pc都是小端</strong>。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/1844e524-6172-4eea-b17f-d66a6715ec27"><img src="https://github.com/user-attachments/assets/1844e524-6172-4eea-b17f-d66a6715ec27" alt="image" style="max-width: 100%;"></a></p>
+<p>关于反码与补码：</p>
+<ul>
+<li>反码：对于正数，其反码与原码相同；对于负数，其反码是将原码除符号位外的所有位取反。例如，十进制数-1的原码是10000001，其反码是1111111036。</li>
+<li>补码：正数的补码与其原码相同；负数的补码是其反码加1。</li>
+<li>计算机内部通常使用补码来存储和处理数字，因为这样可以避免使用专门的减法电路，简化了硬件设计</li>
+<li>补码的一个重要特性是它允许表示一个额外的负数。例如，在8位二进制中，使用原码或反码可以表示的范围是-127到+127，而使用补码可以表示的范围是-128到+127。</li>
+<li>补码也解决了正零和负零的问题。在补码表示中，只有一个零的表示方式，即所有位都是0。</li>
+</ul>
+<p>高德纳在《计算机程序设计的艺术》指出，虽然早在1946年就有人将二分查找的方法公诸于世，但直到1962年才有人写出没有bug的二分查找程序。</p>
+<h2>第7章 链接</h2>
+<p>参考哈工大讲义：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/221bec80-2120-4526-9b98-4a420092cf5e"><img src="https://github.com/user-attachments/assets/221bec80-2120-4526-9b98-4a420092cf5e" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/76c31ca9-ea4f-4157-aa3e-e57822fbd0e5"><img src="https://github.com/user-attachments/assets/76c31ca9-ea4f-4157-aa3e-e57822fbd0e5" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/04faee43-ec02-49e1-bce5-9680f6c14862"><img src="https://github.com/user-attachments/assets/04faee43-ec02-49e1-bce5-9680f6c14862" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/95fe0639-5519-4fb1-9006-c4ca4eea2c33"><img src="https://github.com/user-attachments/assets/95fe0639-5519-4fb1-9006-c4ca4eea2c33" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/392b4c77-2c67-4baf-98d6-8efd727cca51"><img src="https://github.com/user-attachments/assets/392b4c77-2c67-4baf-98d6-8efd727cca51" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/391980d6-7579-4b1b-a152-7ac99bb415b1"><img src="https://github.com/user-attachments/assets/391980d6-7579-4b1b-a152-7ac99bb415b1" alt="image" style="max-width: 100%;"></a></p>
+<h2>第9章 虚拟内存</h2>
+<p>参考哈工大讲义：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0c351396-cc04-4b4c-871b-31b6dcc9fd04"><img src="https://github.com/user-attachments/assets/0c351396-cc04-4b4c-871b-31b6dcc9fd04" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/cb8be84e-5abf-4e64-8b01-8de583a573f1"><img src="https://github.com/user-attachments/assets/cb8be84e-5abf-4e64-8b01-8de583a573f1" alt="image" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/5686441f-0f94-4b95-87ee-f1dc5c2acb10"><img src="https://github.com/user-attachments/assets/5686441f-0f94-4b95-87ee-f1dc5c2acb10" alt="image" style="max-width: 100%;"></a></p>
+<p>程序员的自我休养：链接、装载与库</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/4aa8860d-7007-4117-866c-5027d4b33086"><img src="https://github.com/user-attachments/assets/4aa8860d-7007-4117-866c-5027d4b33086" alt="image" style="max-width: 100%;"></a></p>
+<p>Q：我在有些书里看到说堆总是向上增长，是这样的吗？</p>
+<p>A：不是，有些较老的书籍针对当时的系统曾做出过这样的断言，这在当时可能是正确的。因为当时的系统多是类unix系统，它们使用类似于brk的方法来分配堆空间，而brk的增长方向是向上的。但随着Windows的出现，这个规律被打破了。在Windows里，大部分堆使用HeapCreate产生，而HeapCreate系列函数却完全不遵照向上增长这个规律。</p>
+<p>Q：调用malloc会不会最后调用到系统调用或者API？</p>
+<p>A：这个取决于当前进程向操作系统批发的那些空间还够不够用，如果够用了，那么它可以直接在仓库里取出来卖给用户；如果不够用了，它就只能通过系统调用或者API向操作系统再进一批货了。</p>
+<p>Q：malloc申请的内存，进程结束以后还会不会存在？</p>
+<p>A：这是一个很常见的问题，答案是很明确的：不会存在。因为当进程结束以后，所有与进程相关的资源，包括进程的地址空间、物理内存、打开的文件、网络链接等都被操作系统关闭或者收回，所以无论malloc申请了多少内存，进程结束以后都不存在了。</p>
+<p>Q：malloc申请的空间是不是连续的？</p>
+<p>A：在分析这个问题之前，我们首先要分清楚“空间”这个词所指的意思。如果“空间”是指虚拟空间的话，那么答案是连续的，即每一次malloc分配后返回的空间都可以看做是一块连续的地址；如果空间是指“物理空间”的话，则答案是不一定连续，因为一块连续的虚拟地址空间有可能是若干个不连续的物理页拼凑而成的。</p>
+<p>以上是《程序员的自我修养》第10章，内存部分摘抄。</p>
+<h2>第11章 网络编程</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3b3161ea-327e-4e5f-9597-f7ab11be00fa"><img src="https://github.com/user-attachments/assets/3b3161ea-327e-4e5f-9597-f7ab11be00fa" alt="image" style="max-width: 100%;"></a></p>
+<h2>第12章 并发编程</h2>
+<p>线程的数据共享</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/b7ca4ecf-f0b9-4849-b1fd-4b1bbff002c8"><img src="https://github.com/user-attachments/assets/b7ca4ecf-f0b9-4849-b1fd-4b1bbff002c8" alt="image" style="max-width: 100%;"></a></p>
+<p>线程的并发与状态</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/cbb5dc43-deb8-44cd-8a19-08d6ea3c8a28"><img src="https://github.com/user-attachments/assets/cbb5dc43-deb8-44cd-8a19-08d6ea3c8a28" alt="image" style="max-width: 100%;"></a></p>
+<p>io与cpu密集型的优先级</p>
+<p>频繁等待的线程通常只占用很少的时间，CPU也喜欢先捏软柿子。我们一般把频繁等待的线程称之为IO密集型线程（IO Bound Thread），而把很少等待的线程称为CPU密集型线程（CPU Bound Thread）。IO密集型线程总是比CPU密集型线程容易得到优先级的提升。</p>
+<p>Linux的多线程</p>
+<p>Windows对进程和线程的实现如同教科书一般标准，Windows内核有明确的线程和进程的概念。在Windows API中，可以使用明确的API：CreateProcess和CreateThread来创建进程和线程，并且有一系列的API来操纵它们。但对于Linux来说，线程并不是一个通用的概念。</p>
+<p>Linux对多线程的支持颇为贫乏，事实上，在Linux内核中并不存在真正意义上的线程概念。Linux将所有的执行实体（无论是线程还是进程）都称为任务（Task），每一个任务概念上都类似于一个单线程的进程，具有内存空间、执行实体、文件资源等。不过，Linux下不同的任务之间可以选择共享内存空间，因而在实际意义上，共享了同一个内存空间的多个任务构成了一个进程，这些任务也就成了这个进程里的线程。</p>
+<p>fork函数调用之后，新的任务将启动并和本任务一起从fork函数返回。但不同的是本任务的fork将返回新任务pid，而新任务的fork将返回0。</p>
+<p>fork产生新任务的速度非常快，因为fork并不复制原任务的内存空间，而是和原任务一起共享一个写时复制（Copy on Write, COW）的内存空间（见图1-10）。所谓写时复制，指的是两个任务可以同时自由地读取内存，但任意一个任务试图对内存进行修改时，内存就会复制一份提供给修改方单独使用，以免影响到其他的任务使用。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/968a2832-f8f5-49fb-8ac4-72bbf98907a8"><img src="https://github.com/user-attachments/assets/968a2832-f8f5-49fb-8ac4-72bbf98907a8" alt="image" style="max-width: 100%;"></a></p>
+<p>三种线程模型</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/410bab7d-791b-49fa-8a0c-af9e6093d073"><img src="https://github.com/user-attachments/assets/410bab7d-791b-49fa-8a0c-af9e6093d073" alt="image" style="max-width: 100%;"></a></p>
+<p>多对一模型将多个用户线程映射到一个内核线程上，线程之间的切换由用户态的代码来进行，因此相对于一对一模型，多对一模型的线程切换要快速许多。多对一的模型如图所示。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/798e2562-009e-4274-af38-f737dc85e216"><img src="https://github.com/user-attachments/assets/798e2562-009e-4274-af38-f737dc85e216" alt="image" style="max-width: 100%;"></a></p>
+<p>上述为《程序员的自我修养》第一章内容摘抄。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
