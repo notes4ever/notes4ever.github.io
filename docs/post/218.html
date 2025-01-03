@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="github-light" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186999790">
+<meta name="description" content="《wireshark数据包分析实战》第三版中文版
+
+夹杂其他的笔记一起记录抓包相关的知识笔记，如：极客时间《网络排查案例课》。">
+<meta property="og:title" content="抓包学习笔记">
+<meta property="og:description" content="《wireshark数据包分析实战》第三版中文版
+
+夹杂其他的笔记一起记录抓包相关的知识笔记，如：极客时间《网络排查案例课》。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://notes4ever.github.io/post/218.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/186999790">
+<title>抓包学习笔记</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">抓包学习笔记</h1>
+<div class="title-right">
+    <a href="https://notes4ever.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题"style="display:none;">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>《wireshark数据包分析实战》第三版中文版</p>
+<p>夹杂其他的笔记一起记录抓包相关的知识笔记，如：极客时间《网络排查案例课》。</p>
+<h2>底层原理</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/232a52fa-6ccc-43f1-a6e2-927391399ef6"><img src="https://github.com/user-attachments/assets/232a52fa-6ccc-43f1-a6e2-927391399ef6" alt="image" style="max-width: 100%;"></a></p>
+<p>BPF</p>
+<p>BPF 全称是 Berkeley Packet Filter（也叫 BSD Packet Filter），它是 tcpdump 等抓包 工具的底层基础。在 BPF 出现之前，虽然各家操作系统都有自己的抓包工具，但也都有这 样或那样的不足。比如，有些系统把所有网络报文一股脑儿塞给用户空间程序，开销非常 大；而有些系统虽然有报文过滤功能，但是工作很不稳定。</p>
+<p>为了解决这些问题，1992 年，也还是在劳伦斯伯克利国家实验室，当初 tcpdump 的两个 作者史蒂文·麦克凯恩（Steven McCanne）和范·雅各布森（Van Jacobson）发表了关于 BPF 的  论文，它以一种新的基于寄存器的虚拟机方式，实现了高效稳定的报文过滤功 能。从此以后，抓包技术这棵大树有了一个甚为强大的根基，而构建在 BPF 之上的 libpcap、tcpdump 等不断枝繁叶茂，进一步使得抓包工作变得方便、稳定，我们这些凡 夫俗子才好在这棵大树底下，下棋乘凉。</p>
+<p>libpcap</p>
+<p>BPF 实现了抓包虚拟机，但它是如何被用户空间程序使用的呢？于是，libpcap 出现了， 它提供了 API 给用户空间程序（包括 tcpdump、Wireshark 等），使得后者能方便地调 用 BPF 实现抓包过滤等功能。也就是说，libpcap 是 BPF 的一层 API 封装。<br>
+那么到目前为止，我们应该就能明白 tcpdump 是怎么工作的了：tcpdump 调用了 libpcap 接口，后者调用 BPF 实现了报文过滤和抓取。我们来看一下示意图：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/53c778c2-6df0-4d1e-8888-ee8797dfc2fc"><img src="https://github.com/user-attachments/assets/53c778c2-6df0-4d1e-8888-ee8797dfc2fc" alt="image" style="max-width: 100%;"></a></p>
+<p>WinPcap</p>
+<p>Windows 上也可以做到类似 Linux 这样的抓包，其底层就是依赖 WinPcap，它是 libpcap 的 Windows 版本。微软很早就支持了图形界面抓包工具，从 Windows NT 时代 开始，人们就可以用 Network Monitor 这个工具在 Windows 平台上进行网络排查。十 多年前，我还在做 Windows 工程师时，也时常用到这个工具。算起来，我跟抓包工具结 缘也有不少年头了（哎，又暴露年龄了）。</p>
+<p>eBPF</p>
+<p>Linux 从 3.18 版本开始支持 extended BPF，简称 eBPF。这是一个更加通用的内核接口，不仅能支持网络抓包，还能支持网络以外的内核观测点的信息收集等工作。所以事实上，eBPF 已经是一个通用工具，而不再局限在网络工具这个角色定位上了。</p>
+<p>同时，也因为它在数据面上的性能很出色，所以现在不少公司正在探索，利用它实现一些 数据面的开发工作，比如高性能的负载均衡。相信不久的将来，我们就能看到越来越多的 eBPF 的应用案例了。</p>
+<p>为什么抓包文件有好几种类型？</p>
+<p>如果你留意过抓包文件后缀名的话，会发现有 pcap、cap、pcapng 这几种不同的后缀名。为什么会有好几种类型呢？下面我来给你说道说道。</p>
+<p>pcap</p>
+<p>这个是 libpcap 的格式，也是 tcpdump 和 Wireshark 等工具默认支持的文件格式。pcap 格式的文件中除了报文数据以外，也包含了抓包文件的元信息，比如版本号、抓包时间、 每个报文被抓取的最大长度，等等。</p>
+<p>cap</p>
+<p>cap 文件可能含有一些 libpcap 标准之外的数据格式，它是由一些 tcpdump 以外的抓包程序生成的。比如 Citrix 公司的 netscaler 负载均衡器，它的 nstrace 命令生成的抓包文 件，就是以.cap 为扩展名的。这种文件除了包含 pcap 标准定义的信息以外，还包含了 LB 的前端连接和后端连接之间的 mapping 信息。Wireshark 是可以读取这些.cap 文件的， 只要在正确的版本上。</p>
+<p>pcapng</p>
+<p>pcap 格式虽然满足了大部分需求，但是它也有一些不足。比如，现在多网口的情况已经越来越常见了，我们也经常需要从多个网络接口去抓取报文，那么在抓包文件里，如果不把这些报文跟所属的网口信息展示清楚，那我们的分析，岂不是要张冠李戴了吗？</p>
+<p>为了弥补 pcap 格式的不足，人们需要有一种新的文件格式，pcapng 就出现了。有了它， 单个抓包文件就可以包含多个网络接口上抓取到的报文了。pcapng 还有很多别的特性，比如更细粒度的报文时间戳、允许对报文添加注释、 更灵活的元数据，等等。如果你是用版本比较新的 Wireshark 和 tshark 做抓包，默认生 成的抓包文件就已经是 pcapng 格式了。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://notes4ever.github.io">notes4ever</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+
+
+
+
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>
+
+</html>
