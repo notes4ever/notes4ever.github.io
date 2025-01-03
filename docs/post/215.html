@@ -102,7 +102,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 &gt;&gt;&gt; d2 | d1  ➊
 {'name': 'apple', 'price': 10}
 </code></pre>
-<p>运算顺序不同，会影响最终的合并结果。d1和d2本身不会被改变。d1.update(d2) 则会改变d1原来的值。</p>
+<p>➊ 运算顺序不同，会影响最终的合并结果。d1和d2本身不会被改变。d1.update(d2) 则会改变d1原来的值。</p>
 <p>dict.setdefault(key, default) 会产生两种结果：当 key 不存在时，该方法会把 default 值写入字典的 key 位置，并返回该值；假如 key 已经存在，该方法就会直接返回它在字典中的对应值。</p>
 <p>假设你只是单纯地想去掉某个键，并不关心它存在与否、删除有没有成功，那么使用 dict.pop(key, default) 方法就够了。</p>
 <p>只要在调用 pop 方法时传入默认值 None，在键不存在的情况下也不会产生任何异常。</p>
